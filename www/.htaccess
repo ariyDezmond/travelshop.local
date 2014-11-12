@@ -1,0 +1,17 @@
+RewriteEngine on
+
+RewriteCond %{HTTP_HOST} ^www.jeisport.ru [NC]
+RewriteRule ^(.*)$ http://jeisport.ru/$1 [R=301,L]
+
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_URI} !(.*)/$
+#RewriteRule ^(.*[^/])$ $1/ [L,R=301]
+
+RewriteBase /
+# Hide the application and system directories by redirecting the request to index.php
+RewriteRule ^(application|system|\.svn) index.php/$1 [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php/$1 [QSA,L]
+
+AddDefaultCharset utf-8
