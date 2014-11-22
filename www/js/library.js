@@ -1,9 +1,9 @@
-function image_del_click_subscription() {
+function image_del_click_subscription(module) {
     $('.image_del').click(function () {
         var image_del = this;
         if (confirm('Удалить?')) {
             $.ajax({
-                url: '/admin/points/image_delete',
+                url: '/admin/' + module + '/image_delete',
                 type: 'POST',
                 data: {
                     id: $(this).attr('id')
@@ -13,7 +13,6 @@ function image_del_click_subscription() {
                 },
                 success: function (data) {
                     $(image_del).parent().parent().remove();
-                    //alert(data);
                 }
             });
             return true
@@ -122,10 +121,10 @@ function trener_del_click_subscription() {
 
             var sname = "<input type='text' class='form-control' value='" + trener_sname + "' placeholder='Фамилия'>";
             $(this).parent().parent().find('.trener_sname').html(sname);
-            
+
             var pph = "<input type='text' class='form-control' value='" + trener_pph + "' placeholder='Цена за час'>";
             $(this).parent().parent().find('.trener_pph').html(pph);
-            
+
             var ppm = "<input type='text' class='form-control' value='" + trener_ppm + "' placeholder='Цена за месяц'>";
             $(this).parent().parent().find('.trener_ppm').html(ppm);
 
@@ -178,7 +177,7 @@ jQuery(document).ready(function () {
     $('#order_by_category').change(function () {
         window.location.href = "/admin/sports/order/" + this.value;
     });
-    
+
     $('#order_by_sport').change(function () {
         window.location.href = "/admin/points/order/" + this.value;
     });

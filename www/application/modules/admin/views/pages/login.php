@@ -37,6 +37,12 @@
             <h2 class="form-signin-heading">Авторизация</h2>
             <?php
             echo validation_errors();
+
+            if ($this->session->userdata('error')) {
+                echo $this->session->userdata('error');
+            }
+            $this->session->unset_userdata('error');
+
             $data = array(
                 'name' => 'login',
                 'value' => set_value('login'),

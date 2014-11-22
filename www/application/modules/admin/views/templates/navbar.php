@@ -15,9 +15,12 @@
                 <li <?php if (strpos(current_url(), 'admin/main')) {
     echo "class=\"active\"";
 } ?> ><a href="/admin/main">Главная</a></li>
-                <li <?php if (strpos(current_url(), 'admin/categories')) {
+                <li <?php if (strpos(current_url(), 'admin/hotels')) {
     echo "class=\"active\"";
-} ?> ><a href="/admin/categories">Категории</a></li>
+} ?> ><a href="/admin/hotels">Отели</a></li>
+                <li <?php if (strpos(current_url(), 'admin/tours')) {
+    echo "class=\"active\"";
+} ?> ><a href="/admin/tours">Туры</a></li>
                 <!--              <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Настройки <span class="caret"></span></a>
                                 <ul class="dropdown-menu" role="menu">
