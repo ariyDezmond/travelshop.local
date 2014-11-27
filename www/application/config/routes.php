@@ -41,11 +41,15 @@ if (!defined('BASEPATH'))
   |
  */
 
-$route['default_controller'] = "welcome";
+$route['default_controller'] = "front/main";
 
 $route['admin/login'] = 'admin/login';
 $route['admin/logout'] = 'admin/logout';
 
+$route['requests/savemail'] = 'requests/savemail';
+$route['request/read'] = 'requests/setread';
+
+$route['admin/tag_del'] = 'admin/tag_del';
 $route['admin/(:any)/up/(:any)'] = '$1/up/$2';
 $route['admin/(:any)/down/(:any)'] = '$1/down/$2';
 $route['admin/(:any)/image_delete'] = '$1/image_delete';
@@ -55,6 +59,9 @@ $route['admin/(:any)/delete/(:num)'] = '$1/delete/$2';
 $route['admin/(:any)/(:any)/(:any)'] = 'admin/$2/$1/$3';
 $route['admin/(:any)/(:any)'] = 'admin/$2/$1';
 $route['admin/(:any)'] = 'admin/view/$1';
+$route['admin'] = 'admin/view/main';
+
+$route['(:any)'] = 'front/$1';
 
 
 /* End of file routes.php */

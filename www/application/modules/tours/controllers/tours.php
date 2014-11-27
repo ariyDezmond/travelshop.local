@@ -41,7 +41,6 @@ class Tours extends MX_Controller {
 
         if ($this->input->post('do') == $this->module . 'Edit') {
             $this->form_validation->set_rules('name', 'Название', 'trim|required|xss_clean');
-            $this->form_validation->set_rules('url', 'ЧПУ', 'trim|required|xss_clean');
             $this->form_validation->set_rules('price', 'Стоимость', 'trim|required|xss_clean');
             $this->form_validation->set_rules('datefrom', 'Дата с', 'trim|required|xss_clean');
             $this->form_validation->set_rules('duration', 'Продолжительность', 'trim|required|xss_clean');

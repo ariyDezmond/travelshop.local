@@ -1,7 +1,7 @@
 RewriteEngine on
 
-RewriteCond %{HTTP_HOST} ^www.jeisport.ru [NC]
-RewriteRule ^(.*)$ http://jeisport.ru/$1 [R=301,L]
+RewriteCond %{HTTP_HOST} ^www.travelshop.kg [NC]
+RewriteRule ^(.*)$ http://travelshop.kg/$1 [R=301,L]
 
 #RewriteCond %{REQUEST_FILENAME} !-f
 #RewriteCond %{REQUEST_URI} !(.*)/$

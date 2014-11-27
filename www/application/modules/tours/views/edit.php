@@ -29,11 +29,11 @@
     <div class="col-md-6">
         <div class="form-group">
             <label for="name">Название</label>
-            <input required name='name' value="<?= $entry['name'] ?>" type="text" class="form-control name" id="name" placeholder="">
+            <input required name='name' value="<?= $entry['name'] ?>" type="text" class="form-control" id="name" placeholder="">
         </div>
         <div class="form-group">
             <label for="url">ЧПУ</label>
-            <input required name='url' value="<?= $entry['url'] ?>" type="text" class="form-control name_translit" id="url" placeholder="">
+            <input disabled name='url' value="<?= $entry['url'] ?>" type="text" class="form-control" id="url" placeholder="">
         </div>
         <div class="form-group">
             <label for="price">Стоимость</label>

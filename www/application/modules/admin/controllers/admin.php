@@ -19,6 +19,20 @@ class Admin extends MX_Controller {
         }
     }
 
+    public function set_tag($tag, $page_id, $object) {
+        $this->admins_model->set_tag($tag, $page_id, $object);
+    }
+
+    public function tag_del() {
+        if (!$this->session->userdata('logged')) {
+            redirect('admin/login');
+        }
+        if ($this->input->post('id')) {
+            $id = $this->input->post('id');
+            $this->admins_model->delete_tag($id);
+        }
+    }
+
     public function login() {
         if ($this->session->userdata('logged')) {
             redirect('admin/main');
@@ -53,6 +67,8 @@ class Admin extends MX_Controller {
         }
 
         $data['title'] = 'Административная панель';
+        $data['msgs'] = Modules::run('requests/get_unread_requests');
+
         $this->load->view('templates/metahead', $data);
         $this->load->view('templates/navbar', $data);
         $this->load->view('pages/' . $page, $data);
@@ -63,6 +79,7 @@ class Admin extends MX_Controller {
         if (!$this->session->userdata('logged')) {
             redirect('admin/login');
         }
+        $data['msgs'] = Modules::run('requests/get_unread_requests');
         $data['title'] = 'Редактирование записи - административная панель';
         $data['page'] = $page;
         $data['id'] = $id;
@@ -72,10 +89,25 @@ class Admin extends MX_Controller {
         $this->load->view('templates/footer', $data);
     }
 
+    public function more($page, $id) {
+        if (!$this->session->userdata('logged')) {
+            redirect('admin/login');
+        }
+        $data['msgs'] = Modules::run('requests/get_unread_requests');
+        $data['title'] = 'Просмотр записи - административная панель';
+        $data['page'] = $page;
+        $data['id'] = $id;
+        $this->load->view('templates/metahead', $data);
+        $this->load->view('templates/navbar', $data);
+        $this->load->view('pages/more', $data);
+        $this->load->view('templates/footer', $data);
+    }
+
     public function add($page) {
         if (!$this->session->userdata('logged')) {
             redirect('admin/login');
         }
+        $data['msgs'] = Modules::run('requests/get_unread_requests');
         $data['title'] = 'Добавление записи - административная панель';
         $data['page'] = $page;
         $this->load->view('templates/metahead', $data);

@@ -12,30 +12,39 @@
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li <?php if (strpos(current_url(), 'admin/main')) {
-    echo "class=\"active\"";
-} ?> ><a href="/admin/main">Главная</a></li>
-                <li <?php if (strpos(current_url(), 'admin/hotels')) {
-    echo "class=\"active\"";
-} ?> ><a href="/admin/hotels">Отели</a></li>
-                <li <?php if (strpos(current_url(), 'admin/tours')) {
-    echo "class=\"active\"";
-} ?> ><a href="/admin/tours">Туры</a></li>
-                <!--              <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Настройки <span class="caret"></span></a>
-                                <ul class="dropdown-menu" role="menu">
-                                  <li><a href="/admin/blog">Блог</a></li>
-                                  <li><a href="/admin/news">Новости</a></li>
-                                  <li><a href="/admin/video-blog">Видео блог</a></li>
-                                  <li class="divider"></li>
-                                  <li class="dropdown-header">Nav header</li>
-                                  <li><a href="#">Separated link</a></li>
-                                  <li><a href="#">One more separated link</a></li>
-                                </ul>
-                              </li>-->
+                <li <?php
+                if (strpos(current_url(), 'admin/main')) {
+                    echo "class=\"active\"";
+                }
+                ?> ><a href="/admin/main">Главная</a></li>
+                <li <?php
+                if (strpos(current_url(), 'admin/hotels')) {
+                    echo "class=\"active\"";
+                }
+                ?> ><a href="/admin/hotels">Отели</a></li>
+                <li <?php
+                if (strpos(current_url(), 'admin/tours')) {
+                    echo "class=\"active\"";
+                }
+                ?> ><a href="/admin/tours">Туры</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Модули <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="/admin/blog">Блог</a></li>
+                        <li><a href="/admin/news">Новости</a></li>
+                        <li class="divider"></li>
+                        <li class="dropdown-header">Nav header</li>
+                        <li><a href="#">Separated link</a></li>
+                        <li><a href="#">One more separated link</a></li>
+                    </ul>
+                </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li class="active"><a href="./">Default</a></li>
+                <li class="active"><a href="/admin/requests">Запросы <span style="background-color:green;" class="badge"><?php
+                            if (isset($msgs)) {
+                                echo $msgs;
+                            }
+                            ?></span></a></li>
                 <li><a href="/" target="_blank">Перейти на сайт <span class='glyphicon glyphicon-new-window'></span></a></li>
                 <li><a href="<?= '/admin/logout' ?>">Выход</a></li>
             </ul>

@@ -6,7 +6,7 @@
     </div>
 </div>
 <div class="page-header">
-    <h2>Редактирование модуля "<?= $module_name ?>"</h2>
+    <h2>Добавление записи в модуль "<?= $module_name ?>"</h2>
 </div>
 <?= form_open_multipart('admin/' . $module . '/add') ?>
 <div class="row" style="margin-bottom: 10px;">
