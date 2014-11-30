@@ -58,6 +58,11 @@ class Tours_model extends CI_Model {
         }
     }
 
+    public function get_by_url($url) {
+        $query = $this->db->get_where($this->table_name, array('active' => 'on', 'url' => $url));
+        return $query->row_array();
+    }
+
     public function images_insert($image, $id) {
         $data = array(
             'image' => $image,
@@ -90,6 +95,9 @@ class Tours_model extends CI_Model {
 
         $data = array(
             'name' => $this->input->post('name'),
+            'flightout' => $this->input->post('flightout'),
+            'priceperone' => $this->input->post('priceperone'),
+            'country' => $this->input->post('country'),
             'url' => $this->input->post('url'),
             'price' => $this->input->post('price'),
             'datefrom' => date('Y-m-d h:i:s', strtotime($this->input->post('datefrom'))),
@@ -125,6 +133,9 @@ class Tours_model extends CI_Model {
         if (!$image) {
             $data = array(
                 'name' => $this->input->post('name'),
+                'flightout' => $this->input->post('flightout'),
+                'priceperone' => $this->input->post('priceperone'),
+                'country' => $this->input->post('country'),
                 'price' => $this->input->post('price'),
                 'datefrom' => date('Y-m-d h:i:s', strtotime($this->input->post('datefrom'))),
                 'duration' => $this->input->post('duration'),
@@ -150,6 +161,9 @@ class Tours_model extends CI_Model {
         } else {
             $data = array(
                 'name' => $this->input->post('name'),
+                'flightout' => $this->input->post('flightout'),
+                'priceperone' => $this->input->post('priceperone'),
+                'country' => $this->input->post('country'),
                 'price' => $this->input->post('price'),
                 'datefrom' => date('Y-m-d h:i:s', strtotime($this->input->post('datefrom'))),
                 'duration' => $this->input->post('duration'),

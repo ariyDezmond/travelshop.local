@@ -11,7 +11,7 @@
                 </div>
                 <div class="inner-footer-block-2">
                     <a class="dev" href="http://www.googstudio.com">
-                        <img src="img/dev-logo.png" alt=""/>
+                        <img src="/img/dev-logo.png" alt=""/>
                     </a>
                 </div>
             </div>

@@ -29,10 +29,22 @@ class Hotels extends MX_Controller {
         $this->load->view('hotels', $data);
     }
 
-    public function get_hotels(){
-        return $this->hotels_model->get();
+    public function get($id = null, $for_front = false) {
+        if ($id) {
+            if ($for_front) {
+                return $this->hotels_model->get($id, true);
+            } else {
+                return $this->hotels_model->get($id);
+            }
+        } else {
+            if ($for_front) {
+                return $this->hotels_model->get('', true);
+            } else {
+                return $this->hotels_model->get();
+            }
+        }
     }
-    
+
     public function edit($id = null) {
         $entry = $this->hotels_model->get($id);
         $data['entry'] = $entry;
@@ -208,31 +220,35 @@ class Hotels extends MX_Controller {
         }
     }
 
-    public function get_images($id) {
-        $pimages = $this->hotels_model->get_images($id);
+    public function get_images($id, $front = false) {
+        if ($front) {
+            return $this->hotels_model->get_images($id);
+        } else {
+            $pimages = $this->hotels_model->get_images($id);
 
-        if (!$pimages) {
-            echo '<div class="alert alert-danger" role="alert">Миниатюр не найдено!</div>';
-        }
-        ?>
-        <div class="row images">
-            <?php
-            foreach ($pimages as $pimage):
-                ?>
-                <div id="image_<?= $pimage['id'] ?>" style="width:200px;" class="col-xs-6 col-md-3">
-                    <a class="thumbnail">
-                        <button id="<?= $pimage['id'] ?>" type="button" class="close image_del">
-                            <span aria-hidden="true">&times;</span>
-                            <span class="sr-only">Close</span>
-                        </button>
-                        <img class="img-rounded" src="/images/hotels/<?= $pimage['image'] ?>" alt="...">
-                    </a>
-                </div>
-                <?php
-            endforeach;
+            if (!$pimages) {
+                echo '<div class="alert alert-danger" role="alert">Миниатюр не найдено!</div>';
+            }
             ?>
-        </div>
-        <?php
+            <div class="row images">
+                <?php
+                foreach ($pimages as $pimage):
+                    ?>
+                    <div id="image_<?= $pimage['id'] ?>" style="width:200px;" class="col-xs-6 col-md-3">
+                        <a class="thumbnail">
+                            <button id="<?= $pimage['id'] ?>" type="button" class="close image_del">
+                                <span aria-hidden="true">&times;</span>
+                                <span class="sr-only">Close</span>
+                            </button>
+                            <img class="img-rounded" src="/images/hotels/<?= $pimage['image'] ?>" alt="...">
+                        </a>
+                    </div>
+                    <?php
+                endforeach;
+                ?>
+            </div>
+            <?php
+        }
     }
 
     public function image_delete() {

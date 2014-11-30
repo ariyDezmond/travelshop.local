@@ -44,7 +44,7 @@ class Requests_model extends CI_Model {
     }
 
     public function get_email() {
-        $query = $this->db->get('email');
+        $query = $this->db->get('requests_email');
         if (count($query->row_array()) > 0) {
             return $query->row_array();
         } else {
@@ -56,7 +56,7 @@ class Requests_model extends CI_Model {
         $data = array(
             'email' => $this->input->post('email')
         );
-        $this->db->update('email', $data);
+        $this->db->update('requests_email', $data);
     }
 
     public function get_unread_requests() {
@@ -114,22 +114,24 @@ class Requests_model extends CI_Model {
         }
     }
 
-    public function set($image) {
+    public function set() {
 
+        date_default_timezone_set('Asia/Bishkek');
         $data = array(
             'name' => $this->input->post('name'),
-            'url' => $this->input->post('url'),
-            'title' => $this->input->post('title'),
-            'desc' => $this->input->post('desc'),
-            'keyw' => $this->input->post('keyw'),
+            'country' => $this->input->post('country'),
+            'rooms' => $this->input->post('rooms'),
+            'price' => $this->input->post('price'),
             'text' => $this->input->post('text'),
-            'date' => $this->input->post('date'),
-            'active' => $this->input->post('active'),
-            'image' => $image
+            'email' => $this->input->post('email'),
+            'email' => $this->input->post('email'),
+            'date' => date('d.m.Y H:i:s'),
+            'phone' => $this->input->post('phone'),
+            'ip' => $this->input->ip_address(),
+            'read' => 0
         );
 
-        $this->db->insert($this->table_name, $data);
-        return $this->db->insert_id();
+        return $this->db->insert($this->table_name, $data);
     }
 
     public function delete($id) {

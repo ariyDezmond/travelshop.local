@@ -32,10 +32,9 @@
                     <ul class="dropdown-menu" role="menu">
                         <li><a href="/admin/blog">Блог</a></li>
                         <li><a href="/admin/news">Новости</a></li>
-                        <li class="divider"></li>
-                        <li class="dropdown-header">Nav header</li>
-                        <li><a href="#">Separated link</a></li>
-                        <li><a href="#">One more separated link</a></li>
+                        <li><a href="/admin/contacts">Контакты</a></li>
+                        <li><a href="/admin/backcall">Обратный звонок</a></li>
+                        <li><a href="/admin/feedback">Обратная связь</a></li>
                     </ul>
                 </li>
             </ul>

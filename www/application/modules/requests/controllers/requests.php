@@ -8,6 +8,8 @@ class Requests extends MX_Controller {
     public function __construct() {
         parent::__construct();
         $this->load->model('requests_model');
+        $this->form_validation->set_message('required', 'Поле "%s" обязательно для заполения');
+        $this->form_validation->set_message('valid_email', 'Поле "%s" должно содержать валидный E-mail адрес');
     }
 
     public function index() {
@@ -40,6 +42,34 @@ class Requests extends MX_Controller {
             $data['entries'] = $this->requests_model->get('', true);
         }
         $this->load->view($this->module, $data);
+    }
+
+    public function save() {
+        if ($this->input->post('do') == $this->module . 'Save') {
+            $this->form_validation->set_rules('country', 'Страна и город', 'required|trim|xss_clean');
+            $this->form_validation->set_rules('rooms', 'Количество комнат', 'required|trim|xss_clean');
+            $this->form_validation->set_rules('price', 'Цена за сутки', 'required|trim|xss_clean');
+            $this->form_validation->set_rules('name', 'Имя, Фамилия', 'required|trim|xss_clean');
+            $this->form_validation->set_rules('phone', 'Телефон', 'required|trim|xss_clean');
+            $this->form_validation->set_rules('text', 'Дополнительная информация', 'required|trim|xss_clean');
+            $this->form_validation->set_rules('email', 'E-mail', 'required|valid_email|trim|xss_clean');
+
+            $this->form_validation->set_error_delimiters('<p style="color:red;">', '</p>');
+
+            if ($this->form_validation->run() == FALSE) {
+                $this->load->view('front/request_form');
+            } else {
+                $this->requests_model->set();
+                echo '<p style="margin:10px; font-weight:bold; text-align:center; color:green">Успех! Заявка на поиск отеля была успешно отправлена! Ожидайте...наш менеджер свяжется с вам в ближайшее время.</p>';
+                //$arr = array(
+                //    'error' => '<p style="margin:10px; font-weight:bold; text-align:center; color:green">Успех! Заявка на поиск отеля была успешно отправлена! Ожидайте...наш менеджер свяжется с вам в ближайшее время.</p>'
+                //);
+                //$this->session->set_userdata($arr);
+                //$this->load->view('front/request_form');
+            }
+        } else {
+            $this->load->view('front/request_form');
+        }
     }
 
     public function more($id = null) {

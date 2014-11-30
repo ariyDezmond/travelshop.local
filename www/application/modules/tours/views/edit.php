@@ -36,6 +36,18 @@
             <input disabled name='url' value="<?= $entry['url'] ?>" type="text" class="form-control" id="url" placeholder="">
         </div>
         <div class="form-group">
+            <label for="country">Страна, город</label>
+            <input required name='country' value="<?= $entry['country'] ?>" type="text" class="form-control" id="country" placeholder="">
+        </div>
+        <div class="form-group">
+            <label for="flightout">Вылет</label>
+            <input required name='flightout' value="<?= $entry['flightout'] ?>" type="text" class="form-control" id="flightout" placeholder="из Москвы">
+        </div>
+        <div class="form-group">
+            <label for="priceperone">Цена за одного человека</label>
+            <input required name='priceperone' value="<?= $entry['priceperone'] ?>" type="text" class="form-control" id="priceperone" placeholder="">
+        </div>
+        <div class="form-group">
             <label for="price">Стоимость</label>
             <input required name='price' value="<?= $entry['price'] ?>" type="text" class="form-control" id="price" placeholder="">
         </div>

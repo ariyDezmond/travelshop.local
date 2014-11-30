@@ -1,10 +1,9 @@
 <?php
 
-class Blog_model extends CI_Model {
+class Contacts_model extends CI_Model {
 
-    private $table_name = 'blog';
-    private $images_table = 'tours_images';
-    private $redirect_url = 'blog';
+    private $table_name = 'contacts';
+    private $redirect_url = 'contacts';
 
     public function __construct() {
         $this->load->database();

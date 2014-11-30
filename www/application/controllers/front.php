@@ -3,7 +3,7 @@
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
-class Front extends CI_Controller {
+class Front extends MX_Controller {
 
     public function __construct() {
         parent::__construct();
@@ -35,6 +35,32 @@ class Front extends CI_Controller {
         $this->load->view('pages/tours', $data);
         $this->load->view('templates/contacts', $data);
         $this->load->view('templates/footer', $data);
+    }
+
+    public function tour($url) {
+        $tour = Modules::run('tours/get_by_url', $url);
+        $hotel = Modules::run('hotels/get', $tour['hotel_id'], true);
+        $tour_images = Modules::run('tours/get_images', $tour['id'], true);
+        $hotel_images = Modules::run('hotels/get_images', $hotel['id'], true);
+        if ($tour) {
+            $data['title'] = $tour['name'];
+            $data['url'] = $url;
+            $data['entry'] = $tour;
+            $data['tour_images'] = $tour_images;
+            $data['hotel_images'] = $hotel_images;
+            if ($tour['hotel_id']) {
+                $data['hotel'] = $hotel;
+            } else {
+                $data['hotel'] = 'Нет';
+            }
+            $this->load->view('templates/metahead', $data);
+            $this->load->view('templates/head', $data);
+            $this->load->view('pages/tour', $data);
+            $this->load->view('templates/contacts', $data);
+            $this->load->view('templates/footer', $data);
+        } else {
+            show_404();
+        }
     }
 
     public function vises() {

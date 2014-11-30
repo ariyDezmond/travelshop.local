@@ -36,6 +36,18 @@
             <input required name='url' value="<?= set_value('url') ?>" type="text" class="form-control name_translit" id="url" placeholder="">
         </div>
         <div class="form-group">
+            <label for="country">Страна, город</label>
+            <input required name='country' value="<?= set_value('country') ?>" type="text" class="form-control" id="country" placeholder="">
+        </div>
+        <div class="form-group">
+            <label for="flightout">Вылет</label>
+            <input required name='flightout' value="<?= set_value('flightout') ?>" type="text" class="form-control" id="flightout" placeholder="из Москвы">
+        </div>
+        <div class="form-group">
+            <label for="priceperone">Цена за одного человека</label>
+            <input required name='priceperone' value="<?= set_value('priceperone') ?>" type="text" class="form-control" id="priceperone" placeholder="">
+        </div>
+        <div class="form-group">
             <label for="price">Стоимость</label>
             <input required name='price' value="<?= set_value('price') ?>" type="text" class="form-control" id="price" placeholder="">
         </div>
@@ -73,7 +85,7 @@
                 <option value="0" selected>Нет</option>
                 <?php foreach ($hotels as $hotel): ?>
                     <option value="<?= $hotel['id'] ?>"><?= $hotel['id'] . '. ' . $hotel['name'] ?></option>
-                    <?php endforeach; ?>
+                <?php endforeach; ?>
             </select>
         </div>
         <div class="form-group">

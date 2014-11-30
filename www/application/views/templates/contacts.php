@@ -6,10 +6,10 @@
                 сетях,следите за нашими
                 новостями и новыми турами.</p>
             <ul class="social">
-                <li><a href="#"><img src="img/social-icons/vk.png" alt=""/></a></li>
-                <li><a href="#"><img src="img/social-icons/fb.png" alt=""/></a></li>
-                <li><a href="#"><img src="img/social-icons/tw.png" alt=""/></a></li>
-                <li><a href="#"><img src="img/social-icons/ok.png" alt=""/></a></li>
+                <li><a href="#"><img src="/img/social-icons/vk.png" alt=""/></a></li>
+                <li><a href="#"><img src="/img/social-icons/fb.png" alt=""/></a></li>
+                <li><a href="#"><img src="/img/social-icons/tw.png" alt=""/></a></li>
+                <li><a href="#"><img src="/img/social-icons/ok.png" alt=""/></a></li>
             </ul>
         </div>
         <div class="inner-contacts-block-2">

@@ -1,13 +1,13 @@
 <?php
 
-class Blog extends MX_Controller {
+class Contacts extends MX_Controller {
 
-    private $module = 'blog';
-    private $module_name = 'Блог';
+    private $module = 'ontacts';
+    private $module_name = 'Контакты';
 
     public function __construct() {
         parent::__construct();
-        $this->load->model('blog_model');
+        $this->load->model('contacts_model');
     }
 
     public function index() {
@@ -24,9 +24,9 @@ class Blog extends MX_Controller {
         $data['module_name'] = $this->module_name;
         $data['module'] = $this->module;
         if (!$for_front) {
-            $data['entries'] = $this->blog_model->get();
+            $data['entries'] = $this->contacts_model->get();
         } else {
-            $data['entries'] = $this->blog_model->get('', true);
+            $data['entries'] = $this->contacts_model->get('', true);
         }
         $this->load->view($this->module, $data);
     }
@@ -35,9 +35,9 @@ class Blog extends MX_Controller {
         global $object;
         $object = 'blog';
         $data['title'] = 'Административная панель';
-        $entry = $this->blog_model->get_blogs($id);
+        $entry = $this->contacts_model->get_blogs($id);
         $data['entry'] = $entry;
-        $tags = $this->blog_model->get_tags($id);
+        $tags = $this->contacts_model->get_tags($id);
         $data['tags'] = $tags;
         $data['module_name'] = $this->module_name;
         $data['module'] = $this->module;
@@ -69,7 +69,7 @@ class Blog extends MX_Controller {
                             Modules::run('admin/set_tag', $tag, $id, $object);
                         }
                     }
-                    $this->blog_model->update($id);
+                    $this->contacts_model->update($id);
                     $arr = array(
                         'error' => '<div class="alert alert-success" role="alert"><strong>Успех! </strong>Запись была успешно обновлена!</div>'
                     );
@@ -80,7 +80,7 @@ class Blog extends MX_Controller {
                         $this->session->set_userdata('error', $this->upload->display_errors('<span class="label label-danger">', '</span>'));
                         redirect('admin/' . $this->module . '/edit/' . $entry['id']);
                     } else {
-                        $entry = $this->blog_model->get_blogs($id);
+                        $entry = $this->contacts_model->get_blogs($id);
                         if (file_exists('images/' . $this->module . '/' . $entry['image'])) {
                             unlink('images/' . $this->module . '/' . $entry['image']);
                             if ($this->input->post('tags')) {
@@ -89,7 +89,7 @@ class Blog extends MX_Controller {
                                 }
                             }
                             $image_data = $this->upload->data();
-                            $this->blog_model->update($id, $image_data['file_name']);
+                            $this->contacts_model->update($id, $image_data['file_name']);
                             $arr = array(
                                 'error' => '<div class="alert alert-success" role="alert"><strong>Успех! </strong>Запись была успешно обновлена!</div>'
                             );
@@ -102,7 +102,7 @@ class Blog extends MX_Controller {
                                 }
                             }
                             $image_data = $this->upload->data();
-                            $this->blog_model->update($id, $image_data['file_name']);
+                            $this->contacts_model->update($id, $image_data['file_name']);
                             $arr = array(
                                 'error' => '<div class="alert alert-success" role="alert"><strong>Успех! </strong>Запись была успешно обновлена!</div>'
                             );
@@ -131,7 +131,7 @@ class Blog extends MX_Controller {
     }
 
     public function check_url($url) {
-        if ($this->blog_model->get_by_url($url)) {
+        if ($this->contacts_model->get_by_url($url)) {
             $this->form_validation->set_message('check_url', 'Такой ЧПУ уже занят!');
             return FALSE;
         } else {
@@ -172,7 +172,7 @@ class Blog extends MX_Controller {
                     redirect('admin/' . $this->module . '/add');
                 } else {
                     $image_data = $this->upload->data();
-                    $insert_id = $this->blog_model->set($image_data['file_name']);
+                    $insert_id = $this->contacts_model->set($image_data['file_name']);
 
                     $arr = array(
                         'error' => '<div class="alert alert-success" role="alert"><strong>Успех! </strong>Запись была успешно добавлена!</div>'
@@ -187,14 +187,14 @@ class Blog extends MX_Controller {
     }
 
     public function delete($id) {
-        $entry = $this->blog_model->get($id);
+        $entry = $this->contacts_model->get($id);
         if (count($entry) > 0) {
             if (file_exists('images/' . $this->module . '/' . $entry['image'])) {
-                $this->blog_model->delete($id);
+                $this->contacts_model->delete($id);
                 unlink('images/' . $this->module . '/' . $entry['image']);
                 redirect('admin/' . $this->module);
             } else {
-                $this->blog_model->delete($id);
+                $this->contacts_model->delete($id);
                 redirect('admin/' . $this->module);
             }
         } else {
@@ -203,11 +203,11 @@ class Blog extends MX_Controller {
     }
 
     public function up($id) {
-        $this->blog_model->order($id, 'up');
+        $this->contacts_model->order($id, 'up');
     }
 
     public function down($id) {
-        $this->blog_model->order($id, 'down');
+        $this->contacts_model->order($id, 'down');
     }
 
 }

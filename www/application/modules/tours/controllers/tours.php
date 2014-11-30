@@ -20,15 +20,30 @@ class Tours extends MX_Controller {
         }
     }
 
-    public function view($for_front = false) {
+    public function view($for_front = false, $url = false) {
         $data['module_name'] = $this->module_name;
         $data['module'] = $this->module;
         if (!$for_front) {
-            $data['entries'] = $this->tours_model->get();
+            if (!$url) {
+                $data['entries'] = $this->tours_model->get();
+                $this->load->view('tours', $data);
+            } else {
+                $data['entry'] = $this->tours_model->get_by_url($url);
+                $this->load->view('front/tour', $data);
+            }
         } else {
-            $data['entries'] = $this->tours_model->get('', true);
+            if (!$url) {
+                $data['entries'] = $this->tours_model->get('', true);
+                $this->load->view('front/tours', $data);
+            } else {
+                //$data['entry'] = $this->tours_model->get_by_url($url);
+                $this->load->view('front/tour', $data);
+            }
         }
-        $this->load->view($this->module, $data);
+    }
+
+    public function get_by_url($url) {
+        return $this->tours_model->get_by_url($url);
     }
 
     public function edit($id = null) {
@@ -36,11 +51,12 @@ class Tours extends MX_Controller {
         $data['entry'] = $entry;
         $data['module_name'] = $this->module_name;
         $data['module'] = $this->module;
-        $hotels = Modules::run('hotels/get_hotels');
+        $hotels = Modules::run('hotels/get', '', true);
         $data['hotels'] = $hotels;
 
         if ($this->input->post('do') == $this->module . 'Edit') {
             $this->form_validation->set_rules('name', 'Название', 'trim|required|xss_clean');
+            $this->form_validation->set_rules('country', 'Страна, город', 'trim|required|xss_clean');
             $this->form_validation->set_rules('price', 'Стоимость', 'trim|required|xss_clean');
             $this->form_validation->set_rules('datefrom', 'Дата с', 'trim|required|xss_clean');
             $this->form_validation->set_rules('duration', 'Продолжительность', 'trim|required|xss_clean');
@@ -125,10 +141,11 @@ class Tours extends MX_Controller {
     public function add() {
         $data['module_name'] = $this->module_name;
         $data['module'] = $this->module;
-        $hotels = Modules::run('hotels/get_hotels');
+        $hotels = Modules::run('hotels/get', '', true);
         $data['hotels'] = $hotels;
         if ($this->input->post('do') == $this->module . 'Add') {
             $this->form_validation->set_rules('name', 'Название', 'trim|required|xss_clean');
+            $this->form_validation->set_rules('country', 'Страна, город', 'trim|required|xss_clean');
             $this->form_validation->set_rules('url', 'ЧПУ', 'trim|required|xss_clean');
             $this->form_validation->set_rules('price', 'Стоимость', 'trim|required|xss_clean');
             $this->form_validation->set_rules('datefrom', 'Дата с', 'trim|required|xss_clean');
@@ -237,31 +254,35 @@ class Tours extends MX_Controller {
         }
     }
 
-    public function get_images($id) {
-        $pimages = $this->tours_model->get_images($id);
+    public function get_images($id, $front = false) {
+        if ($front) {
+            return $this->tours_model->get_images($id);
+        } else {
+            $pimages = $this->tours_model->get_images($id);
 
-        if (!$pimages) {
-            echo '<div class="alert alert-danger" role="alert">Миниатюр не найдено!</div>';
-        }
-        ?>
-        <div class="row images">
-            <?php
-            foreach ($pimages as $pimage):
-                ?>
-                <div id="image_<?= $pimage['id'] ?>" style="width:200px;" class="col-xs-6 col-md-3">
-                    <a class="thumbnail">
-                        <button id="<?= $pimage['id'] ?>" type="button" class="close image_del">
-                            <span aria-hidden="true">&times;</span>
-                            <span class="sr-only">Close</span>
-                        </button>
-                        <img class="img-rounded" src="/images/<?= $this->module . '/' . $pimage['image'] ?>" alt="...">
-                    </a>
-                </div>
-                <?php
-            endforeach;
+            if (!$pimages) {
+                echo '<div class="alert alert-danger" role="alert">Миниатюр не найдено!</div>';
+            }
             ?>
-        </div>
-        <?php
+            <div class="row images">
+                <?php
+                foreach ($pimages as $pimage):
+                    ?>
+                    <div id="image_<?= $pimage['id'] ?>" style="width:200px;" class="col-xs-6 col-md-3">
+                        <a class="thumbnail">
+                            <button id="<?= $pimage['id'] ?>" type="button" class="close image_del">
+                                <span aria-hidden="true">&times;</span>
+                                <span class="sr-only">Close</span>
+                            </button>
+                            <img class="img-rounded" src="/images/<?= $this->module . '/' . $pimage['image'] ?>" alt="...">
+                        </a>
+                    </div>
+                    <?php
+                endforeach;
+                ?>
+            </div>
+            <?php
+        }
     }
 
     public function image_delete() {

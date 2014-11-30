@@ -61,6 +61,8 @@ $route['admin/(:any)/(:any)'] = 'admin/$2/$1';
 $route['admin/(:any)'] = 'admin/view/$1';
 $route['admin'] = 'admin/view/main';
 
+$route['tours/(:any)'] = 'front/tour/$1';
+$route['(:any)/(:any)'] = '$1/$2';
 $route['(:any)'] = 'front/$1';
 
 
