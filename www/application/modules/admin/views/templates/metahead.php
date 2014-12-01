@@ -22,6 +22,12 @@
         <link href="/css/datepick/pygments-manni.css" rel="stylesheet">
         <link href="/css/datepick/font-awesome.css" rel="stylesheet">
 
+        <style type="text/css">
+            #map-canvas{
+                width: 600px;
+                height: 556px;
+            }
+        </style>
 
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script src="/js/jquery.min.js"></script>

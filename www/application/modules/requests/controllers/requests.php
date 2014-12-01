@@ -167,14 +167,8 @@ class Requests extends MX_Controller {
     public function delete($id) {
         $entry = $this->requests_model->get($id);
         if (count($entry) > 0) {
-            if (file_exists('images/' . $this->module . '/' . $entry['image'])) {
-                $this->requests_model->delete($id);
-                unlink('images/' . $this->module . '/' . $entry['image']);
-                redirect('admin/' . $this->module);
-            } else {
-                $this->requests_model->delete($id);
-                redirect('admin/' . $this->module);
-            }
+            $this->requests_model->delete($id);
+            redirect('admin/' . $this->module);
         } else {
             die('Ошибка! Такой записи в базе не существует!');
         }

@@ -103,12 +103,38 @@ class Front extends MX_Controller {
         $this->load->view('templates/footer', $data);
     }
 
+    public function post($url) {
+        $post = Modules::run('blog/get_by_url', $url);
+        $data['entry'] = $post;
+        $data['title'] = 'Блог - ' . $post['name'];
+        $data['url'] = $url;
+        $this->load->view('templates/metahead', $data);
+        $this->load->view('templates/head', $data);
+        $this->load->view('templates/slider', $data);
+        $this->load->view('pages/post', $data);
+        $this->load->view('templates/contacts', $data);
+        $this->load->view('templates/footer', $data);
+    }
+
     public function news() {
         $data['title'] = 'Новости';
         $this->load->view('templates/metahead', $data);
         $this->load->view('templates/head', $data);
         $this->load->view('templates/slider', $data);
         $this->load->view('pages/news', $data);
+        $this->load->view('templates/contacts', $data);
+        $this->load->view('templates/footer', $data);
+    }
+
+    public function onenew($url) {
+        $new = Modules::run('news/get_by_url', $url);
+        $data['entry'] = $new;
+        $data['title'] = 'Новости - ' . $new['name'];
+        $data['url'] = $url;
+        $this->load->view('templates/metahead', $data);
+        $this->load->view('templates/head', $data);
+        $this->load->view('templates/slider', $data);
+        $this->load->view('pages/new', $data);
         $this->load->view('templates/contacts', $data);
         $this->load->view('templates/footer', $data);
     }

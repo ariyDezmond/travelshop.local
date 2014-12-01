@@ -1,10 +1,9 @@
 <?php
 
-class Blog_model extends CI_Model {
+class Backcall_model extends CI_Model {
 
-    private $table_name = 'blog';
-    private $images_table = 'tours_images';
-    private $redirect_url = 'blog';
+    private $table_name = 'backcall';
+    private $redirect_url = 'backcall';
 
     public function __construct() {
         $this->load->database();
@@ -35,21 +34,7 @@ class Blog_model extends CI_Model {
 
                 return $query->row_array();
             }
-            $this->db->order_by('order', 'desc');
             $query = $this->db->get($this->table_name);
-            if (count($query->result_array()) > 0) {
-                return $query->result_array();
-            } else {
-                return false;
-            }
-        } else {
-            if ($id) {
-                $query = $this->db->get_where($this->table_name, array('id' => $id, 'active' => 'on'));
-
-                return $query->row_array();
-            }
-            $this->db->order_by('order', 'desc');
-            $query = $this->db->get_where($this->table_name, array('active' => 'on'));
             if (count($query->result_array()) > 0) {
                 return $query->result_array();
             } else {
@@ -58,9 +43,54 @@ class Blog_model extends CI_Model {
         }
     }
 
+    public function get_email() {
+        $query = $this->db->get('backcall_email');
+        if (count($query->row_array()) > 0) {
+            return $query->row_array();
+        } else {
+            return false;
+        }
+    }
+
+    public function save_email() {
+        $data = array(
+            'email' => $this->input->post('email')
+        );
+        $this->db->update('backcall_email', $data);
+    }
+
+    public function get_unread_requests() {
+        $query = $this->db->get_where($this->table_name, array('read' => '0'));
+        if (count($query->result_array()) > 0) {
+            return count($query->result_array());
+        } else {
+            return false;
+        }
+    }
+
+    public function request_delete($id) {
+        $this->db->delete($this->table_name, array('id' => $id));
+    }
+
+    public function update_request_read($id) {
+        $data = array(
+            'read' => 'on'
+        );
+        $this->db->where('id', $id);
+        $this->db->update($this->table_name, $data);
+    }
+
     public function get_by_url($url) {
-        $query = $this->db->get_where($this->table_name, array('active' => 'on', 'url' => $url));
-        return $query->row_array();
+        if ($url) {
+            $query = $this->db->get_where($this->module, array('url' => $url));
+            if ($query) {
+                return $query->row_array();
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
     }
 
     public function get_blogs($id = null) {
@@ -84,22 +114,17 @@ class Blog_model extends CI_Model {
         }
     }
 
-    public function set($image) {
-
+    public function set() {
+        date_default_timezone_set('Asia/Bishkek');
         $data = array(
             'name' => $this->input->post('name'),
-            'url' => $this->input->post('url'),
-            'title' => $this->input->post('title'),
-            'desc' => $this->input->post('desc'),
-            'keyw' => $this->input->post('keyw'),
-            'text' => $this->input->post('text'),
-            'date' => $this->input->post('date'),
-            'active' => $this->input->post('active'),
-            'image' => $image
+            'phone' => $this->input->post('phone'),
+            'date' => date('Y-m-d H:i:s'),
+            'ip' => $this->input->ip_address(),
+            'read' => 0
         );
 
-        $this->db->insert($this->table_name, $data);
-        return $this->db->insert_id();
+        return $this->db->insert($this->table_name, $data);
     }
 
     public function delete($id) {

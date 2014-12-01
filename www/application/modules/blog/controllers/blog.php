@@ -20,15 +20,25 @@ class Blog extends MX_Controller {
         }
     }
 
-    public function view($for_front = false) {
+    public function view($for_front = false, $url = false) {
         $data['module_name'] = $this->module_name;
         $data['module'] = $this->module;
         if (!$for_front) {
-            $data['entries'] = $this->blog_model->get();
+            if ($url) {
+                $data['entries'] = $this->blog_model->get_by_url($url);
+            } else {
+                $data['entries'] = $this->blog_model->get();
+                $this->load->view($this->module, $data);
+            }
         } else {
-            $data['entries'] = $this->blog_model->get('', true);
+            if ($url) {
+                $data['entries'] = $this->blog_model->get_by_url($url);
+                $this->load->view('front/post', $data);
+            } else {
+                $data['entries'] = $this->blog_model->get('', true);
+                $this->load->view('front/' . $this->module, $data);
+            }
         }
-        $this->load->view($this->module, $data);
     }
 
     public function edit($id = null) {
@@ -117,17 +127,8 @@ class Blog extends MX_Controller {
         }
     }
 
-    public function get_point_by_url($url) {
-        if ($url) {
-            $query = $this->db->get_where($this->module, array('url' => $url));
-            if ($query) {
-                return $query->row_array();
-            } else {
-                return false;
-            }
-        } else {
-            return false;
-        }
+    public function get_by_url($url) {
+        return $this->blog_model->get_by_url($url);
     }
 
     public function check_url($url) {

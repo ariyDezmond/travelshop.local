@@ -2,7 +2,7 @@
 
 class Contacts extends MX_Controller {
 
-    private $module = 'ontacts';
+    private $module = 'contacts';
     private $module_name = 'Контакты';
 
     public function __construct() {
@@ -20,194 +20,52 @@ class Contacts extends MX_Controller {
         }
     }
 
-    public function view($for_front = false) {
+    public function view($front = false, $pos = 'footer') {
         $data['module_name'] = $this->module_name;
         $data['module'] = $this->module;
-        if (!$for_front) {
-            $data['entries'] = $this->contacts_model->get();
+        $data['entry'] = $this->contacts_model->get();
+        if ($front) {
+            if ($pos == 'footer') {
+                $this->load->view('front/contacts_footer', $data);
+            } elseif ($pos == 'contacts') {
+                $this->load->view('front/contacts', $data);
+            }
         } else {
-            $data['entries'] = $this->contacts_model->get('', true);
+            $this->load->view($this->module, $data);
         }
-        $this->load->view($this->module, $data);
     }
 
     public function edit($id = null) {
-        global $object;
-        $object = 'blog';
-        $data['title'] = 'Административная панель';
-        $entry = $this->contacts_model->get_blogs($id);
-        $data['entry'] = $entry;
-        $tags = $this->contacts_model->get_tags($id);
-        $data['tags'] = $tags;
-        $data['module_name'] = $this->module_name;
-        $data['module'] = $this->module;
-        if ($this->input->post('do') == 'blogEdit') {
-            $this->form_validation->set_rules('name', 'Заголовок', 'required|trim|xss_clean');
-            //$this->form_validation->set_rules('url', 'Чпу', 'required|trim|xss_clean');
-            $this->form_validation->set_rules('text', 'Текст', 'trim|xss_clean');
-            $this->form_validation->set_rules('title', 'Мета title', 'trim|xss_clean');
-            $this->form_validation->set_rules('desc', 'Мета description', 'trim|xss_clean');
-            $this->form_validation->set_rules('keyw', 'Мета keywords', 'trim|xss_clean');
-            $this->form_validation->set_rules('date', 'Дата публикации', 'trim|xss_clean');
+        if ($this->input->post('do') == $this->module . 'Edit') {
+            $this->form_validation->set_rules('adress', 'Адрес', 'trim|xss_clean');
+            $this->form_validation->set_rules('phone', 'Телефон(ы)', 'trim|xss_clean');
+            $this->form_validation->set_rules('email', 'E-mail', 'trim|valid_email|xss_clean');
+            $this->form_validation->set_rules('coords', 'Координаты на карте', 'trim|xss_clean');
+            $this->form_validation->set_rules('social_text', 'Текст', 'trim|xss_clean');
+            $this->form_validation->set_rules('social_vk', 'Мета keywords', 'trim|xss_clean');
+            $this->form_validation->set_rules('social_fb', 'Мета keywords', 'trim|xss_clean');
+            $this->form_validation->set_rules('social_tw', 'Мета keywords', 'trim|xss_clean');
+            $this->form_validation->set_rules('social_ok', 'Мета keywords', 'trim|xss_clean');
 
             $this->form_validation->set_error_delimiters('<span class="label label-danger">', '</span>');
 
             if ($this->form_validation->run() == FALSE) {
-                $this->load->view('edit', $data);
-            } else {
-                $config['upload_path'] = './images/' . $this->module;
-                $config['allowed_types'] = 'gif|jpg|png|jpeg|JPG|JPEG';
-                $config['max_size'] = '5120';
-                $config['encrypt_name'] = true;
-
-                $this->load->library('upload', $config);
-
-                $image_data = $this->upload->data();
-                if ($_FILES['image']['name'] == '') {
-                    if ($this->input->post('tags')) {
-                        foreach ($this->input->post('tags') as $tag) {
-                            Modules::run('admin/set_tag', $tag, $id, $object);
-                        }
-                    }
-                    $this->contacts_model->update($id);
-                    $arr = array(
-                        'error' => '<div class="alert alert-success" role="alert"><strong>Успех! </strong>Запись была успешно обновлена!</div>'
-                    );
-                    $this->session->set_userdata($arr);
-                    redirect('admin/' . $this->module . '/edit/' . $entry['id']);
-                } else {
-                    if (!$this->upload->do_upload('image')) {
-                        $this->session->set_userdata('error', $this->upload->display_errors('<span class="label label-danger">', '</span>'));
-                        redirect('admin/' . $this->module . '/edit/' . $entry['id']);
-                    } else {
-                        $entry = $this->contacts_model->get_blogs($id);
-                        if (file_exists('images/' . $this->module . '/' . $entry['image'])) {
-                            unlink('images/' . $this->module . '/' . $entry['image']);
-                            if ($this->input->post('tags')) {
-                                foreach ($this->input->post('tags') as $tag) {
-                                    Modules::run('admin/set_tag', $tag, $id, $object);
-                                }
-                            }
-                            $image_data = $this->upload->data();
-                            $this->contacts_model->update($id, $image_data['file_name']);
-                            $arr = array(
-                                'error' => '<div class="alert alert-success" role="alert"><strong>Успех! </strong>Запись была успешно обновлена!</div>'
-                            );
-                            $this->session->set_userdata($arr);
-                            redirect('admin/' . $this->module . '/edit/' . $entry['id']);
-                        } else {
-                            if ($this->input->post('tags')) {
-                                foreach ($this->input->post('tags') as $tag) {
-                                    Modules::run('admin/set_tag', $tag, $id, $object);
-                                }
-                            }
-                            $image_data = $this->upload->data();
-                            $this->contacts_model->update($id, $image_data['file_name']);
-                            $arr = array(
-                                'error' => '<div class="alert alert-success" role="alert"><strong>Успех! </strong>Запись была успешно обновлена!</div>'
-                            );
-                            $this->session->set_userdata($arr);
-                            redirect('admin/' . $this->module . '/edit/' . $entry['id']);
-                        }
-                    }
-                }
-            }
-        } else {
-            $this->load->view('edit', $data);
-        }
-    }
-
-    public function get_point_by_url($url) {
-        if ($url) {
-            $query = $this->db->get_where($this->module, array('url' => $url));
-            if ($query) {
-                return $query->row_array();
-            } else {
-                return false;
-            }
-        } else {
-            return false;
-        }
-    }
-
-    public function check_url($url) {
-        if ($this->contacts_model->get_by_url($url)) {
-            $this->form_validation->set_message('check_url', 'Такой ЧПУ уже занят!');
-            return FALSE;
-        } else {
-            return TRUE;
-        }
-    }
-
-    public function add() {
-        global $object;
-        $object = 'blog';
-        $data['title'] = 'Административная панель';
-        $data['module_name'] = $this->module_name;
-        $data['module'] = $this->module;
-        if ($this->input->post('do') == 'blogAdd') {
-            $this->form_validation->set_rules('name', 'Заголовок', 'required|trim|xss_clean');
-            $this->form_validation->set_rules('url', 'Чпу', 'required|trim|xss_clean|callback_check_url');
-            $this->form_validation->set_rules('text', 'Текст', 'trim|xss_clean');
-            $this->form_validation->set_rules('title', 'Мета title', 'trim|xss_clean');
-            $this->form_validation->set_rules('desc', 'Мета description', 'trim|xss_clean');
-            $this->form_validation->set_rules('keyw', 'Мета keywords', 'trim|xss_clean');
-            $this->form_validation->set_rules('date', 'Дата публикации', 'trim|xss_clean');
-
-            $this->form_validation->set_error_delimiters('<span class="label label-danger">', '</span>');
-
-            if ($this->form_validation->run() == FALSE) {
-                $this->load->view('add', $data);
-            } else {
-                $config['upload_path'] = './images/' . $this->module;
-                $config['allowed_types'] = 'gif|jpg|png|jpeg|JPG|JPEG';
-                $config['max_size'] = '5120';
-                $config['encrypt_name'] = true;
-
-                $this->load->library('upload', $config);
-
-                $image_data = $this->upload->data();
-                if (!$this->upload->do_upload('image')) {
-                    $this->session->set_userdata('error', $this->upload->display_errors('<span class="label label-danger">', '</span>'));
-                    redirect('admin/' . $this->module . '/add');
-                } else {
-                    $image_data = $this->upload->data();
-                    $insert_id = $this->contacts_model->set($image_data['file_name']);
-
-                    $arr = array(
-                        'error' => '<div class="alert alert-success" role="alert"><strong>Успех! </strong>Запись была успешно добавлена!</div>'
-                    );
-                    $this->session->set_userdata($arr);
-                    redirect('admin/' . $this->module . '/edit/' . $insert_id);
-                }
-            }
-        } else {
-            $this->load->view('add', $data);
-        }
-    }
-
-    public function delete($id) {
-        $entry = $this->contacts_model->get($id);
-        if (count($entry) > 0) {
-            if (file_exists('images/' . $this->module . '/' . $entry['image'])) {
-                $this->contacts_model->delete($id);
-                unlink('images/' . $this->module . '/' . $entry['image']);
+                $arr = array(
+                    'error' => '<div class="alert alert-danger" role="alert"><strong>Oops! </strong>Не валидный e-mail адрес!</div>'
+                );
+                $this->session->set_userdata($arr);
                 redirect('admin/' . $this->module);
             } else {
-                $this->contacts_model->delete($id);
+                $this->contacts_model->update($id);
+                $arr = array(
+                    'error' => '<div class="alert alert-success" role="alert"><strong>Успех! </strong>Запись была успешно обновлена!</div>'
+                );
+                $this->session->set_userdata($arr);
                 redirect('admin/' . $this->module);
             }
         } else {
-            die('Ошибка! Такой записи в базе не существует!');
+            $this->load->view($this->module, $data);
         }
-    }
-
-    public function up($id) {
-        $this->contacts_model->order($id, 'up');
-    }
-
-    public function down($id) {
-        $this->contacts_model->order($id, 'down');
     }
 
 }

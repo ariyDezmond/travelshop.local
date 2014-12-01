@@ -57,18 +57,10 @@ class News_model extends CI_Model {
             }
         }
     }
-    
+
     public function get_by_url($url) {
-        if ($url) {
-            $query = $this->db->get_where($this->module, array('url' => $url));
-            if ($query) {
-                return $query->row_array();
-            } else {
-                return false;
-            }
-        } else {
-            return false;
-        }
+        $query = $this->db->get_where($this->table_name, array('active' => 'on', 'url' => $url));
+        return $query->row_array();
     }
 
     public function get_blogs($id = null) {

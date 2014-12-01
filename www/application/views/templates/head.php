@@ -11,7 +11,7 @@
                         <img src="/logo.png" alt=""/>
                     </a>
                 </div>
-                <a id="backcall" class="form-link" href="/backcall">Заказать обратный звонок</a>
+                <a id="backcall" class="form-link" href="/backcall/send">Заказать обратный звонок</a>
             </div>
         </header>
         <div class="main-menu">
