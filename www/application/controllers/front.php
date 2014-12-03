@@ -21,6 +21,8 @@ class Front extends MX_Controller {
 
     public function contacts() {
         $data['title'] = 'Контаты';
+        $contacts = Modules::run('contacts/get');
+        $data['contacts'] = $contacts;
         $this->load->view('templates/metahead', $data);
         $this->load->view('templates/head', $data);
         $this->load->view('templates/slider', $data);

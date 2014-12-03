@@ -1,13 +1,13 @@
 <?php
 
-class Contacts extends MX_Controller {
+class Vises extends MX_Controller {
 
-    private $module = 'contacts';
-    private $module_name = 'Контакты';
+    private $module = 'vises';
+    private $module_name = 'Визовые услуги';
 
     public function __construct() {
         parent::__construct();
-        $this->load->model('contacts_model');
+        $this->load->model('vises_model');
     }
 
     public function index() {
@@ -21,19 +21,15 @@ class Contacts extends MX_Controller {
     }
 
     public function get() {
-        return $this->contacts_model->get();
+        return $this->vises_model->get();
     }
 
-    public function view($front = false, $pos = 'footer') {
+    public function view($front = false) {
         $data['module_name'] = $this->module_name;
         $data['module'] = $this->module;
-        $data['entry'] = $this->contacts_model->get();
+        $data['entry'] = $this->vises_model->get();
         if ($front) {
-            if ($pos == 'footer') {
-                $this->load->view('front/contacts_footer', $data);
-            } elseif ($pos == 'contacts') {
-                $this->load->view('front/contacts', $data);
-            }
+            $this->load->view('front/viese', $data);
         } else {
             $this->load->view($this->module, $data);
         }
@@ -60,7 +56,7 @@ class Contacts extends MX_Controller {
                 $this->session->set_userdata($arr);
                 redirect('admin/' . $this->module);
             } else {
-                $this->contacts_model->update($id);
+                $this->vises_model->update($id);
                 $arr = array(
                     'error' => '<div class="alert alert-success" role="alert"><strong>Успех! </strong>Запись была успешно обновлена!</div>'
                 );

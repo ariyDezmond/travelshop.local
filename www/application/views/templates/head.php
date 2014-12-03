@@ -3,8 +3,8 @@
         <header>
             <div class="container">
                 <div class="telephones">
-                    <p>+996 312 885 5152</p>
-                    <p>+996 312 885 5152</p>
+                    <?php $contacts = Modules::run('contacts/get'); ?>
+                    <p><?= $contacts['phone'] ?></p>
                 </div>
                 <div class="logo">
                     <a href="/">
@@ -23,7 +23,7 @@
                         </a></li>
                     <li><a href="/tours">
                             <div class="img"><img src="/img/menu-icons/2.png" alt=""/></div>
-                            <span>ТУРЫ ЗАРУБЕЖ</span>
+                            <span>ТУРЫ ЗА РУБЕЖ</span>
                         </a></li>
                     <li><a href="/vises">
                             <div class="img"><img src="/img/menu-icons/3.png" alt=""/></div>

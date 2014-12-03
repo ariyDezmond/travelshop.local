@@ -9,24 +9,6 @@ class Requests_model extends CI_Model {
         $this->load->database();
     }
 
-    public function order($id, $direction) {
-        $query = $this->db->get_where($this->table_name, array('id' => $id));
-        $category = $query->row_array();
-        $order = $category['order'];
-        if ($direction == 'up') {
-            $order++;
-        } elseif ($direction == 'down') {
-            $order--;
-        }
-        $data = array(
-            'order' => $order,
-        );
-
-        $this->db->where('id', $id);
-        $this->db->update($this->table_name, $data);
-        redirect('admin/' . $this->redirect_url);
-    }
-
     public function get($id = null, $for_front = false) {
         if (!$for_front) {
             if ($id) {

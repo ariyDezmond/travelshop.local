@@ -52,6 +52,8 @@ $route['requests/savemail'] = 'requests/savemail';
 $route['request/read'] = 'requests/setread';
 $route['backcall/savemail'] = 'backcall/savemail';
 $route['backcall/read'] = 'backcall/setread';
+$route['feedback/savemail'] = 'feedback/savemail';
+$route['feedback/read'] = 'feedback/setread';
 
 $route['admin/tag_del'] = 'admin/tag_del';
 $route['admin/(:any)/up/(:any)'] = '$1/up/$2';
