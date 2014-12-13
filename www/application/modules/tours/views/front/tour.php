@@ -176,45 +176,51 @@
         <div class="reviews-items">
             <div class="reviews-item">
                 <span class="date">23.09.2014</span>
-                <p class="stat bad">Недостатки</p>
+                <p class="stat bad">Недостатки</p><p class="reviews_name">Кличко</p>
                 <p class="desc">Начнем с того, что если вы приезжаете ночью,в так называемой регистратуре никто вас не встретит..по причине беспробудного сна..И дальше пошло-поехало..
                     Здание совдеповской постройк</p>
-                <a class="reed-full" href="#">Прочитать отзыв полностью</a>
+                <a class="reed-full" data-text="Скрыть отзыв" href="#">Прочитать отзыв полностью</a>
+                <p class="hidden_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui architecto et odit? Tempore quaerat vero expedita, placeat rerum magnam voluptates non! Sequi, quisquam cupiditate maiores sapiente esse ex beatae quasi est quod cumque magni, ea consequatur, nisi et aut consequuntur.</p>
             </div>
             <div class="reviews-item">
                 <span class="date">23.09.2014</span>
-                <p class="stat good">Достоинства</p>
+                <p class="stat good">Достоинства</p><p class="reviews_name">Кличко</p>
                 <p class="desc">Начнем с того, что если вы приезжаете ночью,в так называемой регистратуре никто вас не встретит..по причине беспробудного сна..И дальше пошло-поехало..
                     Здание совдеповской постройк</p>
-                <a class="reed-full" href="#">Прочитать отзыв полностью</a>
+                <a class="reed-full" data-text="Скрыть отзыв" href="#">Прочитать отзыв полностью</a>
+                <p class="hidden_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi enim, quidem quis suscipit maxime quod quaerat quos, assumenda nisi dolore natus! Quae laudantium autem, suscipit eligendi vero eveniet esse ipsum impedit velit explicabo minus commodi distinctio beatae consectetur amet! Consequuntur!</p>
             </div>
             <div class="reviews-item">
                 <span class="date">23.09.2014</span>
-                <p class="stat bad">Недостатки</p>
+                <p class="stat bad">Недостатки</p><p class="reviews_name">Кличко</p>
                 <p class="desc">Начнем с того, что если вы приезжаете ночью,в так называемой регистратуре никто вас не встретит..по причине беспробудного сна..И дальше пошло-поехало..
                     Здание совдеповской постройк</p>
-                <a class="reed-full" href="#">Прочитать отзыв полностью</a>
+                <a class="reed-full" data-text="Скрыть отзыв" href="#">Прочитать отзыв полностью</a>
+                <p class="hidden_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis, numquam saepe libero culpa nihil quam, maxime autem sequi molestias deleniti, consectetur doloribus sapiente nemo suscipit eius odit explicabo cumque ducimus facere accusamus incidunt illum modi. Necessitatibus fugiat non est veniam!</p>
             </div>
             <div class="reviews-item">
                 <span class="date">23.09.2014</span>
-                <p class="stat good">Достоинства</p>
+                <p class="stat good">Достоинства</p><p class="reviews_name">Кличко</p>
                 <p class="desc">Начнем с того, что если вы приезжаете ночью,в так называемой регистратуре никто вас не встретит..по причине беспробудного сна..И дальше пошло-поехало..
                     Здание совдеповской постройк</p>
-                <a class="reed-full" href="#">Прочитать отзыв полностью</a>
+                <a class="reed-full" data-text="Скрыть отзыв" href="#">Прочитать отзыв полностью</a>
+                <p class="hidden_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit voluptatem ex eum nulla tempora voluptatum, natus nemo facilis quaerat sunt similique dolor tenetur libero beatae deserunt odio sit ut qui ab, nisi? Tempora inventore pariatur aliquam sunt consequuntur voluptatem perspiciatis.</p>
             </div>
             <div class="reviews-item">
                 <span class="date">23.09.2014</span>
-                <p class="stat bad">Недостатки</p>
+                <p class="stat bad">Недостатки</p><p class="reviews_name">Кличко</p>
                 <p class="desc">Начнем с того, что если вы приезжаете ночью,в так называемой регистратуре никто вас не встретит..по причине беспробудного сна..И дальше пошло-поехало..
                     Здание совдеповской постройк</p>
-                <a class="reed-full" href="#">Прочитать отзыв полностью</a>
+                <a class="reed-full" data-text="Скрыть отзыв" href="#">Прочитать отзыв полностью</a>
+                <p class="hidden_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, sit quibusdam temporibus! Assumenda officia eos obcaecati autem quisquam ex cupiditate, accusamus enim. Facilis eos itaque ducimus, ratione consectetur architecto dolore aliquam numquam et dicta perferendis facere rerum cum ullam enim.</p>
             </div>
             <div class="reviews-item">
                 <span class="date">23.09.2014</span>
-                <p class="stat bad">Недостатки</p>
+                <p class="stat bad">Недостатки</p><p class="reviews_name">Кличко</p>
                 <p class="desc">Начнем с того, что если вы приезжаете ночью,в так называемой регистратуре никто вас не встретит..по причине беспробудного сна..И дальше пошло-поехало..
                     Здание совдеповской постройк</p>
-                <a class="reed-full" href="#">Прочитать отзыв полностью</a>
+                <a class="reed-full" data-text="Скрыть отзыв" href="#">Прочитать отзыв полностью</a>
+                <p class="hidden_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque suscipit aliquam, pariatur vitae iste quisquam, assumenda. Debitis deserunt illum natus, doloribus aspernatur expedita explicabo veritatis perferendis nihil blanditiis dicta. Delectus voluptatem tempora quis itaque eum ab modi officiis nam omnis!</p>
             </div>
             <a class="show-more" href="#">Загрузить еще</a>
         </div>

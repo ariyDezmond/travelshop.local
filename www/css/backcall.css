@@ -17,3 +17,15 @@
     margin-top: 1em;
     margin-bottom: 1em;
 }
+
+#colorbox .back_call {
+  height: 40px;
+  padding: 0 0 0 10px;
+  border: 0;
+  border-radius: 4px;
+  font-size: 20px;
+  width: 392px;
+  background: #FDCA00;
+  color: #fff;
+  margin: 0;
+}

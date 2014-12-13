@@ -1,5 +1,11 @@
 $(document).ready(function () {
 
+    $('.reed-full').click(function () {
+        var t = $(this).text();
+        $(this).text($(this).attr('data-text')).attr('data-text', t).parents('.reviews-item').toggleClass('active').find('.hidden_text').toggle();
+        return false;
+    });
+
     $(document).scroll(function () {
         if ($(document).scrollTop() >= 97) {
             $(".main-menu").addClass("fix-menu");

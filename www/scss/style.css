@@ -1,4 +1,4 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -373,26 +373,26 @@ body {
           .wrapper .main-container .tours-blocks .tours-items .tour-item:hover .tour-item-header {
             background: #efc825; }
         .wrapper .main-container .tours-blocks .tours-items .see-all-tour {
-          position: relative;
+          position: absolute;
           display: block;
           float: left;
           width: 190px;
           height: 45px;
           text-align: center;
           line-height: 45px;
-          margin: 30px 0 30px -85px;
-          left: 50%;
+          left: 460px;
           background: #042d80;
           border-radius: 5px;
           color: #fff;
           font-size: 16px;
+          bottom: -58px;
           text-decoration: none; }
     .wrapper .main-container .search-hotel-block {
       position: relative;
       float: left;
       width: 1020px;
       height: 540px;
-      margin: 20px 90px; }
+      margin: 55px 90px 20px 90px; }
       .wrapper .main-container .search-hotel-block .hotel-desc {
         position: relative;
         float: left;
@@ -528,7 +528,7 @@ body {
       float: left;
       width: 1100px;
       height: 370px;
-      margin: 20px 50px;
+      margin: 60px 50px 20px 50px;
       padding-top: 20px;
       padding-bottom: 50px;
       border-top: solid 1px #042d80; }
@@ -1134,3 +1134,23 @@ body {
         position: relative;
         float: right;
         margin-top: 30px; }
+
+#colorbox #backcall_area .form-item label {display: none;}
+#colorbox #backcall_area .form-item {margin: 0;}
+#colorbox #backcall_area .form-item input[type="text"] {
+  height: 40px;
+  padding: 0 0 0 10px;
+  border: 1px solid #FDCA00;
+  border-radius: 4px;
+  font-size: 20px;
+  width: 380px;
+  margin: 0 0 10px 0;
+}
+#colorbox #backcall_area .backcall_form_title p {
+  font-size: 24px;text-align: center;margin: 0 0 10px 0;text-shadow: 0px 1px 1px #969696;font-family: "Arial Black", arial-black;color: #efc825;text-transform: uppercase;
+}
+
+.reviews-block .reviews-item p.hidden_text {display: none;font-size: 13px;margin-top: 10px;}
+
+.reviews-block .reviews-item p.stat {float: left;width: 20%l}
+.reviews-block .reviews-item p.reviews_name {float: left;width: 80%;}
