@@ -3,11 +3,13 @@
 class Feedback extends MX_Controller {
 
     private $module = 'feedback';
+    private $model;
     private $module_name = 'Обратная связь';
 
     public function __construct() {
         parent::__construct();
         $this->load->model('feedback_model');
+        $this->model = $this->feedback_model;
         $this->form_validation->set_message('required', 'Поле "%s" обязательно для заполения');
         $this->form_validation->set_message('valid_email', 'Поле "%s" должно содержать валидный E-mail адрес');
     }
@@ -28,19 +30,19 @@ class Feedback extends MX_Controller {
         }
         if ($this->input->post('email')) {
             $email = $this->input->post('email');
-            $this->feedback_model->save_email();
+            $this->model->save_email();
         }
     }
 
     public function view($for_front = false) {
         $data['module_name'] = $this->module_name;
         $data['module'] = $this->module;
-        $data['email'] = $this->feedback_model->get_email();
+        $data['email'] = $this->model->get_email();
         if (!$for_front) {
-            $data['entries'] = $this->feedback_model->get();
+            $data['entries'] = $this->model->get();
             $this->load->view($this->module, $data);
         } else {
-            $data['entries'] = $this->feedback_model->get('', true);
+            $data['entries'] = $this->model->get('', true);
             $this->load->view('front/feedback_form', $data);
         }
     }
@@ -57,7 +59,7 @@ class Feedback extends MX_Controller {
             if ($this->form_validation->run() == FALSE) {
                 $this->load->view('front/feedback_form');
             } else {
-                $this->feedback_model->set();
+                $this->model->set();
                 echo '<p style="margin:10px; font-weight:bold; text-align:center; color:green">Успех! Сообщение отправлено.</p>';
                 //$arr = array(
                 //    'error' => '<p style="margin:10px; font-weight:bold; text-align:center; color:green">Успех! Заявка на поиск отеля была успешно отправлена! Ожидайте...наш менеджер свяжется с вам в ближайшее время.</p>'
@@ -74,7 +76,7 @@ class Feedback extends MX_Controller {
         $data['title'] = 'Административная панель';
         $data['module_name'] = $this->module_name;
         $data['module'] = $this->module;
-        $entry = $this->feedback_model->get($id);
+        $entry = $this->model->get($id);
         $data['entry'] = $entry;
         $this->load->view('more', $data);
     }
@@ -85,14 +87,14 @@ class Feedback extends MX_Controller {
         }
         if ($this->input->post('id')) {
             $id = $this->input->post('id');
-            $this->feedback_model->update_request_read($id);
+            $this->model->update_request_read($id);
         }
     }
 
     public function delete($id) {
-        $entry = $this->feedback_model->get($id);
+        $entry = $this->model->get($id);
         if (count($entry) > 0) {
-            $this->feedback_model->delete($id);
+            $this->model->delete($id);
             redirect('admin/' . $this->module);
         } else {
             die('Ошибка! Такой записи в базе не существует!');
@@ -100,11 +102,11 @@ class Feedback extends MX_Controller {
     }
 
     public function up($id) {
-        $this->feedback_model->order($id, 'up');
+        $this->model->order($id, 'up');
     }
 
     public function down($id) {
-        $this->feedback_model->order($id, 'down');
+        $this->model->order($id, 'down');
     }
 
 }

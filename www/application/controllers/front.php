@@ -18,6 +18,16 @@ class Front extends MX_Controller {
         $this->load->view('templates/contacts', $data);
         $this->load->view('templates/footer', $data);
     }
+    
+    public function about() {
+        $data['title'] = 'О нас';
+        $this->load->view('templates/metahead', $data);
+        $this->load->view('templates/head', $data);
+        $this->load->view('templates/slider', $data);
+        $this->load->view('pages/about', $data);
+        $this->load->view('templates/contacts', $data);
+        $this->load->view('templates/footer', $data);
+    }
 
     public function contacts() {
         $data['title'] = 'Контаты';

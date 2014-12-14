@@ -2,11 +2,12 @@
 <div class="avia-block">
     <div class="avia-block-inner">
         <h2>Онлайн бронироавние билетов</h2>
-            <input type="checkbox" name="option1" value="a1">
+
+            <input type="radio" name="option[]" value="a1">
           <span class="checkbox">В одну сторону</span>
-            <input type="checkbox" name="option2" value="a2">
+            <input type="radio" name="option[]" value="a2">
           <span class="checkbox">Туда и обратно</span>
-            <input type="checkbox" name="option3" value="a3">
+            <input type="radio" name="option[]" value="a3">
           <span class="checkbox">Составить маршрут</span>
             <div class="clear"></div>
         <div class="avia-block-item avia-block-item-1">
@@ -32,19 +33,19 @@
             <p>Количество пассажиров</p>
             <div class="passangers_item passangers_item_1">
                 <span></span>
-                <div class="passangers_field">0</div>
+                <input class="passangers_field" type="text" value="0">
                 <a href="" class="passangers_more"></a>
                 <a href="" class="passangers_less"></a>
             </div>
             <div class="passangers_item passangers_item_2">
                 <span></span>
-                <div class="passangers_field">0</div>
+                <input class="passangers_field" type="text" value="0">
                 <a href="" class="passangers_more"></a>
                 <a href="" class="passangers_less"></a>
             </div>
             <div class="passangers_item passangers_item_3">
                 <span></span>
-                <div class="passangers_field">0</div>
+                <input class="passangers_field" type="text" value="0">
                 <a href="" class="passangers_more"></a>
                 <a href="" class="passangers_less"></a>
             </div>
@@ -52,7 +53,7 @@
         <input type="submit" class="economy_class" value="Эконом">
         <input type="submit" class="business_class" value="Бизнесс">
             <div class="clear"></div>
-        <input type="checkbox" class="checkbox_bottom" name="option2" value="a5">
+        <input type="radio" class="checkbox_bottom" name="option2" value="a5">
         <span class="checkbox">Показать отели в соседней вкладке</span>
             <a href="#" class="blue_find_btn">Найти</a>
     </div>
@@ -76,14 +77,5 @@
         </div>
         <?= Modules::run('requests/save'); ?>
     </div>
-    <div class="partners-block">
-        <h1 class="block-title">Партнеры</h1>
-        <ul class="partners">
-            <li><a href="#"><img src="img/partner-image.png" alt=""/></a></li>
-            <li><a href="#"><img src="img/partner-image.png" alt=""/></a></li>
-            <li><a href="#"><img src="img/partner-image.png" alt=""/></a></li>
-            <li><a href="#"><img src="img/partner-image.png" alt=""/></a></li>
-            <li><a href="#"><img src="img/partner-image.png" alt=""/></a></li>
-            <li><a href="#"><img src="img/partner-image.png" alt=""/></a></li>
-        </ul>
-    </div>
+    <?= Modules::run('partners/view', true) ?>
+    

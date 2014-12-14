@@ -1241,8 +1241,9 @@ body {
 .wrapper .avia-block .passangers_item .passangers_field {
   float: left;
   width: 36px;
-  padding: 5px 0 0 8px;
-  height: 21px;
+  padding: 2px 0 0 8px;
+  height: 20px;
+  font-size: 18px;
   background: #fff;
   margin: 6px 0 0 2px;
 }

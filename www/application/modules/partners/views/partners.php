@@ -3,11 +3,7 @@
     <?php if (is_array($entries)) { ?>
         <tr>
             <td width="30px">#</td>
-            <td width="30%">Название</td>
-            <td width="30%">ЧПУ</td>
-            <td>Миниатюра</td>
-            <td width="30%">Текст</td>
-            <td>Дата</td>
+            <td width="100%">Миниатюра</td>
             <td>Активен</td>
             <td>Порядок</td>
             <td width="30px">Редактировать</td>
@@ -18,11 +14,7 @@
             ?>
             <tr>
                 <td class="id" width="30px"><?= $entry['id'] ?></td>
-                <td width="30%"><?= $entry['name'] ?></td>
-                <td width="30%"><?= $entry['url'] ?></td>
                 <td width="20px"><img width="50px" src='/images/<?= $module ?>/<?= $entry['image'] ?>'></td>
-                <td><?= mb_strimwidth(strip_tags($entry['text']), 0, 50, "..."); ?></td>
-                <td><?= date('d.m.Y h:i', strtotime($entry['date'])) ?></td>
                 <td width="30px"><?php
                     if ($entry['active'] == 'on') {
                         echo '<span style="-webkit-user-select: none;" class="label label-success active">да</span>';

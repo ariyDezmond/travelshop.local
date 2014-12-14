@@ -27,6 +27,11 @@
                     echo "class=\"active\"";
                 }
                 ?> ><a href="/admin/tours">Туры</a></li>
+                <li <?php
+                if (strpos(current_url(), 'admin/widget')) {
+                    echo "class=\"active\"";
+                }
+                ?> ><a href="/admin/widget">Виджеты</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Модули <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
@@ -35,6 +40,8 @@
                         <li><a href="/admin/contacts">Контакты</a></li>
                         <li><a href="/admin/backcall">Обратный звонок</a></li>
                         <li><a href="/admin/feedback">Обратная связь</a></li>
+                        <li><a href="/admin/reviews">Отзывы о турах</a></li>
+                        <li><a href="/admin/partners">Партнеры</a></li>
                     </ul>
                 </li>
             </ul>

@@ -6,10 +6,10 @@
         }
         $this->session->unset_userdata('error');
         ?>
-        <?= validation_errors() ?>
         <div class="backcall_form_title">
             <p>Введите имя и телефон и мы Вам перезвоним!</p>
         </div>
+        <?= validation_errors() ?>
         <div class="form-item">
             <label for="name" placeholder="Введите Имя">Имя<span style="color:red;" title="Это поле обязательно для заполнения">*</span></label>
             <input <?php if(strpos(validation_errors(),'"Имя"')){ echo 'style="border-color:red;"'; } ?> type="text" name="name" size="50" maxlength="" placeholder="Введите Имя" value="<?= set_value('name') ?>" >

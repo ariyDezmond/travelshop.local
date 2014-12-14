@@ -2,12 +2,12 @@
             <div class="container">
                 <div class="inner-footer-block-1">
                     <ul>
-                        <li><a href="#">Главная</a></li>
-                        <li><a href="#">О нас</a></li>
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/about">О нас</a></li>
                         <li><a href="/blog">Статьи</a></li>
                         <li><a href="/news">Новости</a></li>
                     </ul>
-                    <p class="copyright">© ОсОО «Травел Шоп» 2014. Все права защищены.</p>
+                    <p class="copyright"><?= Modules::run('widget/get_widget', 'copyright') ?></p>
                 </div>
                 <div class="inner-footer-block-2">
                     <a class="dev" href="http://www.googstudio.com">
