@@ -47,6 +47,8 @@ class Admin extends MX_Controller {
 
             if ($this->admins_model->get_user()) {
                 $this->session->set_userdata('logged', true);
+                $_SESSION['KCFINDER'] = array();
+                $_SESSION['KCFINDER']['disabled'] = false;
             } else {
                 $arr = array(
                     'error' => '<div class="alert alert-danger" role="alert"><strong>Ошибка! </strong>Неверный логин и/или пароль!</div>'

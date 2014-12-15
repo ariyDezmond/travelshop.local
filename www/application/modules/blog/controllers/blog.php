@@ -54,7 +54,7 @@ class Blog extends MX_Controller {
         if ($this->input->post('do') == 'blogEdit') {
             $this->form_validation->set_rules('name', 'Заголовок', 'required|trim|xss_clean');
             //$this->form_validation->set_rules('url', 'Чпу', 'required|trim|xss_clean');
-            $this->form_validation->set_rules('text', 'Текст', 'trim|xss_clean');
+            $this->form_validation->set_rules('text', 'Текст', 'required');
             $this->form_validation->set_rules('title', 'Мета title', 'trim|xss_clean');
             $this->form_validation->set_rules('desc', 'Мета description', 'trim|xss_clean');
             $this->form_validation->set_rules('keyw', 'Мета keywords', 'trim|xss_clean');

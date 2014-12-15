@@ -52,7 +52,7 @@ class Widget extends MX_Controller {
         $data['module'] = $this->module;
         if ($this->input->post('do') == 'widgetEdit') {
             $this->form_validation->set_rules('title', 'Название', 'required|trim|xss_clean');
-            $this->form_validation->set_rules('text', 'Значение виджета', 'required|trim|xss_clean');
+            $this->form_validation->set_rules('text', 'Значение виджета', 'required');
 
             $this->form_validation->set_error_delimiters('<span class="label label-danger">', '</span>');
             if ($this->form_validation->run() == FALSE) {
