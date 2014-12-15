@@ -22,7 +22,7 @@ $_CONFIG = array(
 // GENERAL SETTINGS
 
     'disabled' => false,
-    'uploadURL' => "../../images/ckimages",
+    'uploadURL' => "upload",
     'uploadDir' => "",
     'theme' => "default",
 
