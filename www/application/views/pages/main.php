@@ -58,7 +58,7 @@
         <input type="submit" class="economy_class" value="Эконом">
         <input type="submit" class="business_class" value="Бизнесс">
             <div class="clear"></div>
-                <input type="radio" class="checkbox_bottom" id="r4" name="option[]" value="a3">
+                <input type="checkbox" class="checkbox_bottom" id="r4" name="option[]" value="a3">
                 <label class="checkbox" for="r4"><span></span>Показать отели в соседней вкладке</label>
             <a href="#" class="blue_find_btn">Найти</a>
     </div>

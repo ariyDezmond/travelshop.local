@@ -1342,9 +1342,10 @@ box-shadow:         0px 2px 2px 0px rgba(137, 137, 137, 0.3);
 }
 .wrapper .avia-block input.economy_class:hover, .wrapper .avia-block input.business_class:hover {cursor: pointer;}
 
-.wrapper .avia-block .checkbox_bottom {
-  margin-left: 15px;
-}
+.wrapper .avia-block input[type="checkbox"] {display:none;}
+.wrapper .avia-block input[type="checkbox"] + label {color:#fff;font-family:Arial, sans-serif;font-size:14px;}
+.wrapper .avia-block input[type="checkbox"] + label span {display:inline-block;width:19px;height:19px;margin:-1px 4px 0 0;vertical-align:middle;background: url(../img/form-icons/checkbox.png) 0 0 no-repeat;cursor:pointer;}
+.wrapper .avia-block input[type="checkbox"]:checked + label span {background: url(../img/form-icons/checkbox_checked.png) 0 0 no-repeat;}
 
 .wrapper .avia-block a.blue_find_btn {
   height: 39px;
