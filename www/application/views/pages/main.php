@@ -2,13 +2,18 @@
 <div class="avia-block">
     <div class="avia-block-inner">
         <h2>Онлайн бронироавние билетов</h2>
+        <div class="radio_buttons">
 
-            <input type="radio" name="option[]" value="a1">
-          <span class="checkbox">В одну сторону</span>
-            <input type="radio" name="option[]" value="a2">
-          <span class="checkbox">Туда и обратно</span>
-            <input type="radio" name="option[]" value="a3">
-          <span class="checkbox">Составить маршрут</span>
+            <input type="radio" id="r1" name="option[]" value="a1">
+            <label class="checkbox" for="r1"><span></span>В одну сторону</label>
+
+            <input type="radio" id="r2" name="option[]" value="a2">
+            <label class="checkbox" for="r2"><span></span>Туда и обратно</label>
+
+            <input type="radio" id="r3" name="option[]" value="a3">
+            <label class="checkbox" for="r3"><span></span>Составить маршрут</label>
+
+        </div>
             <div class="clear"></div>
         <div class="avia-block-item avia-block-item-1">
             <label for="">Город вылета</label>
@@ -53,8 +58,8 @@
         <input type="submit" class="economy_class" value="Эконом">
         <input type="submit" class="business_class" value="Бизнесс">
             <div class="clear"></div>
-        <input type="radio" class="checkbox_bottom" name="option2" value="a5">
-        <span class="checkbox">Показать отели в соседней вкладке</span>
+                <input type="radio" class="checkbox_bottom" id="r4" name="option[]" value="a3">
+                <label class="checkbox" for="r4"><span></span>Показать отели в соседней вкладке</label>
             <a href="#" class="blue_find_btn">Найти</a>
     </div>
 </div>
@@ -78,4 +83,3 @@
         <?= Modules::run('requests/save'); ?>
     </div>
     <?= Modules::run('partners/view', true) ?>
-    
