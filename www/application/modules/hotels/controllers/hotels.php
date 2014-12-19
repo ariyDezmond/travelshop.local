@@ -61,7 +61,7 @@ class Hotels extends MX_Controller {
             $this->form_validation->set_rules('distoport', 'Расстояние до аэропорта', 'trim|required|xss_clean');
             $this->form_validation->set_rules('beachl', 'Пляжная линия', 'trim|required|xss_clean');
             $this->form_validation->set_rules('text', 'Информация об отеле', 'trim|xss_clean');
-            //$this->form_validation->set_rules('coords', 'Координаты на карте', 'trim|required|xss_clean');
+            //$this->form_validation->set_rules('coords', 'Координаты на карте', 'trim|required|xss_clean');я
             $this->form_validation->set_rules('active', 'Активность', 'trim|xss_clean');
 
             $this->form_validation->set_error_delimiters('<span class="label label-danger">', '</span>');

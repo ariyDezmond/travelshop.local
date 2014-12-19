@@ -267,7 +267,7 @@ body {
       text-shadow: 0px 1px 1px black; }
   .wrapper .avia-block {
     position: relative;
-    width: 1050px;
+    width: 900px;
     height: 340px;
     background: #f1d14e;
     z-index: 10;
@@ -1064,8 +1064,6 @@ body {
               font-size: 13px;
               color: #000;
               font-family: Arial; }
-              .wrapper .main-container .tour-page .reviews-block .reviews-items .reviews-item .desc:after {
-                content: "..."; }
             .wrapper .main-container .tour-page .reviews-block .reviews-items .reviews-item .reed-full {
               position: absolute;
               width: 200px;
@@ -1150,7 +1148,7 @@ body {
   font-size: 24px;text-align: center;margin: 0 0 10px 0;text-shadow: 0px 1px 1px #969696;font-family: "Arial Black", arial-black;color: #efc825;text-transform: uppercase;
 }
 
-.reviews-block .reviews-item p.hidden_text {display: none;font-size: 13px;margin-top: 10px;}
+.reviews-block .reviews-item p.hidden_text {display: none;font-size: 13px;/*margin-top: 10px;*/}
 
 .reviews-block .reviews-item p.stat {width: auto;margin: 5px 0;}
 .reviews-block .reviews-item p.reviews_name {width: auto;margin: 5px 0;}
@@ -1161,7 +1159,7 @@ body {
   margin-right: 10px;
 }
 .wrapper .avia-block {padding: 10px;position: relative;}
-.wrapper .avia-block .avia-block-inner {padding: 0 0 0 67px;}
+.wrapper .avia-block .avia-block-inner {padding: 0 0 0 100px;}
 .wrapper .avia-block span.form_marker {
   width: 34px;
   height: 31px;

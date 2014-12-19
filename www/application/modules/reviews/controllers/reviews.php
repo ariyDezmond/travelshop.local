@@ -34,7 +34,7 @@ class Reviews extends MX_Controller {
         }
     }
 
-    public function view($for_front = false) {
+    public function view($for_front = false, $tour_id = false) {
         $data['module_name'] = $this->module_name;
         $data['module'] = $this->module;
         $data['email'] = $this->model->get_email();
@@ -42,7 +42,7 @@ class Reviews extends MX_Controller {
             $data['entries'] = $this->model->get();
             $this->load->view($this->module, $data);
         } else {
-            $data['entries'] = $this->model->get('', true);
+            $data['entries'] = $this->model->get('', true, $tour_id);
             $this->load->view('front/reviews_on_tour', $data);
         }
     }
@@ -64,19 +64,29 @@ class Reviews extends MX_Controller {
         $this->load->view('front/full_reviews_list', $data);
     }
 
-    public function save() {
-        $data['entries'] = $this->model->getForMainPage();
+    public function username_check($str) {
+        if ($str == 'test') {
+            $this->form_validation->set_message('username_check', 'The %s field can not be the word "test"');
+            return FALSE;
+        } else {
+            return TRUE;
+        }
+    }
+
+    public function save($object_id = false) {
+        $data['object_id'] = $object_id;
         if ($this->input->post('do') == $this->module . 'Save') {
             $this->form_validation->set_rules('name', 'Имя', 'required|trim|xss_clean');
-            $this->form_validation->set_rules('text', 'Сообщение', 'required|trim|xss_clean');
-            $this->form_validation->set_rules('email', 'E-mail', 'required|valid_email|trim|xss_clean');
+            $this->form_validation->set_rules('worths', 'Достоинства', 'trim|xss_clean');
+            $this->form_validation->set_rules('flaws', 'Недостатки', 'trim|xss_clean');
+            $this->form_validation->set_rules('obj_id', '', 'trim|xss_clean');
 
             $this->form_validation->set_error_delimiters('<p style="color:red;">', '</p>');
 
             if ($this->form_validation->run() == FALSE) {
-                $this->load->view('front/reviews_on_tour', $data);
+                $this->load->view('front/reviews_add_form', $data);
             } else {
-                $this->model->set();
+                $this->model->set($object_id);
                 echo '<p style="margin:10px; font-weight:bold; text-align:center; color:green">Успех! Отзыв появится после рассмотрения администратором.</p>';
 
                 $config = array(
@@ -85,18 +95,25 @@ class Reviews extends MX_Controller {
                     'smtp_port' => 465,
                     'smtp_user' => 'officialakniet@gmail.com',
                     'smtp_pass' => 'googstud321',
-                    'mailtype'  => 'html',
-                    'charset'   => 'utf-8'
+                    'mailtype' => 'html',
+                    'charset' => 'utf-8'
                 );
                 $this->load->library('email');
                 $this->email->initialize($config);
 
                 $emailArray = $this->model->get_email();
                 $this->email->set_newline("\r\n");
-                $this->email->from($this->input->post('email'), $this->input->post('name'));
+                $this->email->from(str_ireplace('http://', '', substr(base_url(), 0, -1)), '');
                 $this->email->to($emailArray['email']);
-                $this->email->subject('Новый отзыв на сайте');
-                $this->email->message($this->input->post('text'));
+                $this->email->subject('Новый комментарий на сайте');
+                $this->email->message(
+                        'Новый комментарий на сайте: ' . str_ireplace('http://', '', substr(base_url(), 0, -1)) . '<br>' .
+                        'Имя: ' . $this->input->post('name') . '<br>' .
+                        'Достоинства: ' . $this->input->post('worths') . '<br>' .
+                        'Недостатки: ' . $this->input->post('flaws') . '<br>' .
+                        'Дата: ' . date('Y-m-d H:i:s') . '<br>' .
+                        'IP: ' . $this->input->ip_address() . '<br>'
+                );
                 $this->email->send();
             }
         } else {
@@ -114,6 +131,8 @@ class Reviews extends MX_Controller {
         $data['module'] = $this->module;
         $entry = $this->model->get($id);
         $data['entry'] = $entry;
+        $review = $this->model->get($id);
+        $data['tour'] = Modules::run('tours/get_by_id', $review['object_id']);
 
         if ($this->input->post('do') == $this->module . 'Edit') {
 

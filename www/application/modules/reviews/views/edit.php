@@ -1,7 +1,7 @@
 <script>
     $(document).ready(function () {
         $.ajax({
-            url: '/feedback/read',
+            url: '/reviews/read',
             type: "POST",
             dataType: "html",
             data: {
@@ -55,7 +55,7 @@
         <div class="panel panel-default">
             <div class="panel-heading">Дата отправки</div>
             <div class="panel-body">
-                <?=date('d.m.Y H:i', strtotime($entry['date'])) ?>
+                <?= date('d.m.Y H:i', strtotime($entry['date'])) ?>
             </div>
         </div>
     </div>
@@ -63,7 +63,7 @@
         <div class="panel panel-default">
             <div class="panel-heading">IP-адрес</div>
             <div class="panel-body">
-                <?=$entry['ip']?>
+                <?= $entry['ip'] ?>
             </div>
         </div>
     </div>
@@ -71,23 +71,32 @@
         <div class="panel panel-default">
             <div class="panel-heading">Имя, Фамилия</div>
             <div class="panel-body">
-                <input required name='name' value="<?=$entry['name']?>" type="text" class="form-control" id="name" placeholder="">
+                <input required name='name' value="<?= $entry['name'] ?>" type="text" class="form-control" id="name" placeholder="">
             </div>
         </div>
     </div>
     <div class="col-md-6">
         <div class="panel panel-default">
-            <div class="panel-heading">E-mail</div>
+            <div class="panel-heading">Страница с комментарием</div>
             <div class="panel-body">
-                <input name="email" type='text' value="<?=$entry['email']?>" class="form-control" />
+                <a target="_blank" href="/tours/<?= $tour['url'] ?>"><?= $tour['name'] ?></a>
             </div>
         </div>
     </div>
-    <div class="col-md-12">
+    <div style="clear: both;"></div>
+    <div class="col-md-6">
         <div class="panel panel-default">
-            <div class="panel-heading">Сообщение</div>
+            <div class="panel-heading">Достоинства</div>
             <div class="panel-body">
-                <textarea name='text' rows="5" class="form-control" id="text" placeholder=""><?=$entry['text']?></textarea>
+                <textarea name='worths' rows="5" class="form-control" id="worths" placeholder=""><?= $entry['worths'] ?></textarea>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">Недостатки</div>
+            <div class="panel-body">
+                <textarea name='flaws' rows="5" class="form-control" id="flaws" placeholder=""><?= $entry['flaws'] ?></textarea>
             </div>
         </div>
     </div>

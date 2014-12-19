@@ -45,6 +45,10 @@ class Tours extends MX_Controller {
     public function get_by_url($url) {
         return $this->tours_model->get_by_url($url);
     }
+    
+    public function get_by_id($id){
+        return $this->tours_model->get($id);
+    }
 
     public function edit($id = null) {
         $entry = $this->tours_model->get($id);

@@ -160,10 +160,10 @@
             </div>
         </div>
     <?php endif; ?>
-    <div class="reviews-form-block">
-        <?= Modules::run('reviews/save', true) ?>
+    <div id="reviews-form-block" class="reviews-form-block">
+        <?= Modules::run('reviews/save', $entry['id']) ?>
     </div>
     <div class="reviews-block">
-        <?= Modules::run('reviews/view', true) ?>
+        <?= Modules::run('reviews/view', true, $entry['id']) ?>
     </div>
 </div>

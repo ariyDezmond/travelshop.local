@@ -9,7 +9,7 @@ class Reviews_model extends CI_Model {
         $this->load->database();
     }
 
-    public function get($id = null, $for_front = false) {
+    public function get($id = false, $for_front = false, $tour_id = false) {
         if (!$for_front) {
             if ($id) {
                 $query = $this->db->get_where($this->table_name, array('id' => $id));
@@ -29,7 +29,7 @@ class Reviews_model extends CI_Model {
                 return $query->row_array();
             }
             $this->db->order_by('date', 'desc')->order_by('date', 'desc');
-            $query = $this->db->get_where($this->table_name, array('active' => 'on'));
+            $query = $this->db->get_where($this->table_name, array('active' => 'on', 'object_id' => $tour_id));
             if (count($query->result_array()) > 0) {
                 return $query->result_array();
             } else {
@@ -94,16 +94,16 @@ class Reviews_model extends CI_Model {
         $this->db->update($this->table_name, $data);
     }
 
-    public function set() {
+    public function set($object_id) {
 
         date_default_timezone_set('Asia/Bishkek');
         $data = array(
             'name' => $this->input->post('name'),
-            'text' => $this->input->post('text'),
-            'email' => $this->input->post('email'),
+            'worths' => nl2br($this->input->post('worths')),
+            'flaws' => nl2br($this->input->post('flaws')),
             'date' => date('Y-m-d H:i:s'),
-            'phone' => $this->input->post('phone'),
             'ip' => $this->input->ip_address(),
+            'object_id' => $object_id,
             'read' => 0
         );
 
@@ -113,9 +113,9 @@ class Reviews_model extends CI_Model {
     public function update($id) {
         $data = array(
             'active' => $this->input->post('active'),
-            'name' => $this->input->post('name'),
-            'email' => $this->input->post('email'),
-            'text' => $this->input->post('text'),
+            'worths' => nl2br($this->input->post('worths')),
+            'flaws' => nl2br($this->input->post('flaws')),
+            'name' => $this->input->post('name')
         );
 
         $this->db->where('id', $id);

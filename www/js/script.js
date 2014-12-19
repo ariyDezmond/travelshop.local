@@ -2,7 +2,15 @@ $(document).ready(function () {
 
     $('.reed-full').click(function () {
         var t = $(this).text();
-        $(this).text($(this).attr('data-text')).attr('data-text', t).parents('.reviews-item').toggleClass('active').find('.hidden_text').toggle();
+        if ($(this).text() == 'Прочитать отзыв полностью') {
+            $(this).text($(this).attr('data-text')).attr('data-text', t);
+            $(this).parent().find('.desc').css('display', 'none');
+            $(this).parent().find('.hidden_text').css('display', 'block');
+        } else {
+            $(this).text($(this).attr('data-text')).attr('data-text', t);
+            $(this).parent().find('.desc').css('display', 'block');
+            $(this).parent().find('.hidden_text').css('display', 'none');
+        }
         return false;
     });
 

@@ -1,33 +1,35 @@
 <h3>Оставить отзыв:</h3>
-<form action="">
+<form id="form" action="javascript:">
     <div class="fields">
-        <label>Имя</label>
-        <input type="text"/>
+        <label>Фамилия, Имя</label>
+        <input <?php if (strpos(validation_errors(), '"Имя"')): ?> style="border:2px solid red;" <?php endif; ?> name="name" value="<?= set_value('name') ?>" type="text"/>
 
         <label>Достоинства</label>
-        <textarea name="" cols="30" rows="10"></textarea>
+        <textarea <?php if (strpos(validation_errors(), '"Достоинства"')): ?> style="border:2px solid red;" <?php endif; ?> name="worths" cols="30" rows="10"><?= set_value('worths') ?></textarea>
 
         <label>Недостатки</label>
-        <textarea name="" cols="30" rows="10"></textarea>
+        <textarea <?php if (strpos(validation_errors(), '"Недостатки"')): ?> style="border:2px solid red;" <?php endif; ?> name="flaws" cols="30" rows="10"><?= set_value('flaws') ?></textarea>
 
     </div>
-    <input type="submit" value="Добавить"/>
+    <input type="hidden" name="do" value="reviewsSave">
+    <input type="hidden" name="obj_id" value="<?= $object_id ?>">
+    <input onclick="sendform()" type="submit" value="Добавить"/>
 </form>
 <script>
-    function sendfeedback() {
-        $('#feedback_main').css('opacity', '0.5')
+    function sendform() {
+        $('#form').css('opacity', '0.5')
         $.ajax({
-            url: '/feedback/save',
+            url: '/reviews/save/<?= $object_id ?>',
             type: "POST",
             dataType: "html",
-            data: $('#save_feedback').serialize(),
+            data: $('#form').serialize(),
             success: function (response) {
-                document.getElementById('feedback_main').innerHTML = response;
-                $('#feedback_main').css('opacity', '1')
+                document.getElementById('reviews-form-block').innerHTML = response;
+                $('#form').css('opacity', '1')
             },
             error: function (response) {
-                document.getElementById('feedback_form_wrapper').innerHTML = "<?= $this->lang->line('text_error_while_sending_form') ?>";
-                $('#feedback_main').css('opacity', '1')
+                document.getElementById('reviews-form-block').innerHTML = "<?= $this->lang->line('text_error_while_sending_form') ?>";
+                $('#form').css('opacity', '1')
             }
         });
         return false;
