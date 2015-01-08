@@ -18,7 +18,7 @@ class Front extends MX_Controller {
         $this->load->view('templates/contacts', $data);
         $this->load->view('templates/footer', $data);
     }
-    
+
     public function about() {
         $data['title'] = 'О нас';
         $this->load->view('templates/metahead', $data);
@@ -54,6 +54,8 @@ class Front extends MX_Controller {
         $hotel = Modules::run('hotels/get', $tour['hotel_id'], true);
         $tour_images = Modules::run('tours/get_images', $tour['id'], true);
         $hotel_images = Modules::run('hotels/get_images', $hotel['id'], true);
+        $data['keyw'] = $tour['keyw'];
+        $data['desc'] = $tour['desc'];
         if ($tour) {
             $data['title'] = $tour['name'];
             $data['url'] = $url;

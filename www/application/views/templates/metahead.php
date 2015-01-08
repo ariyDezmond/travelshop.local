@@ -5,6 +5,14 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
+        <?php if (isset($keyw) && isset($desc)): ?>
+            <meta name="keywords" content="<?= $keyw ?>">
+            <meta name="description" content="<?= $desc ?>">
+        <?php else: ?>
+            <meta name="keywords" content="<?= Modules::run('widget/getByTitle', 'meta-main-keywords') ?>">
+            <meta name="description" content="<?= Modules::run('widget/getByTitle', 'meta-main-description') ?>">
+        <?php endif; ?>
+
         <link rel="stylesheet" href="/scss/style.css">
         <link rel="stylesheet" href="/colorbox/colorbox.css">
         <link rel="stylesheet" href="/css/backcall.css">
