@@ -87,6 +87,7 @@ class Front extends MX_Controller {
         $this->load->view('templates/footer', $data);
     }
 
+
     public function belay() {
         $data['title'] = 'Медицинаская страховка';
         $this->load->view('templates/metahead', $data);

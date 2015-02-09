@@ -8,6 +8,7 @@ class Vises extends MX_Controller {
     public function __construct() {
         parent::__construct();
         $this->load->model('vises_model');
+        $this->model = $this->vises_model;
     }
 
     public function index() {
@@ -20,52 +21,122 @@ class Vises extends MX_Controller {
         }
     }
 
-    public function get() {
-        return $this->vises_model->get();
-    }
-
-    public function view($front = false) {
+    public function view($for_front = false, $url = false) {
         $data['module_name'] = $this->module_name;
         $data['module'] = $this->module;
-        $data['entry'] = $this->vises_model->get();
-        if ($front) {
-            $this->load->view('front/viese', $data);
+        if (!$for_front) {
+            if ($url) {
+                $data['entries'] = $this->model->get_by_url($url);
+            } else {
+                $data['entries'] = $this->model->get();
+                $this->load->view($this->module, $data);
+            }
         } else {
-            $this->load->view($this->module, $data);
+            if ($url) {
+                $data['entries'] = $this->model->get('', true);
+                $data['text'] = $this->model->get_by_url($url);
+                $this->load->view('front/' . $this->module, $data);
+            } else {
+                $data['entries'] = $this->model->get('', true);
+                $data['firstEntry'] = $this->model->getFirstEntry();
+                $this->load->view('front/' . $this->module, $data);
+            }
         }
     }
 
-    public function edit($id = null) {
-        if ($this->input->post('do') == $this->module . 'Edit') {
-            $this->form_validation->set_rules('adress', 'Адрес', 'trim|xss_clean');
-            $this->form_validation->set_rules('phone', 'Телефон(ы)', 'trim|xss_clean');
-            $this->form_validation->set_rules('email', 'E-mail', 'trim|valid_email|xss_clean');
-            $this->form_validation->set_rules('coords', 'Координаты на карте', 'trim|xss_clean');
-            $this->form_validation->set_rules('social_text', 'Текст', 'trim|xss_clean');
-            $this->form_validation->set_rules('social_vk', 'Мета keywords', 'trim|xss_clean');
-            $this->form_validation->set_rules('social_fb', 'Мета keywords', 'trim|xss_clean');
-            $this->form_validation->set_rules('social_tw', 'Мета keywords', 'trim|xss_clean');
-            $this->form_validation->set_rules('social_ok', 'Мета keywords', 'trim|xss_clean');
+    public function get_by_url($url) {
+        return $this->model->get_by_url($url);
+    }
 
+    public function edit($id = null) {
+        global $object;
+        $object = 'blog';
+        $data['title'] = 'Административная панель';
+        $entry = $this->model->get_blogs($id);
+        $data['entry'] = $entry;
+        $tags = $this->model->get_tags($id);
+        $data['tags'] = $tags;
+        $data['module_name'] = $this->module_name;
+        $data['module'] = $this->module;
+        if ($this->input->post('do') == $this->module . 'Edit') {
+
+            $this->form_validation->set_rules('name', 'Категория', 'required|trim|xss_clean');
+            $this->form_validation->set_rules('url', 'ЧПУ', 'required|trim|xss_clean');
+            $this->form_validation->set_rules('text', 'Текст', 'required');
             $this->form_validation->set_error_delimiters('<span class="label label-danger">', '</span>');
 
             if ($this->form_validation->run() == FALSE) {
-                $arr = array(
-                    'error' => '<div class="alert alert-danger" role="alert"><strong>Oops! </strong>Не валидный e-mail адрес!</div>'
-                );
-                $this->session->set_userdata($arr);
-                redirect('admin/' . $this->module);
+                $this->load->view('edit', $data);
             } else {
-                $this->vises_model->update($id);
+                $this->model->update($id);
                 $arr = array(
                     'error' => '<div class="alert alert-success" role="alert"><strong>Успех! </strong>Запись была успешно обновлена!</div>'
                 );
                 $this->session->set_userdata($arr);
+                redirect('admin/' . $this->module . '/edit/' . $entry['id']);
+            }
+        } else {
+            $this->load->view('edit', $data);
+        }
+    }
+
+    public function check_url($url) {
+        if ($this->model->get_by_url($url)) {
+            $this->form_validation->set_message('check_url', 'Такой ЧПУ уже занят!');
+            return FALSE;
+        } else {
+            return TRUE;
+        }
+    }
+
+    public function add() {
+        global $object;
+        $object = 'blog';
+        $data['title'] = 'Административная панель';
+        $data['module_name'] = $this->module_name;
+        $data['module'] = $this->module;
+        if ($this->input->post('do') == $this->module . 'Add') {
+            $this->form_validation->set_rules('name', 'Категория', 'required|trim|xss_clean');
+            $this->form_validation->set_rules('url', 'ЧПУ', 'required|trim|xss_clean');
+            $this->form_validation->set_rules('text', 'Текст', 'required');
+            $this->form_validation->set_error_delimiters('<span class="label label-danger">', '</span>');
+            if ($this->form_validation->run() == FALSE) {
+                $this->load->view('add', $data);
+            } else {
+                $arr = array(
+                    'error' => '<div class="alert alert-success" role="alert"><strong>Успех! </strong>Запись была успешно добавлена!</div>'
+                );
+                $this->session->set_userdata($arr);
+                $this->model->set();
+                redirect('admin/' . $this->module . '/add');
+            }
+        } else {
+            $this->load->view('add', $data);
+        }
+    }
+
+    public function delete($id) {
+        $entry = $this->model->get($id);
+        if (count($entry) > 0) {
+            if (file_exists('images/' . $this->module . '/' . $entry['image'])) {
+                $this->model->delete($id);
+                unlink('images/' . $this->module . '/' . $entry['image']);
+                redirect('admin/' . $this->module);
+            } else {
+                $this->model->delete($id);
                 redirect('admin/' . $this->module);
             }
         } else {
-            $this->load->view($this->module, $data);
+            die('Ошибка! Такой записи в базе не существует!');
         }
+    }
+
+    public function up($id) {
+        $this->model->order($id, 'up');
+    }
+
+    public function down($id) {
+        $this->model->order($id, 'down');
     }
 
 }

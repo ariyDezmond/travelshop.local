@@ -1,12 +1,21 @@
 <?php if (!empty($entries)): ?>
-    <div class="partners-block">
-        <h1 class="block-title">Партнеры</h1>
-        <ul class="partners">
-            <?php foreach ($entries as $entry): ?>
-                <li>
-                    <a style="cursor:default" href="javascript:"><img src="/getimage.php?key=images/partners/<?= $entry['image'] ?>&type=1" alt=""/></a>
-                </li>
-            <?php endforeach; ?>
-        </ul>
+    <div class="wrapper">
+        <h3 class="main_title">ПАРТНЕРЫ</h3>
+        <div class="flexslider">
+            <ul class="slides partners_slider">
+                <?php
+                foreach ($entries as $entry): ?>
+                    <li>
+                        <div class="partners_item_wrapper">
+                            <?php for ($i = 0; $i < 6; $i++): ?>
+                                <?php if (isset($entry[$i])): ?>
+                                    <img src="/images/partners/<?= $entry[$i]['image'] ?>" alt="">
+                                <?php endif; ?>
+                            <?php endfor; ?>
+                        </div>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
+        </div><!-- /flexslider -->
     </div>
 <?php endif; ?>

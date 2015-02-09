@@ -53,6 +53,9 @@ class Requests extends MX_Controller {
             $this->form_validation->set_rules('phone', 'Телефон', 'required|trim|xss_clean');
             $this->form_validation->set_rules('text', 'Дополнительная информация', 'required|trim|xss_clean');
             $this->form_validation->set_rules('email', 'E-mail', 'required|valid_email|trim|xss_clean');
+            $this->form_validation->set_rules('stars', 'Количество звезд', 'trim|xss_clean');
+            $this->form_validation->set_rules('places', 'Количество мест', 'trim|xss_clean');
+            $this->form_validation->set_rules('days', 'Количество дней', 'trim|xss_clean');
 
             $this->form_validation->set_error_delimiters('<p style="color:red;">', '</p>');
 
@@ -60,7 +63,7 @@ class Requests extends MX_Controller {
                 $this->load->view('front/request_form');
             } else {
                 $this->requests_model->set();
-                echo '<p style="margin:10px; font-weight:bold; text-align:center; color:green">Успех! Заявка на поиск отеля была успешно отправлена! Ожидайте...наш менеджер свяжется с вам в ближайшее время.</p>';
+                echo '<p style="margin:10px; font-weight:bold; text-align:center; color:green">Успех! Заявка на поиск отеля была успешно отправлена! Ожидайте...наш менеджер свяжется с вами в ближайшее время.</p>';
                 //$arr = array(
                 //    'error' => '<p style="margin:10px; font-weight:bold; text-align:center; color:green">Успех! Заявка на поиск отеля была успешно отправлена! Ожидайте...наш менеджер свяжется с вам в ближайшее время.</p>'
                 //);

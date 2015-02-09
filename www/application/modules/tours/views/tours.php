@@ -18,7 +18,7 @@
             <tr>
                 <td class="id" width="30px"><?= $entry['id'] ?></td>
                 <td width="30%"><?= $entry['name'] ?></td>
-                <td width="30%"><?= $entry['url'] ?></td>
+                <td width="30%"><?=mb_strimwidth($entry['url'], 0, 30, "...") ?></td>
                 <td width="20px"><img width="50px" src='/images/<?= $module ?>/<?= $entry['image'] ?>'></td>
                 <td width="30px"><?php
                     if ($entry['valid'] == 'on') {

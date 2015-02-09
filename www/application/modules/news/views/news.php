@@ -19,7 +19,7 @@
             <tr>
                 <td class="id" width="30px"><?= $entry['id'] ?></td>
                 <td width="30%"><?= $entry['name'] ?></td>
-                <td width="30%"><?= $entry['url'] ?></td>
+                <td width="30%"><?= mb_strimwidth($entry['url'], 0, 30, "...") ?></td>
                 <td width="20px"><img width="50px" src='/images/<?= $module ?>/<?= $entry['image'] ?>'></td>
                 <td><?= mb_strimwidth(strip_tags($entry['text']), 0, 50, "..."); ?></td>
                 <td><?= date('d.m.Y h:i', strtotime($entry['date'])) ?></td>

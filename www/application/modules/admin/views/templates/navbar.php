@@ -35,13 +35,46 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Модули <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
-                        <li><a href="/admin/blog">Блог</a></li>
-                        <li><a href="/admin/news">Новости</a></li>
-                        <li><a href="/admin/contacts">Контакты</a></li>
-                        <li><a href="/admin/backcall">Обратный звонок</a></li>
-                        <li><a href="/admin/feedback">Обратная связь</a></li>
-                        <li><a href="/admin/reviews">Отзывы о турах</a></li>
-                        <li><a href="/admin/partners">Партнеры</a></li>
+                        <li <?php
+                        if (strpos(current_url(), 'admin/blog')) {
+                            echo "class=\"active\"";
+                        }
+                        ?>><a href="/admin/blog">Блог</a></li>
+                        <li <?php
+                        if (strpos(current_url(), 'admin/news')) {
+                            echo "class=\"active\"";
+                        }
+                        ?>><a href="/admin/news">Новости</a></li>
+                        <li <?php
+                        if (strpos(current_url(), 'admin/contacts')) {
+                            echo "class=\"active\"";
+                        }
+                        ?>><a href="/admin/contacts">Контакты</a></li>
+                        <li <?php
+                        if (strpos(current_url(), 'admin/backcall')) {
+                            echo "class=\"active\"";
+                        }
+                        ?>><a href="/admin/backcall">Обратный звонок</a></li>
+                        <li <?php
+                        if (strpos(current_url(), 'admin/feedback')) {
+                            echo "class=\"active\"";
+                        }
+                        ?>><a href="/admin/feedback">Обратная связь</a></li>
+                        <li <?php
+                        if (strpos(current_url(), 'admin/reviews')) {
+                            echo "class=\"active\"";
+                        }
+                        ?>><a href="/admin/reviews">Отзывы о турах</a></li>
+                        <li <?php
+                        if (strpos(current_url(), 'admin/vises')) {
+                            echo "class=\"active\"";
+                        }
+                        ?>><a href="/admin/vises">Визовые услуги</a></li>
+                        <li <?php
+                        if (strpos(current_url(), 'admin/partners')) {
+                            echo "class=\"active\"";
+                        }
+                        ?>><a href="/admin/partners">Партнеры</a></li>
                     </ul>
                 </li>
             </ul>

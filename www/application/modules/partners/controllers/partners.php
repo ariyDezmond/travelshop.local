@@ -36,7 +36,8 @@ class Partners extends MX_Controller {
                 $data['entries'] = $this->model->get_by_url($url);
                 $this->load->view('front/new', $data);
             } else {
-                $data['entries'] = $this->model->get('', true);
+                $entries = $this->model->get('', true);
+                $data['entries'] = array_chunk($entries, 6);
                 $this->load->view('front/' . $this->module, $data);
             }
         }
@@ -122,28 +123,27 @@ class Partners extends MX_Controller {
 
             $this->form_validation->set_error_delimiters('<span class="label label-danger">', '</span>');
 
-                $config['upload_path'] = './images/' . $this->module;
-                $config['allowed_types'] = 'gif|jpg|png|jpeg|JPG|JPEG';
-                $config['max_size'] = '5120';
-                $config['encrypt_name'] = true;
+            $config['upload_path'] = './images/' . $this->module;
+            $config['allowed_types'] = 'gif|jpg|png|jpeg|JPG|JPEG';
+            $config['max_size'] = '5120';
+            $config['encrypt_name'] = true;
 
-                $this->load->library('upload', $config);
+            $this->load->library('upload', $config);
 
+            $image_data = $this->upload->data();
+            if (!$this->upload->do_upload('image')) {
+                $this->session->set_userdata('error', $this->upload->display_errors('<span class="label label-danger">', '</span>'));
+                redirect('admin/' . $this->module . '/add');
+            } else {
                 $image_data = $this->upload->data();
-                if (!$this->upload->do_upload('image')) {
-                    $this->session->set_userdata('error', $this->upload->display_errors('<span class="label label-danger">', '</span>'));
-                    redirect('admin/' . $this->module . '/add');
-                } else {
-                    $image_data = $this->upload->data();
-                    $this->model->set($image_data['file_name']);
+                $this->model->set($image_data['file_name']);
 
-                    $arr = array(
-                        'error' => '<div class="alert alert-success" role="alert"><strong>Успех! </strong>Запись была успешно добавлена!</div>'
-                    );
-                    $this->session->set_userdata($arr);
-                    redirect('admin/' . $this->module . '/add');
-                }
-            
+                $arr = array(
+                    'error' => '<div class="alert alert-success" role="alert"><strong>Успех! </strong>Запись была успешно добавлена!</div>'
+                );
+                $this->session->set_userdata($arr);
+                redirect('admin/' . $this->module . '/add');
+            }
         } else {
             $this->load->view('add', $data);
         }

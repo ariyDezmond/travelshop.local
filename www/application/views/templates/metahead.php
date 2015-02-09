@@ -13,7 +13,8 @@
             <meta name="description" content="<?= Modules::run('widget/getByTitle', 'meta-main-description') ?>">
         <?php endif; ?>
 
-        <link rel="stylesheet" href="/scss/style.css">
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/slider.css">
         <link rel="stylesheet" href="/colorbox/colorbox.css">
         <link rel="stylesheet" href="/css/backcall.css">
 
@@ -24,8 +25,9 @@
             }
         </style>
         <script src="/js/jquery-2.1.1.min.js"></script>
+        <script defer src="/js/jquery.flexslider.js"></script>
         <script src="/js/jquery.bxslider.js"></script>
-        <script src="/js/script.js"></script>
+        <script src="/js/scripts.js"></script>
         <script src="/colorbox/jquery.colorbox-min.js"></script>
         <script>
             jQuery(document).ready(function () {

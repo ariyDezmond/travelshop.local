@@ -73,6 +73,7 @@ $route['admin'] = 'admin/view/main';
 $route['tours/(:any)'] = 'front/tour/$1';
 $route['news/(:any)'] = 'front/onenew/$1';
 $route['blog/(:any)'] = 'front/post/$1';
+$route['vises/(:any)'] = 'front/vises/$1';
 $route['(:any)/(:any)'] = '$1/$2';
 $route['(:any)'] = 'front/$1';
 

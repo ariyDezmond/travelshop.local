@@ -1,35 +1,28 @@
 <div id="feedback_form">
-    <div class="inner-contacts-block-3" style="margin-bottom: 70px;">
-        <form method="POST" action="javascript:" id="save_feedback">
-            <p>Напишите нам</p>
-            <label>Имя, Фамилия</label>
-            <input name="name" type="text" value="<?= set_value('name') ?>" <?php
-            if (strpos(validation_errors(), '"Имя"')) {
-                echo 'style="border:2px solid red;"';
-            }
-            ?>>
-            <label>Телефон</label>
-            <input name="phone" type="text" value="<?= set_value('phone') ?>" <?php
-            if (strpos(validation_errors(), '"Телефон"')) {
-                echo 'style="border:2px solid red;"';
-            }
-            ?>/>
-            <label>E-mail</label>
-            <input name="email" type="text" value="<?= set_value('email') ?>" <?php
-            if (strpos(validation_errors(), '"E-mail"')) {
-                echo 'style="border:2px solid red;"';
-            }
-            ?>/>
-            <label>Сообщение</label>
-            <textarea name="text" cols="30" rows="10" <?php
-            if (strpos(validation_errors(), '"Сообщение"')) {
-                echo 'style="border:2px solid red;"';
-            }
-            ?>><?= set_value('text') ?></textarea>
-            <input type="hidden" name="do" value="feedbackSave">
-            <input type="submit" value="Отправить" onclick="javascript:sendfeedback()"/>
-        </form>
-    </div>
+    <form method="POST" action="javascript:" id="save_feedback">
+        <input name="name" type="text" value="<?= set_value('name') ?>" <?php
+        if (strpos(validation_errors(), '"Имя"')) {
+            echo 'style="border:2px solid red;"';
+        }
+        ?>  placeholder="Ваше имя">
+        <input name="phone" type="text" value="<?= set_value('phone') ?>" <?php
+        if (strpos(validation_errors(), '"Телефон"')) {
+            echo 'style="border:2px solid red;"';
+        }
+        ?> placeholder="Ваш телефон">
+        <input name="email" type="text" value="<?= set_value('email') ?>" <?php
+        if (strpos(validation_errors(), '"E-mail"')) {
+            echo 'style="border:2px solid red;"';
+        }
+        ?> placeholder="Ваш email...">
+        <textarea name="text" cols="30" rows="10" <?php
+        if (strpos(validation_errors(), '"Сообщение"')) {
+            echo 'style="border:2px solid red;"';
+        }
+        ?> placeholder="Ваше сообщение..."><?= set_value('text') ?></textarea>
+        <input type="hidden" name="do" value="feedbackSave">
+        <input type="button" value="Отправить" onclick="javascript:sendfeedback()">
+    </form>
 </div>
 <script>
     function sendfeedback() {

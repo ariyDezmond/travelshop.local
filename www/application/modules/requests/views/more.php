@@ -80,6 +80,30 @@
             </div>
         </div>
     </div>
+    <div class="col-md-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">Количество звезд</div>
+            <div class="panel-body">
+                <?= $entry['stars'] ?>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">Количество мест</div>
+            <div class="panel-body">
+                <?= $entry['places'] ?>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">Количество дней</div>
+            <div class="panel-body">
+                <?= $entry['days'] ?>
+            </div>
+        </div>
+    </div>
     <div class="col-md-12">
         <div class="panel panel-default">
             <div class="panel-heading">Дополнительная информация</div>

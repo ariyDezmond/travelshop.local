@@ -107,8 +107,11 @@ class Requests_model extends CI_Model {
             'text' => $this->input->post('text'),
             'email' => $this->input->post('email'),
             'email' => $this->input->post('email'),
-            'date' => date('d.m.Y H:i:s'),
+            'date' => date('Y-m-d H:i:s'),
             'phone' => $this->input->post('phone'),
+            'stars' => $this->input->post('stars'),
+            'places' => $this->input->post('places'),
+            'days' => $this->input->post('days'),
             'ip' => $this->input->ip_address(),
             'read' => 0
         );
