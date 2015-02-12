@@ -13,6 +13,7 @@ q:before, q:after {content: '';content: none;}
 table {border-collapse: collapse;border-spacing: 0;}
 input[type=text] {outline: 0;}input[type=submit] {outline: 0;}
 input[type=button] {outline: 0;}input[type=button]:hover {cursor: pointer;}
+.clear_padding {padding-bottom: 20px;}
 textarea {outline: 0;}img{max-width: 100%;}
 .clear_padding {padding-bottom: 20px;}
 .clear {clear: both;font-size: 0;line-height: 0;}
@@ -179,7 +180,7 @@ nav {border-top:9px solid #002983;border-bottom:8px solid #002983;height: 86px;}
         section slider
 **************************/
 
-section {position: relative;height: 736px;}
+section {position: relative;}
 
 /*slider*/
 
@@ -201,7 +202,7 @@ section {position: relative;height: 736px;}
       article
 ************************************************************/
 
-article {padding-bottom: 40px;}
+article {padding-bottom: 40px;margin-top: 310px;}
   article .wrapper {width: 1000px;}
     article h4 {font-family: "Arial-Black";font-size: 30px;color: #fdc900;text-transform: uppercase;text-align: center;margin: 18px 24px 27px 0;text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.75);}
 
@@ -410,7 +411,7 @@ a.more_tours {
         contacts
 **************************/
 
-.contacts {}
+.contacts {margin-top: 50px;}
   .contacts h3 {margin: 24px 0 10px 28px;}
   .contacts .wrapper {width: 1090px;}
 /*contacts_col*/
@@ -529,7 +530,7 @@ footer {height: 148px;background: #002983;}
         abroad_tours page
 **************************/
 
-.abroad_tours {margin-top: 100px;}
+.abroad_tours {margin-top: 60px;}
   .abroad_tours .wrapper  {border-bottom: 1px solid #002983;}
     .abroad_tours h3 {margin-bottom: 40px;}
     .abroad_tours a.more_tours {margin-top: 80px;margin-bottom: 110px;}
@@ -538,7 +539,7 @@ footer {height: 148px;background: #002983;}
         reviews_page page
 **************************/
 
-.reviews_page {}
+.reviews_page {margin-top: 0px;}
   .reviews_page h3 {margin-bottom: 40px;}
 
 /*reviews_inner*/
@@ -584,7 +585,8 @@ footer {height: 148px;background: #002983;}
         news_and_blog page
 **************************/
 
-.news_and_blog {margin: -300px 0 0 0;}
+.news_and_blog {margin: 0 0 0 0;}
+.news_and_blog_inner {margin: 320px 0 0 0;}
   .news_and_blog h3 {margin-bottom: 40px;}
 
 /*news_and_blog_item*/

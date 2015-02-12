@@ -95,7 +95,6 @@ class Front extends MX_Controller {
         $data['title'] = 'Визовые услуги';
         $this->load->view('templates/metahead', $data);
         $this->load->view('templates/head', $data);
-        $this->load->view('templates/slider', $data);
         $this->load->view('templates/none_reservation', $data);
         $this->load->view('pages/vises', $data);
         $this->load->view('templates/contacts', $data);
