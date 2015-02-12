@@ -39,6 +39,6 @@
     </div>
 </footer>
 </div>
-<?= Modules::run('widget/getByTitle', 'snipets') ?>
+<? Modules::run('widget/getByTitle', 'snipets') ?>
 </body>
 </html>-->

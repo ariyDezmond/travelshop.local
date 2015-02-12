@@ -14,6 +14,7 @@ class Front extends MX_Controller {
         $this->load->view('templates/metahead', $data);
         $this->load->view('templates/head', $data);
         $this->load->view('templates/slider', $data);
+        $this->load->view('templates/reservation', $data);
         $this->load->view('pages/main', $data);
         $this->load->view('templates/contacts', $data);
         $this->load->view('templates/footer', $data);
@@ -36,6 +37,7 @@ class Front extends MX_Controller {
         $this->load->view('templates/metahead', $data);
         $this->load->view('templates/head', $data);
         $this->load->view('templates/slider', $data);
+        $this->load->view('templates/none_reservation', $data);
         $this->load->view('pages/contacts', $data);
         $this->load->view('templates/footer', $data);
     }
@@ -82,6 +84,7 @@ class Front extends MX_Controller {
         $this->load->view('templates/metahead', $data);
         $this->load->view('templates/head', $data);
         $this->load->view('templates/slider', $data);
+        $this->load->view('templates/none_reservation', $data);
         $this->load->view('pages/vises', $data);
         $this->load->view('templates/contacts', $data);
         $this->load->view('templates/footer', $data);
@@ -93,6 +96,7 @@ class Front extends MX_Controller {
         $this->load->view('templates/metahead', $data);
         $this->load->view('templates/head', $data);
         $this->load->view('templates/slider', $data);
+        $this->load->view('templates/none_reservation', $data);
         $this->load->view('pages/belay', $data);
         $this->load->view('templates/contacts', $data);
         $this->load->view('templates/footer', $data);
@@ -103,6 +107,7 @@ class Front extends MX_Controller {
         $this->load->view('templates/metahead', $data);
         $this->load->view('templates/head', $data);
         $this->load->view('templates/slider', $data);
+        $this->load->view('templates/reservation', $data);
         $this->load->view('pages/reservation', $data);
         $this->load->view('templates/contacts', $data);
         $this->load->view('templates/footer', $data);
@@ -113,6 +118,7 @@ class Front extends MX_Controller {
         $this->load->view('templates/metahead', $data);
         $this->load->view('templates/head', $data);
         $this->load->view('templates/slider', $data);
+        $this->load->view('templates/none_reservation', $data);
         $this->load->view('pages/blog', $data);
         $this->load->view('templates/contacts', $data);
         $this->load->view('templates/footer', $data);
@@ -126,6 +132,7 @@ class Front extends MX_Controller {
         $this->load->view('templates/metahead', $data);
         $this->load->view('templates/head', $data);
         $this->load->view('templates/slider', $data);
+        $this->load->view('templates/none_reservation', $data);
         $this->load->view('pages/post', $data);
         $this->load->view('templates/contacts', $data);
         $this->load->view('templates/footer', $data);
@@ -136,6 +143,7 @@ class Front extends MX_Controller {
         $this->load->view('templates/metahead', $data);
         $this->load->view('templates/head', $data);
         $this->load->view('templates/slider', $data);
+        $this->load->view('templates/none_reservation', $data);
         $this->load->view('pages/news', $data);
         $this->load->view('templates/contacts', $data);
         $this->load->view('templates/footer', $data);
@@ -149,6 +157,7 @@ class Front extends MX_Controller {
         $this->load->view('templates/metahead', $data);
         $this->load->view('templates/head', $data);
         $this->load->view('templates/slider', $data);
+        $this->load->view('templates/none_reservation', $data);
         $this->load->view('pages/new', $data);
         $this->load->view('templates/contacts', $data);
         $this->load->view('templates/footer', $data);

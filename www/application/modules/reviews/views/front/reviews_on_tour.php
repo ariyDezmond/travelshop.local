@@ -13,7 +13,7 @@
             <?php endforeach; ?>
             <a href="#" class="more_reviews">Загрузить еще</a>
         <?php else: ?>
-            <p>Отзывов еще никто не добавлял</p>
+            <p>Отзывов еще никто не добавлял. Будьте первым!</p>
         <?php endif; ?>
     </div>
 </div>
