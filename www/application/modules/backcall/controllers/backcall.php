@@ -56,8 +56,34 @@ class Backcall extends MX_Controller {
                 $this->load->view('front/backcall');
             } else {
                 $this->backcall_model->set();
-                    echo '<p style="margin:10px; font-weight:bold; text-align:center; color:green">Успех! Наш менеджер уже звонит вам!</p>';
+                echo '<p style="margin:10px; font-weight:bold; text-align:center; color:green">Успех! Наш менеджер уже звонит вам!</p>';
 
+                $emailArray = $this->backcall_model->get_email();
+                if (valid_email($emailArray['email'])) {
+                    $config = array(
+                        'protocol' => 'smtp',
+                        'smtp_host' => 'ssl://smtp.googlemail.com',
+                        'smtp_port' => 465,
+                        'smtp_user' => 'officialakniet@gmail.com',
+                        'smtp_pass' => 'googstud321',
+                        'mailtype' => 'html',
+                        'charset' => 'utf-8'
+                    );
+                    $this->load->library('email');
+                    $this->email->initialize($config);
+
+                    $this->email->set_newline("\r\n");
+                    $this->email->from('support@travelshop.ru', 'Заявка на обратный звонок на сайте ' . str_ireplace('http://', '', substr(base_url(), 0, -1)));
+                    $this->email->to($emailArray['email']);
+                    $this->email->subject('Новая заявка на обратный звонок на сайте ' . str_ireplace('http://', '', substr(base_url(), 0, -1)));
+                    $this->email->message(
+                            'Имя: ' . $this->input->post('name') . '<br>' .
+                            'Телефон: ' . $this->input->post('phone') . '<br>' .
+                            'Дата: ' . date('Y-m-d H:i:s') . '<br>' .
+                            'IP: ' . $this->input->ip_address() . '<br>'
+                    );
+                    $this->email->send();
+                }
             }
         } else {
             $this->load->view('front/backcall');

@@ -33,7 +33,8 @@
             jQuery(document).ready(function () {
                 jQuery('#backcall').colorbox({
                     opacity: 0.5,
-                    width: "580",
+                    width: "600",
+                    height: "360",
                     close: "Закрыть"
                 });
                 $('.main-image a, .rotate-1 a').colorbox({

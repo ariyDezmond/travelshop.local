@@ -75,6 +75,7 @@ class Reviews extends MX_Controller {
 
     public function save($object_id = false) {
         $data['object_id'] = $object_id;
+        $tour = Modules::run('tours/get_by_id', $object_id);
         if ($this->input->post('do') == $this->module . 'Save') {
             $this->form_validation->set_rules('name', 'Имя', 'required|trim|xss_clean');
             $this->form_validation->set_rules('worths', 'Достоинства', 'trim|xss_clean');
@@ -89,32 +90,34 @@ class Reviews extends MX_Controller {
                 $this->model->set($object_id);
                 echo '<p style="margin:10px; font-weight:bold; text-align:center; color:green">Успех! Отзыв появится после рассмотрения администратором.</p>';
 
-                $config = array(
-                    'protocol' => 'smtp',
-                    'smtp_host' => 'ssl://smtp.googlemail.com',
-                    'smtp_port' => 465,
-                    'smtp_user' => 'officialakniet@gmail.com',
-                    'smtp_pass' => 'googstud321',
-                    'mailtype' => 'html',
-                    'charset' => 'utf-8'
-                );
-                $this->load->library('email');
-                $this->email->initialize($config);
-
                 $emailArray = $this->model->get_email();
-                $this->email->set_newline("\r\n");
-                $this->email->from(str_ireplace('http://', '', substr(base_url(), 0, -1)), '');
-                $this->email->to($emailArray['email']);
-                $this->email->subject('Новый комментарий на сайте');
-                $this->email->message(
-                        'Новый комментарий на сайте: ' . str_ireplace('http://', '', substr(base_url(), 0, -1)) . '<br>' .
-                        'Имя: ' . $this->input->post('name') . '<br>' .
-                        'Достоинства: ' . $this->input->post('worths') . '<br>' .
-                        'Недостатки: ' . $this->input->post('flaws') . '<br>' .
-                        'Дата: ' . date('Y-m-d H:i:s') . '<br>' .
-                        'IP: ' . $this->input->ip_address() . '<br>'
-                );
-                $this->email->send();
+                if (valid_email($emailArray['email'])) {
+                    $config = array(
+                        'protocol' => 'smtp',
+                        'smtp_host' => 'ssl://smtp.googlemail.com',
+                        'smtp_port' => 465,
+                        'smtp_user' => 'officialakniet@gmail.com',
+                        'smtp_pass' => 'googstud321',
+                        'mailtype' => 'html',
+                        'charset' => 'utf-8'
+                    );
+                    $this->load->library('email');
+                    $this->email->initialize($config);
+
+                    $this->email->set_newline("\r\n");
+                    $this->email->from('support@travelshop.ru', 'Новый отзыв о туре на сайте ' . str_ireplace('http://', '', substr(base_url(), 0, -1)));
+                    $this->email->to($emailArray['email']);
+                    $this->email->subject('Новый отзыв о туре на сайте ' . str_ireplace('http://', '', substr(base_url(), 0, -1)));
+                    $this->email->message(
+                            'Имя: ' . $this->input->post('name') . '<br>' .
+                            'worths: ' . $this->input->post('worths') . '<br>' .
+                            'flaws: ' . $this->input->post('flaws') . '<br>' .
+                            'Ссылка на тур: <a href="' . base_url() . '/tours/' . $tour['url'] . '">' . $tour['name'] . '</a><br>' .
+                            'Дата: ' . date('Y-m-d H:i:s') . '<br>' .
+                            'IP: ' . $this->input->ip_address() . '<br>'
+                    );
+                    $this->email->send();
+                }
             }
         } else {
             $this->load->view('front/reviews_add_form', $data);

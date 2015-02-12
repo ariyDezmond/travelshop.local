@@ -8,10 +8,12 @@
 <a onclick="sendform()" href="javascript:" class="add_review_btn">Добавить</a>
 <script>
     function sendform() {
-        $('#form').css('opacity', '0.5')
+        $('#form').css('opacity', '0.5');
+        $('.add_review_btn').css('display', 'none');
         $.post('/allreviews/save/', $('#form').serialize(), function (data) {
             $('#reviews-form-block').html(data);
             $('#form').css('opacity', '1');
+            $('.add_review_btn').css('display', 'block');
         });
         return false;
     }

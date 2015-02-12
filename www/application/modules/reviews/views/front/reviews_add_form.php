@@ -11,11 +11,12 @@
     </div>
     <input type="hidden" name="do" value="reviewsSave">
     <input type="hidden" name="obj_id" value="<?= $object_id ?>">
-    <input onclick="sendform()" type="button" value="Добавить" class="add">
+    <input id="send_review_btn" onclick="sendform()" type="button" value="Добавить" class="add">
 </form>
 <script>
     function sendform() {
-        $('#form').css('opacity', '0.5')
+        $('#form').css('opacity', '0.5');
+        $('#send_review_btn').hide();
         $.ajax({
             url: '/reviews/save/<?= $object_id ?>',
             type: "POST",
@@ -23,7 +24,8 @@
             data: $('#form').serialize(),
             success: function (response) {
                 document.getElementById('reviews-form-block').innerHTML = response;
-                $('#form').css('opacity', '1')
+                $('#form').css('opacity', '1');
+                $('#send_review_btn').show();
             },
             error: function (response) {
                 document.getElementById('reviews-form-block').innerHTML = "<?= $this->lang->line('text_error_while_sending_form') ?>";
