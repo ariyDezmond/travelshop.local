@@ -1,19 +1,6 @@
 <script>
     $(document).ready(function () {
-        $.ajax({
-            url: '/reviews/read',
-            type: "POST",
-            dataType: "html",
-            data: {
-                id: <?= $entry['id'] ?>
-            },
-            success: function (response) {
-                console.log('Успех');
-            },
-            error: function (response) {
-                console.log('Ошибка');
-            }
-        });
+        $.post('/<?= $module ?>/read', {id: <?= $entry['id'] ?>});
     });
 </script>
 <div style="margin-bottom: 20px;" class="row">
@@ -77,31 +64,13 @@
     </div>
     <div class="col-md-6">
         <div class="panel panel-default">
-            <div class="panel-heading">Страница с комментарием</div>
+            <div class="panel-heading">Текст</div>
             <div class="panel-body">
-                <a target="_blank" href="/tours/<?= $tour['url'] ?>"><?= $tour['name'] ?></a>
-            </div>
-        </div>
-    </div>
-    <div style="clear: both;"></div>
-    <div class="col-md-6">
-        <div class="panel panel-default">
-            <div class="panel-heading">Достоинства</div>
-            <div class="panel-body">
-                <textarea name='worths' rows="5" class="form-control" id="worths" placeholder=""><?= $entry['worths'] ?></textarea>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-6">
-        <div class="panel panel-default">
-            <div class="panel-heading">Недостатки</div>
-            <div class="panel-body">
-                <textarea name='flaws' rows="5" class="form-control" id="flaws" placeholder=""><?= $entry['flaws'] ?></textarea>
+                <textarea name='text' rows="5" class="form-control" id="text" placeholder=""><?= $entry['text'] ?></textarea>
             </div>
         </div>
     </div>
 </div>
-
 <div class="row" style="margin-top: 10px;">
     <div class="col-md-12">
         <input type="hidden" name="do" value="<?= $module ?>Edit">

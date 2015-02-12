@@ -73,20 +73,17 @@ class Allreviews extends MX_Controller {
         }
     }
 
-    public function save($object_id = false) {
-        $data['object_id'] = $object_id;
+    public function save() {
         if ($this->input->post('do') == $this->module . 'Save') {
             $this->form_validation->set_rules('name', 'Имя', 'required|trim|xss_clean');
-            $this->form_validation->set_rules('worths', 'Достоинства', 'trim|xss_clean');
-            $this->form_validation->set_rules('flaws', 'Недостатки', 'trim|xss_clean');
-            $this->form_validation->set_rules('obj_id', '', 'trim|xss_clean');
+            $this->form_validation->set_rules('text', 'Текст отзыва', 'required|trim|xss_clean');
 
             $this->form_validation->set_error_delimiters('<p style="color:red;">', '</p>');
 
             if ($this->form_validation->run() == FALSE) {
-                $this->load->view('front/allreviews_add_form', $data);
+                $this->load->view('front/allreviews_add_form');
             } else {
-                $this->model->set($object_id);
+                $this->model->set();
                 echo '<p style="margin:10px; font-weight:bold; text-align:center; color:green">Успех! Отзыв появится после рассмотрения администратором.</p>';
 
                 $config = array(
@@ -117,7 +114,7 @@ class Allreviews extends MX_Controller {
                 $this->email->send();
             }
         } else {
-            $this->load->view('front/allreviews_add_form', $data);
+            $this->load->view('front/allreviews_add_form');
         }
     }
 
@@ -132,7 +129,6 @@ class Allreviews extends MX_Controller {
         $entry = $this->model->get($id);
         $data['entry'] = $entry;
         $review = $this->model->get($id);
-        $data['tour'] = Modules::run('tours/get_by_id', $review['object_id']);
 
         if ($this->input->post('do') == $this->module . 'Edit') {
 

@@ -16,6 +16,8 @@ class Allreviews_model extends CI_Model {
 
                 return $query->row_array();
             }
+            $this->db->order_by('order','desc');
+            $this->db->order_by('date','desc');
             $query = $this->db->get($this->table_name);
             if (count($query->result_array()) > 0) {
                 return $query->result_array();
@@ -28,7 +30,7 @@ class Allreviews_model extends CI_Model {
 
                 return $query->row_array();
             }
-            $this->db->order_by('date', 'desc')->order_by('date', 'desc');
+            $this->db->order_by('order', 'desc')->order_by('date', 'desc');
             $query = $this->db->get_where($this->table_name, array('active' => 'on'));
             if (count($query->result_array()) > 0) {
                 return $query->result_array();
@@ -36,6 +38,24 @@ class Allreviews_model extends CI_Model {
                 return false;
             }
         }
+    }
+
+    public function order($id, $direction) {
+        $query = $this->db->get_where($this->table_name, array('id' => $id));
+        $category = $query->row_array();
+        $order = $category['order'];
+        if ($direction == 'up') {
+            $order++;
+        } elseif ($direction == 'down') {
+            $order--;
+        }
+        $data = array(
+            'order' => $order,
+        );
+
+        $this->db->where('id', $id);
+        $this->db->update($this->table_name, $data);
+        redirect('admin/' . $this->redirect_url);
     }
 
     public function getForMainPage() {
@@ -58,7 +78,7 @@ class Allreviews_model extends CI_Model {
     }
 
     public function get_email() {
-        $query = $this->db->get('reviews_email');
+        $query = $this->db->get($this->table_name . '_email');
         if (count($query->row_array()) > 0) {
             return $query->row_array();
         } else {
@@ -70,7 +90,7 @@ class Allreviews_model extends CI_Model {
         $data = array(
             'email' => $this->input->post('email')
         );
-        $this->db->update('reviews_email', $data);
+        $this->db->update($this->table_name . '_email', $data);
     }
 
     public function get_unread_requests() {
@@ -94,16 +114,14 @@ class Allreviews_model extends CI_Model {
         $this->db->update($this->table_name, $data);
     }
 
-    public function set($object_id) {
+    public function set() {
 
         date_default_timezone_set('Asia/Bishkek');
         $data = array(
             'name' => $this->input->post('name'),
-            'worths' => nl2br($this->input->post('worths')),
-            'flaws' => nl2br($this->input->post('flaws')),
+            'text' => nl2br($this->input->post('text')),
             'date' => date('Y-m-d H:i:s'),
             'ip' => $this->input->ip_address(),
-            'object_id' => $object_id,
             'read' => 0
         );
 
@@ -113,8 +131,7 @@ class Allreviews_model extends CI_Model {
     public function update($id) {
         $data = array(
             'active' => $this->input->post('active'),
-            'worths' => nl2br($this->input->post('worths')),
-            'flaws' => nl2br($this->input->post('flaws')),
+            'text' => nl2br($this->input->post('text')),
             'name' => $this->input->post('name')
         );
 

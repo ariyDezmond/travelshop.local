@@ -3,10 +3,9 @@
         <h3 class="main_title">Отзывы</h3>
         <div class="reviews_inner">
             <?= Modules::run('allreviews/view', true) ?>
-            <div class="reviews_inner_item add_review">
+            <div id="reviews-form-block">
                 <?= Modules::run('allreviews/save', true) ?>
             </div>
-            <a href="" class="add_review_btn">Добавить</a>
         </div>
     </div>
 </div>

@@ -61,6 +61,11 @@
                         }
                         ?>><a href="/admin/feedback">Обратная связь</a></li>
                         <li <?php
+                        if (strpos(current_url(), 'admin/allreviews')) {
+                            echo "class=\"active\"";
+                        }
+                        ?>><a href="/admin/allreviews">Отзывы</a></li>
+                        <li <?php
                         if (strpos(current_url(), 'admin/reviews')) {
                             echo "class=\"active\"";
                         }

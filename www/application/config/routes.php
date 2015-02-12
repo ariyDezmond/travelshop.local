@@ -48,14 +48,8 @@ $route['default_controller'] = "front/main";
 $route['admin/login'] = 'admin/login';
 $route['admin/logout'] = 'admin/logout';
 
-$route['requests/savemail'] = 'requests/savemail';
-$route['request/read'] = 'requests/setread';
-$route['backcall/savemail'] = 'backcall/savemail';
-$route['backcall/read'] = 'backcall/setread';
-$route['feedback/savemail'] = 'feedback/savemail';
-$route['feedback/read'] = 'feedback/setread';
-$route['reviews/savemail'] = 'reviews/savemail';
-$route['reviews/read'] = 'reviews/setread';
+$route['(:any)/savemail'] = '$1/savemail';
+$route['(:any)/setread'] = '$1/setread';
 
 $route['admin/tag_del'] = 'admin/tag_del';
 $route['admin/(:any)/up/(:any)'] = '$1/up/$2';
@@ -72,6 +66,7 @@ $route['admin'] = 'admin/view/main';
 //~~~~~~~~~~~~~~~~~~~~~~front routes~~~~~~~~~~~~~~~~~~~~~
 $route['tours/(:any)'] = 'front/tour/$1';
 $route['buy/(:num)'] = 'tours/buy/$1';
+
 $route['news/(:any)'] = 'front/onenew/$1';
 $route['blog/(:any)'] = 'front/post/$1';
 $route['vises/(:any)'] = 'front/vises/$1';

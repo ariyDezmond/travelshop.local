@@ -27,6 +27,7 @@
             <td>Дата</td>
             <td>Прочитан</td>
             <td>Активен</td>
+            <td>Порядок</td>
             <td width="30px">Подробнее /<br/>Редактировать</td>
             <td width="30px">Удалить</td>
         </tr>
@@ -52,6 +53,7 @@
                         <span style="-webkit-user-select: none;" class="label label-danger active">нет</span>
                     <?php endif; ?>
                 </td>
+                <td><a href='/admin/<?= $module ?>/up/<?= $entry['id'] ?>'><span class="glyphicon glyphicon-arrow-up"></span></a><a href='/admin/<?= $module ?>/down/<?= $entry['id'] ?>'><span class="glyphicon glyphicon-arrow-down"></span></a> (<?= $entry['order'] ?>)</td>
                 <td width="30px"><a href='/admin/<?= $module ?>/edit/<?= $entry['id'] ?>'><span class="glyphicon glyphicon-edit"></span></a></td>
                 <td width="30px"><a href='/admin/<?= $module ?>/delete/<?= $entry['id'] ?>'><span class="glyphicon glyphicon-remove"></span></a></td>
             </tr>
