@@ -33,11 +33,18 @@
             jQuery(document).ready(function () {
                 jQuery('#backcall').colorbox({
                     opacity: 0.5,
-                    height: "400",
-                    width: "500",
+                    width: "580",
                     close: "Закрыть"
                 });
-                $('.main-image a, .rotate-1 a').colorbox({rel:'gal'});
+                $('.main-image a, .rotate-1 a').colorbox({
+                    opacity: 0.5,
+                    rel: 'gal',
+                    current: "Фото {current} из {total}",
+                    previous: 'Пред.',
+                    next: 'След.',
+                    close: 'Закрыть'
+                });
+                $('.buy').colorbox({width: "580"});
             });
         </script>
 

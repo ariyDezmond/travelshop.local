@@ -56,31 +56,8 @@ class Backcall extends MX_Controller {
                 $this->load->view('front/backcall');
             } else {
                 $this->backcall_model->set();
-//                $data['user_name'] = $this->input->post('name');
-//                $data['user_phone'] = $this->input->post('phone');
-//
-//                $config['protocol'] = 'sendmail';
-//                $config['mailpath'] = '/usr/sbin/sendmail';
-//                $config['charset'] = 'utf-8';
-//                $config['wordwrap'] = TRUE;
-//                $config['mailtype'] = 'html';
-//
-//                $this->email->initialize($config);
-//
-//                $message = $this->load->view('backcall_msg', $data, true);
-//                $this->email->clear();
-//                $this->email->from('Travelshop');
-//                $this->email->to($email['email']);
-//                $this->email->subject('Новый заказ на обратный звонок.');
-//                $this->email->message($message);
-
-//                if ($this->email->send()) {
                     echo '<p style="margin:10px; font-weight:bold; text-align:center; color:green">Успех! Наш менеджер уже звонит вам!</p>';
-//                    return TRUE;
-//                } else {
-//                    echo '<p style="margin:10px; font-weight:bold; text-align:center; color:red;">Неизвестная ошибка! Сообщение не было доставлено.</p>';
-//                    return FALSE;
-//                }
+
             }
         } else {
             $this->load->view('front/backcall');

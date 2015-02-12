@@ -2,7 +2,7 @@
 
 class Allreviews extends MX_Controller {
 
-    private $module = 'reviews';
+    private $module = 'allreviews';
     private $module_name = 'Отзывы о турах';
     public $model;
 
@@ -42,7 +42,7 @@ class Allreviews extends MX_Controller {
             $data['entries'] = $this->model->get();
             $this->load->view($this->module, $data);
         } else {
-            $data['entries'] = $this->model->get('', true, $tour_id);
+            $data['entries'] = $this->model->get('', true);
             $this->load->view('front/allreviews', $data);
         }
     }
@@ -84,7 +84,7 @@ class Allreviews extends MX_Controller {
             $this->form_validation->set_error_delimiters('<p style="color:red;">', '</p>');
 
             if ($this->form_validation->run() == FALSE) {
-                $this->load->view('front/reviews_add_form', $data);
+                $this->load->view('front/allreviews_add_form', $data);
             } else {
                 $this->model->set($object_id);
                 echo '<p style="margin:10px; font-weight:bold; text-align:center; color:green">Успех! Отзыв появится после рассмотрения администратором.</p>';
@@ -117,7 +117,7 @@ class Allreviews extends MX_Controller {
                 $this->email->send();
             }
         } else {
-            $this->load->view('front/reviews_add_form', $data);
+            $this->load->view('front/allreviews_add_form', $data);
         }
     }
 

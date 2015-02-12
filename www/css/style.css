@@ -384,8 +384,14 @@ a.more_tours {
 .reviews .flexslider ul.reviews_slider li {}
   .reviews_item_wrapper {padding: 0 195px;}
     .reviews .reviews_item {width: 390px;height: 203px;background: url(../img/reviews_bg.png) 0 0 no-repeat;float: left;margin-right: 30px;margin-bottom: 22px;}
+    .reviews .reviews_icon {width:80px;height: 80px;overflow:hidden;float:left;margin:3px 0 0 2px;
+        
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        border-radius: 50%;}
+
     .reviews .reviews_item_2 {margin-right: 0;}
-      .reviews .flexslider ul.reviews_slider li img {width: 80px;height: 80px;float: left;margin: 2px 0 0 6px;}
+      .reviews .flexslider ul.reviews_slider li img {width: 80px;height: 80px;margin: 0;}
       .reviews h6 {float: left;max-width: 135px;margin: 7px 0 0 10px;text-transform: uppercase;font-size: 14px;line-height: 20px;font-family: "Arial";}
       .reviews p {width: 260px;height: 155px;float: right;margin: -40px 0 0 0px;font-size: 12px;line-height: 20px;font-family: "Arial";}
 
@@ -652,7 +658,7 @@ border-radius: 5px;}
 
 .tour_main .single_tour a.cost span {color: #002983;font-size: 25px;display: block;font-family: "TrebuchetMS";padding: 5px;}
   .tour_main .single_tour a.cost:hover {cursor: default;}
-.tour_main .single_tour a.buy {width: 216px;height: 76px;display: block;border:1px solid #dcdcdc;text-decoration: none;font-size: 25px;background: #fdc900;text-align: center;line-height: 76px;position: absolute;bottom: 90px;right: 30%;
+.tour_main .single_tour a.buy {outline: none;width: 216px;height: 76px;display: block;border:1px solid #dcdcdc;text-decoration: none;font-size: 25px;background: #fdc900;text-align: center;line-height: 76px;position: absolute;bottom: 90px;right: 30%;
 
   -webkit-border-radius: 5px;
 -moz-border-radius: 5px;
@@ -696,7 +702,7 @@ h5.hotel_title_2 {font-family: "Arial-Black";font-size: 25px;color: #949494;text
 -moz-border-radius: 5px;
 border-radius: 5px;}
 
-.hotel_info {overflow: hidden;padding-bottom: 50px;}
+.hotel_info {padding-bottom: 130px;}
 .hotel_info h5 {text-align: left;margin: 0;}
 .hotel_info img {float: left;width: 311px;height: 299px;margin: 0 35px 0 0;}
 .hotel_info p {color: #949494;font-size: 16px;line-height: 34px;font-family: "TrebuchetMS";}
@@ -775,13 +781,38 @@ border-radius: 8px;}
 
 a.close-modal {text-decoration: none;color: #000;position: absolute;bottom: 10px;right: 30px;font-size: 13px;}
 
-/*slider in tours*/
+/*modal - купить*/
+
+.modal-content2 input {height: 82px;border:2px solid #fdc900;display: block;width: 500px;margin-bottom: 5px;padding: 0 2%;font-size: 25px;
+
+-webkit-border-radius: 8px;
+-moz-border-radius: 8px;
+border-radius: 8px;}
+
+.modal-content2 input[type=button] {background: #fdc900;color: #fff;width: 526px;
+
+-webkit-border-radius: 8px;
+-moz-border-radius: 8px;
+border-radius: 8px;}
+
+/*rotate in tours*/
 
 .images-block {position: relative;float: left;width: 310px;min-height: 300px;height: auto;background: #cdcdcd; }
   .images-block .main-image img {width: 310px;height: 175px;margin: 0; }
   .images-block .rotation-images {position: relative;width: 100%;height: 60px; }
   .images-block .rotation-images ul.rotate-1 a img, .images-block .rotation-images ul.rotate-2 a img {position: relative;width: 98px;height: 55px;margin: 1px; }
-    .images-block .rotation-images .bx-prev {position: absolute;width: 24px;height: 30px;left: 21px;top: 51px;margin-left: -17px;text-indent: -9999px;background: url("../img/prev-bt.png") no-repeat;background-size: 50% 50%; }
-    .images-block .rotation-images .bx-next {position: absolute;width: 24px;height: 30px;right: -8px;top: 51px;margin-left: 310px;text-indent: -9999px;background: url("../img/next-bt.png") no-repeat;background-size: 50% 50%; }
+    .images-block .rotation-images .bx-prev {position: absolute;width: 24px;height: 30px;left: 7px;top: 51px;margin-left: -17px;text-indent: -9999px;background: url("../img/prev-bt.png") no-repeat;background-size: 50% 50%; }
+    .images-block .rotation-images .bx-next {position: absolute;width: 24px;height: 30px;right: -22px;top: 51px;margin-left: 310px;text-indent: -9999px;background: url("../img/next-bt.png") no-repeat;background-size: 50% 50%; }
     .images-block .rotation-images .disabled {display: none; }
     .images-block {width: 311px;height: 299px;float: left;margin-right: 10px;position: relative;}
+
+/*rotate 2 in tours*/
+
+.hotel_description .rotation-images ul li {width: 98px;height: 55px;margin: 0 5px 5px 0;}
+.hotel_description .rotation-images ul li a {font-size: 0;line-height: 0;}
+.hotel_description .rotation-images ul li a img {width: 98px;height: 55px;margin: 0;}
+.hotel_description .rotation-images .rotate-2 .slide {margin: 0;}
+.hotel_description .images-block .rotation-images .bx-prev {position: absolute;width: 24px;height: 30px;left: 7px;top: 225px;margin-left: -17px;text-indent: -9999px;background: url("../img/prev-bt.png") no-repeat;background-size: 50% 50%; }
+.hotel_description .images-block .rotation-images .bx-next {position: absolute;width: 24px;height: 30px;right: -22px;top: 225px;margin-left: 310px;text-indent: -9999px;background: url("../img/next-bt.png") no-repeat;background-size: 50% 50%; }
+    .images-block .rotation-images .disabled {display: none; }
+.images-block {margin-right: 30px;}

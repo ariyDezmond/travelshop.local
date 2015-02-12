@@ -42,11 +42,16 @@ class Tours extends MX_Controller {
         }
     }
 
+    public function buy($id) {
+        $data['id'] = $id;
+        $this->load->view('front/buy_form', $data);
+    }
+
     public function get_by_url($url) {
         return $this->tours_model->get_by_url($url);
     }
-    
-    public function get_by_id($id){
+
+    public function get_by_id($id) {
         return $this->tours_model->get($id);
     }
 

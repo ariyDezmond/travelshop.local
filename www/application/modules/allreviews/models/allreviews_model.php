@@ -29,7 +29,7 @@ class Allreviews_model extends CI_Model {
                 return $query->row_array();
             }
             $this->db->order_by('date', 'desc')->order_by('date', 'desc');
-            $query = $this->db->get_where($this->table_name, array('active' => 'on', 'object_id' => $tour_id));
+            $query = $this->db->get_where($this->table_name, array('active' => 'on'));
             if (count($query->result_array()) > 0) {
                 return $query->result_array();
             } else {

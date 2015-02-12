@@ -77,109 +77,41 @@
 
         <div class="flexslider">
             <ul class="slides reviews_slider">
+                <?php for ($i = 0; $i < 4; $i++): ?>
+                    <li>
+                        <div class="reviews_item_wrapper">
 
-                <li>
-                    <div class="reviews_item_wrapper">
+                            <div class="reviews_item">
+                                <div class="reviews_icon"> <img src="/img/miniIcon.png" alt=""></div>
+                                <h6>Виктор Иванов</h6>
+                                <div class="clear"></div>
+                                <p>Прикольная штука, заказал сразу 2 шт., для себя и для друга, часто летаем за границу по делам, теперь в полной зарядке все наши гаджеты, заряда хватает для всех. Спасибо! </p>
+                            </div><!-- /reviews_item -->
 
-                        <div class="reviews_item">
-                            <img src="img/reviews_person.png" alt="">
-                            <h6>Виктор Иванов</h6>
-                            <div class="clear"></div>
-                            <p>Прикольная штука, заказал сразу 2 шт., для себя и для друга, часто летаем за границу по делам, теперь в полной зарядке все наши гаджеты, заряда хватает для всех. Спасибо! </p>
-                        </div><!-- /reviews_item -->
+                            <div class="reviews_item reviews_item_2">
+                                <div class="reviews_icon"> <img src="/img/miniIcon.png" alt=""></div>
+                                <h6>Виктор Иванов</h6>
+                                <div class="clear"></div>
+                                <p>Прикольная штука, заказал сразу 2 шт., для себя и для друга, часто летаем за границу по делам, теперь в полной зарядке все наши гаджеты, заряда хватает для всех. Спасибо! </p>
+                            </div><!-- /reviews_item -->
 
-                        <div class="reviews_item reviews_item_2">
-                            <img src="img/reviews_person.png" alt="">
-                            <h6>Виктор Иванов</h6>
-                            <div class="clear"></div>
-                            <p>Прикольная штука, заказал сразу 2 шт., для себя и для друга, часто летаем за границу по делам, теперь в полной зарядке все наши гаджеты, заряда хватает для всех. Спасибо! </p>
-                        </div><!-- /reviews_item -->
+                            <div class="reviews_item">
+                                <div class="reviews_icon"> <img src="/img/miniIcon.png" alt=""></div>
+                                <h6>Виктор Иванов</h6>
+                                <div class="clear"></div>
+                                <p>Прикольная штука, заказал сразу 2 шт., для себя и для друга, часто летаем за границу по делам, теперь в полной зарядке все наши гаджеты, заряда хватает для всех. Спасибо! </p>
+                            </div><!-- /reviews_item -->
 
-                        <div class="reviews_item">
-                            <img src="img/reviews_person.png" alt="">
-                            <h6>Виктор Иванов</h6>
-                            <div class="clear"></div>
-                            <p>Прикольная штука, заказал сразу 2 шт., для себя и для друга, часто летаем за границу по делам, теперь в полной зарядке все наши гаджеты, заряда хватает для всех. Спасибо! </p>
-                        </div><!-- /reviews_item -->
+                            <div class="reviews_item reviews_item_2">
+                                <div class="reviews_icon"> <img src="/img/miniIcon.png" alt=""></div>
+                                <h6>Виктор Иванов</h6>
+                                <div class="clear"></div>
+                                <p>Прикольная штука, заказал сразу 2 шт., для себя и для друга, часто летаем за границу по делам, теперь в полной зарядке все наши гаджеты, заряда хватает для всех. Спасибо! </p>
+                            </div><!-- /reviews_item -->
 
-                        <div class="reviews_item reviews_item_2">
-                            <img src="img/reviews_person.png" alt="">
-                            <h6>Виктор Иванов</h6>
-                            <div class="clear"></div>
-                            <p>Прикольная штука, заказал сразу 2 шт., для себя и для друга, часто летаем за границу по делам, теперь в полной зарядке все наши гаджеты, заряда хватает для всех. Спасибо! </p>
-                        </div><!-- /reviews_item -->
-
-                    </div><!-- /reviews_item_wrapper -->
-                </li>
-
-                <li>
-                    <div class="reviews_item_wrapper">
-
-                        <div class="reviews_item">
-                            <img src="img/reviews_person.png" alt="">
-                            <h6>Виктор Иванов</h6>
-                            <div class="clear"></div>
-                            <p>Прикольная штука, заказал сразу 2 шт., для себя и для друга, часто летаем за границу по делам, теперь в полной зарядке все наши гаджеты, заряда хватает для всех. Спасибо! </p>
-                        </div><!-- /reviews_item -->
-
-                        <div class="reviews_item reviews_item_2">
-                            <img src="img/reviews_person.png" alt="">
-                            <h6>Виктор Иванов</h6>
-                            <div class="clear"></div>
-                            <p>Прикольная штука, заказал сразу 2 шт., для себя и для друга, часто летаем за границу по делам, теперь в полной зарядке все наши гаджеты, заряда хватает для всех. Спасибо! </p>
-                        </div><!-- /reviews_item -->
-
-                        <div class="reviews_item">
-                            <img src="img/reviews_person.png" alt="">
-                            <h6>Виктор Иванов</h6>
-                            <div class="clear"></div>
-                            <p>Прикольная штука, заказал сразу 2 шт., для себя и для друга, часто летаем за границу по делам, теперь в полной зарядке все наши гаджеты, заряда хватает для всех. Спасибо! </p>
-                        </div><!-- /reviews_item -->
-
-                        <div class="reviews_item reviews_item_2">
-                            <img src="img/reviews_person.png" alt="">
-                            <h6>Виктор Иванов</h6>
-                            <div class="clear"></div>
-                            <p>Прикольная штука, заказал сразу 2 шт., для себя и для друга, часто летаем за границу по делам, теперь в полной зарядке все наши гаджеты, заряда хватает для всех. Спасибо! </p>
-                        </div><!-- /reviews_item -->
-
-                    </div><!-- /reviews_item_wrapper -->
-                </li>
-
-                <li>
-                    <div class="reviews_item_wrapper">
-
-                        <div class="reviews_item">
-                            <img src="img/reviews_person.png" alt="">
-                            <h6>Виктор Иванов</h6>
-                            <div class="clear"></div>
-                            <p>Прикольная штука, заказал сразу 2 шт., для себя и для друга, часто летаем за границу по делам, теперь в полной зарядке все наши гаджеты, заряда хватает для всех. Спасибо! </p>
-                        </div><!-- /reviews_item -->
-
-                        <div class="reviews_item reviews_item_2">
-                            <img src="img/reviews_person.png" alt="">
-                            <h6>Виктор Иванов</h6>
-                            <div class="clear"></div>
-                            <p>Прикольная штука, заказал сразу 2 шт., для себя и для друга, часто летаем за границу по делам, теперь в полной зарядке все наши гаджеты, заряда хватает для всех. Спасибо! </p>
-                        </div><!-- /reviews_item -->
-
-                        <div class="reviews_item">
-                            <img src="img/reviews_person.png" alt="">
-                            <h6>Виктор Иванов</h6>
-                            <div class="clear"></div>
-                            <p>Прикольная штука, заказал сразу 2 шт., для себя и для друга, часто летаем за границу по делам, теперь в полной зарядке все наши гаджеты, заряда хватает для всех. Спасибо! </p>
-                        </div><!-- /reviews_item -->
-
-                        <div class="reviews_item reviews_item_2">
-                            <img src="img/reviews_person.png" alt="">
-                            <h6>Виктор Иванов</h6>
-                            <div class="clear"></div>
-                            <p>Прикольная штука, заказал сразу 2 шт., для себя и для друга, часто летаем за границу по делам, теперь в полной зарядке все наши гаджеты, заряда хватает для всех. Спасибо! </p>
-                        </div><!-- /reviews_item -->
-
-                    </div><!-- /reviews_item_wrapper -->
-                </li>
-
+                        </div><!-- /reviews_item_wrapper -->
+                    </li>
+                <?php endfor; ?>
             </ul>
         </div><!-- /flexslider -->
 
