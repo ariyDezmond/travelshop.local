@@ -1,6 +1,7 @@
-<div class="main-container">
-    <div class="news-blog-page">
-        <h1 class="block-title"><?= Modules::run('widget/get_widget', 'belay-title') ?></h1>
+<div class="news_and_blog">
+    <div class="wrapper">
+        <h3 class="main_title"><?= Modules::run('widget/get_widget', 'belay-title') ?></h3>
+        <div class="clear"></div>
         <?= Modules::run('widget/get_widget', 'belay') ?>
-
     </div>
+</div>

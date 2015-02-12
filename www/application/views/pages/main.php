@@ -48,7 +48,9 @@
 
 
 <div class="search_tour">
-    <div class="wrapper"></div><!-- /wrapper -->
+    <div class="wrapper">
+        <!--<iframe src="http://spb.ntk-intourist.ru/main.aspx?userCSS=<?= base_url() ?>css/ex2.css&ClientID=#####" width="100%" height="100%">-->
+    </div><!-- /wrapper -->
 </div><!-- /search_tour -->
 
 <?= Modules::run('tours/view', true) ?>

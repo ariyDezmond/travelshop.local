@@ -31,12 +31,13 @@
         <script src="/colorbox/jquery.colorbox-min.js"></script>
         <script>
             jQuery(document).ready(function () {
-                jQuery('a#backcall').colorbox({
+                jQuery('#backcall').colorbox({
                     opacity: 0.5,
                     height: "400",
                     width: "500",
                     close: "Закрыть"
                 });
+                $('.main-image a, .rotate-1 a').colorbox({rel:'gal'});
             });
         </script>
 

@@ -2,8 +2,12 @@
     <?php if (!empty($entries)): ?>
         <ul>
             <?php foreach ($entries as $entry): ?>
-                <li><a href="/vises/<?= $entry['url'] ?>/"><?= $entry['name'] ?></a></li>
-            <?php endforeach; ?>
+                <li <?php
+                if ($entry['url'] == $this->uri->segment(2)) {
+                    echo 'class="active"';
+                }
+                ?> ><a href="/vises/<?= $entry['url'] ?>/"><?= $entry['name'] ?></a></li>
+                <?php endforeach; ?>
         </ul>
     <?php endif; ?>
 </div>

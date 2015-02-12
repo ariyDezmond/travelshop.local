@@ -33,7 +33,7 @@
         </div>
         <div class="form-group">
             <label for="url">ЧПУ</label>
-            <input disabled name='url' value="<?= $entry['url'] ?>" type="text" class="form-control" id="url" placeholder="">
+            <input name='url' value="<?= $entry['url'] ?>" type="text" class="form-control" id="url" placeholder="">
         </div>
         <div class="form-group">
             <label for="country">Страна, город</label>

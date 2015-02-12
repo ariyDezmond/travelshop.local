@@ -133,6 +133,7 @@ class Tours_model extends CI_Model {
         if (!$image) {
             $data = array(
                 'name' => $this->input->post('name'),
+                'url' => $this->input->post('url'),
                 'flightout' => $this->input->post('flightout'),
                 'priceperone' => $this->input->post('priceperone'),
                 'country' => $this->input->post('country'),
@@ -161,6 +162,7 @@ class Tours_model extends CI_Model {
         } else {
             $data = array(
                 'name' => $this->input->post('name'),
+                'url' => $this->input->post('url'),
                 'flightout' => $this->input->post('flightout'),
                 'priceperone' => $this->input->post('priceperone'),
                 'country' => $this->input->post('country'),
