@@ -41,6 +41,18 @@ class Front extends MX_Controller {
         $this->load->view('pages/contacts', $data);
         $this->load->view('templates/footer', $data);
     }
+    
+    public function allreviews() {
+        $data['title'] = 'Отзывы';
+        $contacts = Modules::run('contacts/get');
+        $data['contacts'] = $contacts;
+        $this->load->view('templates/metahead', $data);
+        $this->load->view('templates/head', $data);
+        $this->load->view('templates/slider', $data);
+        $this->load->view('templates/none_reservation', $data);
+        $this->load->view('pages/allreviews', $data);
+        $this->load->view('templates/footer', $data);
+    }
 
     public function tours() {
         $data['title'] = 'Туры за рубеж';

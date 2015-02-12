@@ -51,7 +51,7 @@
             <label>В стоимость тура включено: <?= $entry['priceinc'] ?></label>
          </div>
          <div class="clear"></div>
-         <a href="#" class="cost">Итоговая цена<span><?= $entry['price'] ?></span>= <?= $entry['priceperone'] ?> за 1 чел.</a>
+         <a href="javascript:" class="cost">Итоговая цена<span><?= $entry['price'] ?></span>= <?= $entry['priceperone'] ?> за 1 чел.</a>
          <a href="#" class="buy">Купить</a>
          <a href="#" class="tour_number">Тур № <?= $entry['id'] ?></a>
       </div>
@@ -84,13 +84,6 @@
                   <img src="/img/jpg/news_and_blog.jpg" alt="">
                   <div class="hotel_info_inner">
                      <h5 class="hotel_title_2"><?= $hotel['name'] ?></h5>
-                     <ul class="raiting">
-                        <li class="active"></li>
-                        <li class="active"></li>
-                        <li class="active"></li>
-                        <li></li>
-                        <li></li>
-                     </ul>
                      <p>Сайт отеля:<a href="<?= $hotel['site'] ?>"><?= $hotel['site'] ?></a></p>
                      <p>Телефон: <?= $hotel['phone'] ?></p>
                      <p>Email:<a href="mailto:<?= $hotel['email'] ?>"><?= $hotel['email'] ?></a></p>

@@ -36,6 +36,7 @@ class News_model extends CI_Model {
                 return $query->row_array();
             }
             $this->db->order_by('order', 'desc');
+            $this->db->order_by('date', 'asc');
             $query = $this->db->get($this->table_name);
             if (count($query->result_array()) > 0) {
                 return $query->result_array();
@@ -49,6 +50,7 @@ class News_model extends CI_Model {
                 return $query->row_array();
             }
             $this->db->order_by('order', 'desc');
+            $this->db->order_by('date', 'asc');
             $query = $this->db->get_where($this->table_name, array('active' => 'on'));
             if (count($query->result_array()) > 0) {
                 return $query->result_array();
