@@ -111,9 +111,8 @@ class Allreviews extends MX_Controller {
                     $this->email->set_newline("\r\n");
                     $this->email->from('support@travelshop.ru', 'Новый отзыв на сайте ' . str_ireplace('http://', '', substr(base_url(), 0, -1)));
                     $this->email->to($emailArray['email']);
-                    $this->email->subject('Новый отзыв на сайте' . str_ireplace('http://', '', substr(base_url(), 0, -1)));
+                    $this->email->subject('Новый отзыв на сайте ' . str_ireplace('http://', '', substr(base_url(), 0, -1)));
                     $this->email->message(
-                            'Новый отзыв на сайте: ' . str_ireplace('http://', '', substr(base_url(), 0, -1)) . '<br>' .
                             'Имя: ' . $this->input->post('name') . '<br>' .
                             'Текст отзыва: ' . $this->input->post('text') . '<br>' .
                             'Дата: ' . date('Y-m-d H:i:s') . '<br>' .

@@ -23,7 +23,6 @@
 </div>
 <script>
     function sendbackcall() {
-        $('#backcall_form').css('opacity', '0.5');
         $("#send_button").css('display', 'none');
         $("#loading_img").css('display', 'block');
         $.ajax({
@@ -33,7 +32,6 @@
             data: $('#backcall_form').serialize(),
             success: function (response) {
                 document.getElementById('cboxLoadedContent').innerHTML = response;
-                $('#backcall_form').css('opacity', '1');
                 $("#send_button").css('display', 'block');
                 $("#loading_img").css('display', 'none');
             },

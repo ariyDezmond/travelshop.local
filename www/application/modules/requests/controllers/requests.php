@@ -64,11 +64,42 @@ class Requests extends MX_Controller {
             } else {
                 $this->requests_model->set();
                 echo '<p style="margin:10px; font-weight:bold; text-align:center; color:green">Успех! Заявка на поиск отеля была успешно отправлена! Ожидайте...наш менеджер свяжется с вами в ближайшее время.</p>';
-                //$arr = array(
-                //    'error' => '<p style="margin:10px; font-weight:bold; text-align:center; color:green">Успех! Заявка на поиск отеля была успешно отправлена! Ожидайте...наш менеджер свяжется с вам в ближайшее время.</p>'
-                //);
-                //$this->session->set_userdata($arr);
-                //$this->load->view('front/request_form');
+
+                $emailArray = $this->requests_model->get_email();
+
+                if (valid_email($emailArray['email'])) {
+                    $config = array(
+                        'protocol' => 'smtp',
+                        'smtp_host' => 'ssl://smtp.googlemail.com',
+                        'smtp_port' => 465,
+                        'smtp_user' => 'officialakniet@gmail.com',
+                        'smtp_pass' => 'googstud321',
+                        'mailtype' => 'html',
+                        'charset' => 'utf-8'
+                    );
+                    $this->load->library('email');
+                    $this->email->initialize($config);
+
+                    $this->email->set_newline("\r\n");
+                    $this->email->from('support@travelshop.ru', 'Новая заявка на поиск отеля');
+                    $this->email->to($emailArray['email']);
+                    $this->email->subject('Новая заявка на поиск отеля на сайте' . str_ireplace('http://', '', substr(base_url(), 0, -1)));
+                    $this->email->message(
+                            'Имя: ' . $this->input->post('name') . '<br>' .
+                            'Телефон: ' . $this->input->post('phone') . '<br>' .
+                            'Страна и город: ' . $this->input->post('country') . '<br>' .
+                            'Количество комнат: ' . $this->input->post('rooms') . '<br>' .
+                            'Цена за сутки: ' . $this->input->post('price') . '<br>' .
+                            'Дополнительная информация: ' . $this->input->post('text') . '<br>' .
+                            'E-mail: ' . $this->input->post('email') . '<br>' .
+                            'Количество звезд: ' . $this->input->post('stars') . '<br>' .
+                            'Количество мест: ' . $this->input->post('places') . '<br>' .
+                            'Количество дней: ' . $this->input->post('days') . '<br>' .
+                            'Дата: ' . date('Y-m-d H:i:s') . '<br>' .
+                            'IP: ' . $this->input->ip_address() . '<br>'
+                    );
+                    $this->email->send();
+                }
             }
         } else {
             $this->load->view('front/request_form');

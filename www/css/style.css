@@ -816,3 +816,13 @@ border-radius: 8px;}
 .hotel_description .images-block .rotation-images .bx-next {position: absolute;width: 24px;height: 30px;right: -22px;top: 225px;margin-left: 310px;text-indent: -9999px;background: url("../img/next-bt.png") no-repeat;background-size: 50% 50%; }
     .images-block .rotation-images .disabled {display: none; }
 .images-block {margin-right: 30px;}
+#request_form .loading_img{
+    min-width: 155px;
+    height: 42px;
+    position: absolute;
+    bottom: 22px;
+    right: 4px;
+    font-family: "TrebuchetMS";
+    font-size: 21px;
+    line-height: 42px;
+}
