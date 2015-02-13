@@ -61,11 +61,35 @@ class Feedback extends MX_Controller {
             } else {
                 $this->model->set();
                 echo '<p style="margin:10px; font-weight:bold; text-align:center; color:green">Успех! Сообщение отправлено.</p>';
-                //$arr = array(
-                //    'error' => '<p style="margin:10px; font-weight:bold; text-align:center; color:green">Успех! Заявка на поиск отеля была успешно отправлена! Ожидайте...наш менеджер свяжется с вам в ближайшее время.</p>'
-                //);
-                //$this->session->set_userdata($arr);
-                //$this->load->view('front/request_form');
+                $emailArray = $this->model->get_email();
+
+                if (valid_email($emailArray['email'])) {
+                    $config = array(
+                        'protocol' => 'smtp',
+                        'smtp_host' => 'ssl://smtp.googlemail.com',
+                        'smtp_port' => 465,
+                        'smtp_user' => 'officialakniet@gmail.com',
+                        'smtp_pass' => 'googstud321',
+                        'mailtype' => 'html',
+                        'charset' => 'utf-8'
+                    );
+                    $this->load->library('email');
+                    $this->email->initialize($config);
+
+                    $this->email->set_newline("\r\n");
+                    $this->email->from('support@travelshop.ru', 'Новое сообщение с сайта ' . str_ireplace('http://', '', substr(base_url(), 0, -1)));
+                    $this->email->to($emailArray['email']);
+                    $this->email->subject('Новое сообщение с сайта ' . str_ireplace('http://', '', substr(base_url(), 0, -1)));
+                    $this->email->message(
+                            'Имя: ' . $this->input->post('name') . '<br>' .
+                            'Телефон: ' . $this->input->post('phone') . '<br>' .
+                            'E-mail: ' . $this->input->post('email') . '<br>' .
+                            'Текст: ' . $this->input->post('text') . '<br>' .
+                            'Дата: ' . date('Y-m-d H:i:s') . '<br>' .
+                            'IP: ' . $this->input->ip_address() . '<br>'
+                    );
+                    $this->email->send();
+                }
             }
         } else {
             $this->load->view('front/feedback_form');

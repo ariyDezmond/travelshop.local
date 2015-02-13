@@ -1,7 +1,7 @@
 <script>
     $(document).ready(function () {
         $.ajax({
-            url: '/request/read',
+            url: '/<?= $module ?>/read',
             type: "POST",
             dataType: "html",
             data: {

@@ -21,11 +21,12 @@
         }
         ?> placeholder="Ваше сообщение..."><?= set_value('text') ?></textarea>
         <input type="hidden" name="do" value="feedbackSave">
-        <input type="button" value="Отправить" onclick="javascript:sendfeedback()">
+        <input id="submit_msg" type="button" value="Отправить" onclick="javascript:sendfeedback()">
     </form>
 </div>
 <script>
     function sendfeedback() {
+        $('#submit_msg').css('visibility', 'hidden');
         $.ajax({
             url: '/feedback/save',
             type: "POST",
@@ -33,6 +34,7 @@
             data: $('#save_feedback').serialize(),
             success: function (response) {
                 document.getElementById('feedback_form').innerHTML = response;
+                $('#submit_msg').css('visibility', 'visible');
             },
             error: function (response) {
                 document.getElementById('feedback_form').innerHTML = "Ошибка при отправке формы";

@@ -49,7 +49,7 @@ $route['admin/login'] = 'admin/login';
 $route['admin/logout'] = 'admin/logout';
 
 $route['(:any)/savemail'] = '$1/savemail';
-$route['(:any)/setread'] = '$1/setread';
+$route['(:any)/read'] = '$1/setread';
 
 $route['admin/tag_del'] = 'admin/tag_del';
 $route['admin/(:any)/up/(:any)'] = '$1/up/$2';
