@@ -37,6 +37,13 @@
     }
     ?> type="checkbox"> Активен
 </label>
+<label style="margin-left: 20px;">
+    <input name='in_slider' <?php
+    if ($entry['in_slider'] == 'on') {
+        echo 'checked';
+    }
+    ?> type="checkbox"> Выводить в слайдере
+</label>
 <div class="row">
     <div class="col-md-6">
         <div class="panel panel-default">

@@ -47,6 +47,14 @@ class Allreviews extends MX_Controller {
         }
     }
 
+    public function get_for_slider() {
+        $entries = $this->model->get_for_slider();
+        $data['entries'] = array_chunk($entries, 4);
+//        echo '<pre>';
+//        print_r(array_chunk($entries, 4));
+        $this->load->view('front/allreviews_in_slider', $data);
+    }
+
     public function listOnMainPage() {
         $data['module_name'] = $this->module_name;
         $data['module'] = $this->module;
@@ -134,7 +142,8 @@ class Allreviews extends MX_Controller {
         if ($this->input->post('do') == $this->module . 'Edit') {
 
             $this->form_validation->set_rules('name', 'Заголовок', 'required|trim|xss_clean');
-            $this->form_validation->set_rules('email', 'E-mail', 'trim|valid_email|xss_clean');
+            $this->form_validation->set_rules('active', 'Активность', 'trim|xss_clean');
+            $this->form_validation->set_rules('in_slider', 'Вывод в слайдере', 'trim|xss_clean');
             $this->form_validation->set_rules('text', 'Текст', 'trim|xss_clean');
             $this->form_validation->set_error_delimiters('<span class="label label-danger">', '</span>');
 

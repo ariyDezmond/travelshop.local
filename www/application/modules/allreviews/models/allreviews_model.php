@@ -16,8 +16,8 @@ class Allreviews_model extends CI_Model {
 
                 return $query->row_array();
             }
-            $this->db->order_by('order','desc');
-            $this->db->order_by('date','desc');
+            $this->db->order_by('order', 'desc');
+            $this->db->order_by('date', 'desc');
             $query = $this->db->get($this->table_name);
             if (count($query->result_array()) > 0) {
                 return $query->result_array();
@@ -77,6 +77,11 @@ class Allreviews_model extends CI_Model {
         return $query->result_array();
     }
 
+    public function get_for_slider() {
+        $query = $this->db->order_by("order", "desc")->order_by("date", "desc")->get_where($this->table_name, array('active' => 'on', 'in_slider' => 'on'));
+        return $query->result_array();
+    }
+
     public function get_email() {
         $query = $this->db->get($this->table_name . '_email');
         if (count($query->row_array()) > 0) {
@@ -131,6 +136,7 @@ class Allreviews_model extends CI_Model {
     public function update($id) {
         $data = array(
             'active' => $this->input->post('active'),
+            'in_slider' => $this->input->post('in_slider'),
             'text' => nl2br($this->input->post('text')),
             'name' => $this->input->post('name')
         );

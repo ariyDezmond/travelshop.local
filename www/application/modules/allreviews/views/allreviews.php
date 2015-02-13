@@ -27,6 +27,7 @@
             <td>Дата</td>
             <td>Прочитан</td>
             <td>Активен</td>
+            <td>В слайдере</td>
             <td>Порядок</td>
             <td width="30px">Подробнее /<br/>Редактировать</td>
             <td width="30px">Удалить</td>
@@ -48,6 +49,13 @@
                 </td>
                 <td width="30px">
                     <?php if ($entry['active'] == 'on'): ?>
+                        <span style="-webkit-user-select: none;" class="label label-success active">да</span>
+                    <?php else: ?>
+                        <span style="-webkit-user-select: none;" class="label label-danger active">нет</span>
+                    <?php endif; ?>
+                </td>
+                <td width="30px">
+                    <?php if ($entry['in_slider'] == 'on'): ?>
                         <span style="-webkit-user-select: none;" class="label label-success active">да</span>
                     <?php else: ?>
                         <span style="-webkit-user-select: none;" class="label label-danger active">нет</span>
