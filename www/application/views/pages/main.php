@@ -49,7 +49,7 @@
 
 <div class="search_tour">
     <div class="wrapper">
-        <!--<iframe src="http://spb.ntk-intourist.ru/main.aspx?userCSS=<?= base_url() ?>css/ex2.css&ClientID=#####" width="100%" height="100%">-->
+        <iframe src="http://spb.ntk-intourist.ru/main.aspx?userCSS=<?= base_url() ?>css/ex2.css" width="100%" height="100%"></iframe>
     </div><!-- /wrapper -->
 </div><!-- /search_tour -->
 
@@ -77,7 +77,7 @@
 
         <div class="flexslider">
             <ul class="slides reviews_slider">
-                    <?= Modules::run('allreviews/get_for_slider') ?>
+                <?= Modules::run('allreviews/get_for_slider') ?>
             </ul>
         </div><!-- /flexslider -->
 
