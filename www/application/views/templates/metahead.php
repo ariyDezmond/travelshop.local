@@ -59,7 +59,7 @@
                     maxHeight: "600",
                     scalePhotos: true
                 });
-                $('.buy').colorbox({width: "580"});
+                $('.buy').colorbox({width: "580", height: "450"});
             });
         </script>
 

@@ -52,7 +52,7 @@
             </div>
             <div class="clear"></div>
             <a href="javascript:" class="cost">Итоговая цена<span><?= $entry['price'] ?></span>= <?= $entry['priceperone'] ?> за 1 чел.</a>
-            <a href="/buy/<?= $entry['id'] ?>" class="buy">Купить</a>
+            <a href="/toursbuy/send/<?= $entry['id'] ?>" class="buy">Купить</a>
             <a href="#" class="tour_number">Тур № <?= $entry['id'] ?></a>
         </div>
         <?php if (count($hotel) > 1): ?>

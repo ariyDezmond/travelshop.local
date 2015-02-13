@@ -13,22 +13,22 @@
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 <li <?php
-                if (strpos(current_url(), 'admin/main')) {
+                if ($this->uri->segment(2) == 'main') {
                     echo "class=\"active\"";
                 }
                 ?> ><a href="/admin/main">Главная</a></li>
                 <li <?php
-                if (strpos(current_url(), 'admin/hotels')) {
+                if ($this->uri->segment(2) == 'hotels') {
                     echo "class=\"active\"";
                 }
                 ?> ><a href="/admin/hotels">Отели</a></li>
                 <li <?php
-                if (strpos(current_url(), 'admin/tours')) {
+                if ($this->uri->segment(2) == 'tours') {
                     echo "class=\"active\"";
                 }
                 ?> ><a href="/admin/tours">Туры</a></li>
                 <li <?php
-                if (strpos(current_url(), 'admin/widget')) {
+                if ($this->uri->segment(2) == 'widget') {
                     echo "class=\"active\"";
                 }
                 ?> ><a href="/admin/widget">Виджеты</a></li>
@@ -36,47 +36,52 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Модули <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
                         <li <?php
-                        if (strpos(current_url(), 'admin/blog')) {
+                        if ($this->uri->segment(2) == 'toursbuy') {
+                            echo "class=\"active\"";
+                        }
+                        ?>><a href="/admin/toursbuy">Покупка туров</a></li>
+                        <li <?php
+                        if ($this->uri->segment(2) == 'blog') {
                             echo "class=\"active\"";
                         }
                         ?>><a href="/admin/blog">Блог</a></li>
                         <li <?php
-                        if (strpos(current_url(), 'admin/news')) {
+                        if ($this->uri->segment(2) == 'news') {
                             echo "class=\"active\"";
                         }
                         ?>><a href="/admin/news">Новости</a></li>
                         <li <?php
-                        if (strpos(current_url(), 'admin/contacts')) {
+                        if ($this->uri->segment(2) == 'contacts') {
                             echo "class=\"active\"";
                         }
                         ?>><a href="/admin/contacts">Контакты</a></li>
                         <li <?php
-                        if (strpos(current_url(), 'admin/backcall')) {
+                        if ($this->uri->segment(2) == 'backcall') {
                             echo "class=\"active\"";
                         }
                         ?>><a href="/admin/backcall">Обратный звонок</a></li>
                         <li <?php
-                        if (strpos(current_url(), 'admin/feedback')) {
+                        if ($this->uri->segment(2) == 'feedback') {
                             echo "class=\"active\"";
                         }
                         ?>><a href="/admin/feedback">Обратная связь</a></li>
                         <li <?php
-                        if (strpos(current_url(), 'admin/allreviews')) {
+                        if ($this->uri->segment(2) == 'allreviews') {
                             echo "class=\"active\"";
                         }
                         ?>><a href="/admin/allreviews">Отзывы</a></li>
                         <li <?php
-                        if (strpos(current_url(), 'admin/reviews')) {
+                        if ($this->uri->segment(2) == 'reviews') {
                             echo "class=\"active\"";
                         }
                         ?>><a href="/admin/reviews">Отзывы о турах</a></li>
                         <li <?php
-                        if (strpos(current_url(), 'admin/vises')) {
+                        if ($this->uri->segment(2) == 'vises') {
                             echo "class=\"active\"";
                         }
                         ?>><a href="/admin/vises">Визовые услуги</a></li>
                         <li <?php
-                        if (strpos(current_url(), 'admin/partners')) {
+                        if ($this->uri->segment(2) == 'partners') {
                             echo "class=\"active\"";
                         }
                         ?>><a href="/admin/partners">Партнеры</a></li>

@@ -246,4 +246,4 @@
         <button type="submit" class="btn btn-default">Сохранить</button>
     </div>    
 </div>
-<?form_close(); ?>
+<?php form_close(); ?>

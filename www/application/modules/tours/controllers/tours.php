@@ -43,8 +43,12 @@ class Tours extends MX_Controller {
     }
 
     public function buy($id) {
-        $data['id'] = $id;
-        $this->load->view('front/buy_form', $data);
+        if ($this->input->post('do') == 'buy') {
+            $data['id'] = $id;
+            $this->load->view('front/buy_form', $data);
+        } else {
+            
+        }
     }
 
     public function get_by_url($url) {
