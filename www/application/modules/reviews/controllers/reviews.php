@@ -110,8 +110,8 @@ class Reviews extends MX_Controller {
                     $this->email->subject('Новый отзыв о туре на сайте ' . str_ireplace('http://', '', substr(base_url(), 0, -1)));
                     $this->email->message(
                             'Имя: ' . $this->input->post('name') . '<br>' .
-                            'worths: ' . $this->input->post('worths') . '<br>' .
-                            'flaws: ' . $this->input->post('flaws') . '<br>' .
+                            'Достоинства: ' . $this->input->post('worths') . '<br>' .
+                            'Недостатки: ' . $this->input->post('flaws') . '<br>' .
                             'Ссылка на тур: <a href="' . base_url() . '/tours/' . $tour['url'] . '">' . $tour['name'] . '</a><br>' .
                             'Дата: ' . date('Y-m-d H:i:s') . '<br>' .
                             'IP: ' . $this->input->ip_address() . '<br>'

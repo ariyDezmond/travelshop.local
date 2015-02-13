@@ -16,7 +16,7 @@
 <script>
     function sendform() {
         $('#form').css('opacity', '0.5');
-        $('#send_review_btn').hide();
+        $('#send_review_btn').css('visibility', 'hidden');
         $.ajax({
             url: '/reviews/save/<?= $object_id ?>',
             type: "POST",
@@ -25,7 +25,7 @@
             success: function (response) {
                 document.getElementById('reviews-form-block').innerHTML = response;
                 $('#form').css('opacity', '1');
-                $('#send_review_btn').show();
+                $('#send_review_btn').css('visibility', 'visible');
             },
             error: function (response) {
                 document.getElementById('reviews-form-block').innerHTML = "<?= $this->lang->line('text_error_while_sending_form') ?>";
