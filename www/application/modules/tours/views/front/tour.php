@@ -5,7 +5,7 @@
         <div class="single_tour">
 
             <div class="images-block">
-                <div class="main-image">
+                <div class="main-image rotator">
                     <a href="/images/tours/<?= $entry['image'] ?>"><img src="/images/tours/<?= $entry['image'] ?>" alt="<?= $entry['name'] ?>"></a>
                 </div>
                 <div class="rotation-images">
@@ -82,7 +82,7 @@
                     <div class="hotel_description_content_left_side">
                         <div class="hotel_info">
                             <div class="images-block">
-                                <div class="main-image">
+                                <div class="main-image rotator2">
                                     <a href="/images/tours/<?= $entry['image'] ?>"><img src="/images/tours/<?= $entry['image'] ?>" alt="<?= $entry['name'] ?>"></a>
                                 </div>
                                 <div class="rotation-images">

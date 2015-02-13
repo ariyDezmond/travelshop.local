@@ -37,13 +37,27 @@
                     height: "360",
                     close: "Закрыть"
                 });
-                $('.main-image a, .rotate-1 a').colorbox({
+                $('.rotator a, .rotate-1 a').colorbox({
                     opacity: 0.5,
                     rel: 'gal',
                     current: "Фото {current} из {total}",
                     previous: 'Пред.',
                     next: 'След.',
-                    close: 'Закрыть'
+                    close: 'Закрыть',
+                    maxWidth: "1000",
+                    maxHeight: "600",
+                    scalePhotos: true
+                });
+                $('.rotator2 a, .rotate-2 a').colorbox({
+                    opacity: 0.5,
+                    rel: 'gal',
+                    current: "Фото {current} из {total}",
+                    previous: 'Пред.',
+                    next: 'След.',
+                    close: 'Закрыть',
+                    maxWidth: "1000",
+                    maxHeight: "600",
+                    scalePhotos: true
                 });
                 $('.buy').colorbox({width: "580"});
             });
