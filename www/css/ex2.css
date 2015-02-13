@@ -1,8 +1,8 @@
 /**************************************************/
-/************* основные настройки *****************/
+/************* РѕСЃРЅРѕРІРЅС‹Рµ РЅР°СЃС‚СЂРѕР№РєРё *****************/
 /**************************************************/
 
-/*цвет шрифта*/
+/*С†РІРµС‚ С€СЂРёС„С‚Р°*/
 body
 {
     color: #000000;
@@ -10,7 +10,7 @@ body
 
 
 
-/*Разделитель между ячейками*/
+/*Р Р°Р·РґРµР»РёС‚РµР»СЊ РјРµР¶РґСѓ СЏС‡РµР№РєР°РјРё*/
 td.leftBorder
 {
     border-left-color:#D6D3CE;
@@ -18,13 +18,13 @@ td.leftBorder
     border-left-style:solid;
 }
     
-/*Рамка над дивом с закруглеенными уголками*/
+/*Р Р°РјРєР° РЅР°Рґ РґРёРІРѕРј СЃ Р·Р°РєСЂСѓРіР»РµРµРЅРЅС‹РјРё СѓРіРѕР»РєР°РјРё*/
 table.mainTablePanel
 {
     background-color:#D6D3CE; 
 }
     
-/*Внутренний див с закругленными уголками*/
+/*Р’РЅСѓС‚СЂРµРЅРЅРёР№ РґРёРІ СЃ Р·Р°РєСЂСѓРіР»РµРЅРЅС‹РјРё СѓРіРѕР»РєР°РјРё*/
  div.mainDivPanel
 {
     background: #e2e2e2; /* old browsers */
@@ -36,14 +36,14 @@ background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e2e2e
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', endColorstr='#fefefe',GradientType=0 );  */
 }
 
-/*Задний фон элементов*/
+/*Р—Р°РґРЅРёР№ С„РѕРЅ СЌР»РµРјРµРЅС‚РѕРІ*/
 .bgec
 {
     background-color:#D6D3CE;
 }
 
 
-/*Цвет кнопки поиска*/
+/*Р¦РІРµС‚ РєРЅРѕРїРєРё РїРѕРёСЃРєР°*/
 .button
 {
      background: #e2e2e2; /* old browsers */
@@ -56,10 +56,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', end
 }
     
 /**************************************************/
-/******************* логотипы  ********************/
+/******************* Р»РѕРіРѕС‚РёРїС‹  ********************/
 /**************************************************/
 
-/*Указывает какой, как и откуда выводить логотип*/
+/*РЈРєР°Р·С‹РІР°РµС‚ РєР°РєРѕР№, РєР°Рє Рё РѕС‚РєСѓРґР° РІС‹РІРѕРґРёС‚СЊ Р»РѕРіРѕС‚РёРї*/
 div.logo
 {
     background-position: right;
@@ -67,7 +67,7 @@ div.logo
     background-repeat: no-repeat;
 }
 
-/*Указывает какой, как и откуда выводить логотип календарика*/
+/*РЈРєР°Р·С‹РІР°РµС‚ РєР°РєРѕР№, РєР°Рє Рё РѕС‚РєСѓРґР° РІС‹РІРѕРґРёС‚СЊ Р»РѕРіРѕС‚РёРї РєР°Р»РµРЅРґР°СЂРёРєР°*/
 .calendar
 {
     background-position: right;
@@ -82,54 +82,54 @@ div.places
     padding-left: 20px;
 }
 
-/* места есть*/
+/* РјРµСЃС‚Р° РµСЃС‚СЊ*/
 div.airPlacesAvailable
 {
     background-image: url('../images/airoplan_green.jpg');
 }
 
-/* мест мало */
+/* РјРµСЃС‚ РјР°Р»Рѕ */
 div.airPlacesFew
 {
     background-image: url('../images/airoplan_yellow.jpg');
 }
 
-/* мест нет */
+/* РјРµСЃС‚ РЅРµС‚ */
 div.airPlacesDisable
 {
     background-image: url('../images/airoplan_red.jpg');
 }
-/* места есть*/
+/* РјРµСЃС‚Р° РµСЃС‚СЊ*/
 div.airPlacesAvailableBack
 {
     background-image: url('../images/airoplan_green_Back.jpg');
 }
 
-/* мест мало */
+/* РјРµСЃС‚ РјР°Р»Рѕ */
 div.airPlacesFewBack
 {
     background-image: url('../images/airoplan_yellow_Back.jpg');
 }
 
-/* мест нет */
+/* РјРµСЃС‚ РЅРµС‚ */
 div.airPlacesDisableBack
 {
     background-image: url('../images/airoplan_red_Back.jpg');
 }
 
-/* мгновенное подтверждение */
+/* РјРіРЅРѕРІРµРЅРЅРѕРµ РїРѕРґС‚РІРµСЂР¶РґРµРЅРёРµ */
 div.hotelPlacesAvailable
 {
     background-image: url('../images/house_green.jpg');
 }
 
-/* по запросу */
+/* РїРѕ Р·Р°РїСЂРѕСЃСѓ */
 div.hotelPlacesByReq
 {
     background-image: url('../images/house_yelow.jpg');
 }
 
-/* отсутствуют */
+/* РѕС‚СЃСѓС‚СЃС‚РІСѓСЋС‚ */
 div.HotelPlacesDisable
 {
     background-image: url('../images/house_red.jpg');
@@ -139,16 +139,16 @@ div.HotelPlacesDisable
 
 
 /**************************************************/
-/**********  рекомендуемые настройки  *************/
+/**********  СЂРµРєРѕРјРµРЅРґСѓРµРјС‹Рµ РЅР°СЃС‚СЂРѕР№РєРё  *************/
 /**************************************************/
 
-/*размер шрифта*/
+/*СЂР°Р·РјРµСЂ С€СЂРёС„С‚Р°*/
 body
 {
     font-size: smaller;
 }
 
-/*таблица всех блоков формы поиска*/
+/*С‚Р°Р±Р»РёС†Р° РІСЃРµС… Р±Р»РѕРєРѕРІ С„РѕСЂРјС‹ РїРѕРёСЃРєР°*/
 table.SearchTableForm
 {
     border:1px;
@@ -157,7 +157,7 @@ table.SearchTableForm
 
 
 
-/* поле поиска отеля по названию*/
+/* РїРѕР»Рµ РїРѕРёСЃРєР° РѕС‚РµР»СЏ РїРѕ РЅР°Р·РІР°РЅРёСЋ*/
 .searchbyname
 {
     text-align:left;
@@ -166,7 +166,7 @@ table.SearchTableForm
 
 
 
-/* размер поля ввода возраста детей*/
+/* СЂР°Р·РјРµСЂ РїРѕР»СЏ РІРІРѕРґР° РІРѕР·СЂР°СЃС‚Р° РґРµС‚РµР№*/
 .child-age 
 {
     width:50px;
@@ -174,29 +174,29 @@ table.SearchTableForm
     color:inherit;
 }
 
-/* размер поля выбора города и направления*/
+/* СЂР°Р·РјРµСЂ РїРѕР»СЏ РІС‹Р±РѕСЂР° РіРѕСЂРѕРґР° Рё РЅР°РїСЂР°РІР»РµРЅРёСЏ*/
 .combo1
 {
     width:180px;
 }
 
-/* скрывает бордюры таблиц*/
+/* СЃРєСЂС‹РІР°РµС‚ Р±РѕСЂРґСЋСЂС‹ С‚Р°Р±Р»РёС†*/
 .innerWidth
     {
         border-style:none;
         border-width:1px;
     }
     
-/*Размещение кнопки поиска*/
+/*Р Р°Р·РјРµС‰РµРЅРёРµ РєРЅРѕРїРєРё РїРѕРёСЃРєР°*/
 .butSearch
 {
     text-align:right;
 }
 
 /****************************************************
-*****************Настройки календаря ****************
+*****************РќР°СЃС‚СЂРѕР№РєРё РєР°Р»РµРЅРґР°СЂСЏ ****************
 ****************************************************/
-/*Цвет доступных для выбора ячеек выбранного месяца*/
+/*Р¦РІРµС‚ РґРѕСЃС‚СѓРїРЅС‹С… РґР»СЏ РІС‹Р±РѕСЂР° СЏС‡РµРµРє РІС‹Р±СЂР°РЅРЅРѕРіРѕ РјРµСЃСЏС†Р°*/
 tbody.datepickerDays td.datepickerSelected{
 	background-color:#C4C1BC;
 	color:#E6E6E6;
@@ -204,25 +204,25 @@ tbody.datepickerDays td.datepickerSelected{
 
 
 
-/*Цвет доступных дней, не входящих в выбранный месяц*/
+/*Р¦РІРµС‚ РґРѕСЃС‚СѓРїРЅС‹С… РґРЅРµР№, РЅРµ РІС…РѕРґСЏС‰РёС… РІ РІС‹Р±СЂР°РЅРЅС‹Р№ РјРµСЃСЏС†*/
 tbody.datepickerDays td.datepickerNotInMonth.datepickerSelected {
 	background-color:#C4C1BC;
 	color:#E6E6E6;
 }
 
-/*Цвет дней со спецпредложениями*/
+/*Р¦РІРµС‚ РґРЅРµР№ СЃРѕ СЃРїРµС†РїСЂРµРґР»РѕР¶РµРЅРёСЏРјРё*/
 tbody.datepickerDays td.datepickerSpecialDays{
 	background-color:red;
 	color:#E6E6E6;
 }
 
-/*Цвет дней со спецпредложениями, не входящих в выбранный месяц*/
+/*Р¦РІРµС‚ РґРЅРµР№ СЃРѕ СЃРїРµС†РїСЂРµРґР»РѕР¶РµРЅРёСЏРјРё, РЅРµ РІС…РѕРґСЏС‰РёС… РІ РІС‹Р±СЂР°РЅРЅС‹Р№ РјРµСЃСЏС†*/
 tbody.datepickerDays td.datepickerNotInMonth.datepickerSpecialDays {
 	background-color:#FAB6B1;
 	color:#E6E6E6;
 }
 
-/*Ячейка сегодняшнего дня, если он недоступен
+/*РЇС‡РµР№РєР° СЃРµРіРѕРґРЅСЏС€РЅРµРіРѕ РґРЅСЏ, РµСЃР»Рё РѕРЅ РЅРµРґРѕСЃС‚СѓРїРµРЅ
 tbody.datepickerDays td.datepickerDisabled.datepickerSelected
 {
     background-color:Red;
@@ -233,25 +233,25 @@ tbody.datepickerDays td.datepickerDisabled.datepickerSelected
     border-color:Red;
 }*/
 
-/*Цвет недоступных дней, не входящих в выбранных месяц*/
+/*Р¦РІРµС‚ РЅРµРґРѕСЃС‚СѓРїРЅС‹С… РґРЅРµР№, РЅРµ РІС…РѕРґСЏС‰РёС… РІ РІС‹Р±СЂР°РЅРЅС‹С… РјРµСЃСЏС†*/
 td.datepickerDisabled.datepickerNotInMonth a
 {
     color: #C0C0C0;
 }
 
 
-/*Цвет дней, не доступных для выбора при наведении курсора*/
+/*Р¦РІРµС‚ РґРЅРµР№, РЅРµ РґРѕСЃС‚СѓРїРЅС‹С… РґР»СЏ РІС‹Р±РѕСЂР° РїСЂРё РЅР°РІРµРґРµРЅРёРё РєСѓСЂСЃРѕСЂР°*/
 td.datepickerDisabled a:hover, div.datepicker td.datepickerNotInMonth a:hover
 {
     color: #A3A3A3;
 }
 
-/*Цвет при наведении на ссылку*/
+/*Р¦РІРµС‚ РїСЂРё РЅР°РІРµРґРµРЅРёРё РЅР° СЃСЃС‹Р»РєСѓ*/
 div.datepicker a:hover {
 	color: Gray;
 }
 
-/* Цвет дней недели */
+/* Р¦РІРµС‚ РґРЅРµР№ РЅРµРґРµР»Рё */
 tr.datepickerDoW
 {
     background-color: #C4C1BC;
@@ -259,28 +259,28 @@ tr.datepickerDoW
 }
 
 
-/* Цвет фона календаря */
+/* Р¦РІРµС‚ С„РѕРЅР° РєР°Р»РµРЅРґР°СЂСЏ */
 .datepickerContainer
 {
     /*background-color:White;*/
     background-color:#eeeeee;
 }
 
-/*Цвет номера недели при наведении*/
+/*Р¦РІРµС‚ РЅРѕРјРµСЂР° РЅРµРґРµР»Рё РїСЂРё РЅР°РІРµРґРµРЅРёРё*/
 tbody.datepickerDays th.datepickerWeek a:hover
 {
     color:inherit;
 }
 
 /****************************************************
-***************** результаты   **********************
+***************** СЂРµР·СѓР»СЊС‚Р°С‚С‹   **********************
 ****************************************************/
 #mPnLegend
 {
     
 }
 
-/*Фон для ячеек без картинок в "легенде" */
+/*Р¤РѕРЅ РґР»СЏ СЏС‡РµРµРє Р±РµР· РєР°СЂС‚РёРЅРѕРє РІ "Р»РµРіРµРЅРґРµ" */
 div.bglegend
 {
     /*background-color: #c2d0e7;*/
@@ -291,61 +291,61 @@ div.places
     padding-left: 20px;
 }
 
-/* места есть*/
+/* РјРµСЃС‚Р° РµСЃС‚СЊ*/
 div.airPlacesAvailable
 {
     background-image: url('../images/airoplan_green.jpg');
 }
 
-/* мест мало */
+/* РјРµСЃС‚ РјР°Р»Рѕ */
 div.airPlacesFew
 {
     background-image: url('../images/airoplan_yellow.jpg');
 }
 
-/* мест нет */
+/* РјРµСЃС‚ РЅРµС‚ */
 div.airPlacesDisable
 {
     background-image: url('../images/airoplan_red.jpg');
 }
-/* места есть*/
+/* РјРµСЃС‚Р° РµСЃС‚СЊ*/
 div.airPlacesAvailableBack
 {
     background-image: url('../images/airoplan_green_Back.jpg');
 }
 
-/* мест мало */
+/* РјРµСЃС‚ РјР°Р»Рѕ */
 div.airPlacesFewBack
 {
     background-image: url('../images/airoplan_yellow_Back.jpg');
 }
 
-/* мест нет */
+/* РјРµСЃС‚ РЅРµС‚ */
 div.airPlacesDisableBack
 {
     background-image: url('../images/airoplan_red_Back.jpg');
 }
 
-/* мгновенное подтверждение */
+/* РјРіРЅРѕРІРµРЅРЅРѕРµ РїРѕРґС‚РІРµСЂР¶РґРµРЅРёРµ */
 div.hotelPlacesAvailable
 {
     background-image: url('../images/house_green.jpg');
 }
 
-/* по запросу */
+/* РїРѕ Р·Р°РїСЂРѕСЃСѓ */
 div.hotelPlacesByReq
 {
     background-image: url('../images/house_yelow.jpg');
 }
 
-/* отсутствуют */
+/* РѕС‚СЃСѓС‚СЃС‚РІСѓСЋС‚ */
 div.HotelPlacesDisable
 {
     background-image: url('../images/house_red.jpg');
     
 }
 
-/* Удачная покупка  */
+/* РЈРґР°С‡РЅР°СЏ РїРѕРєСѓРїРєР°  */
 div.isEmptyGoodPrice
 {
     padding-left:16px;
@@ -360,20 +360,20 @@ div.isGoodPrice
     text-align:left;
 }
 
-/*Таблица вокруг блока результатов выборки*/
+/*РўР°Р±Р»РёС†Р° РІРѕРєСЂСѓРі Р±Р»РѕРєР° СЂРµР·СѓР»СЊС‚Р°С‚РѕРІ РІС‹Р±РѕСЂРєРё*/
     table.mainTableResultPanel
     {
         background-color:#D6D3CE;
         
     }
-/*внутренний див с результатами выборки*/
+/*РІРЅСѓС‚СЂРµРЅРЅРёР№ РґРёРІ СЃ СЂРµР·СѓР»СЊС‚Р°С‚Р°РјРё РІС‹Р±РѕСЂРєРё*/
     div.MainResultPanel
     {
         background-color:#eeeeee;
     }
    
 
-/*Текст заголовка дива с результатами*/
+/*РўРµРєСЃС‚ Р·Р°РіРѕР»РѕРІРєР° РґРёРІР° СЃ СЂРµР·СѓР»СЊС‚Р°С‚Р°РјРё*/
 .title
 {
     background-color:#D6D3CE;
@@ -381,15 +381,15 @@ div.isGoodPrice
     font-weight:bold;
 }
 
-/*Див, закрывающий див с результатами*/
+/*Р”РёРІ, Р·Р°РєСЂС‹РІР°СЋС‰РёР№ РґРёРІ СЃ СЂРµР·СѓР»СЊС‚Р°С‚Р°РјРё*/
 .titleClose
 {
     background-color:#D6D3CE;
-    /*background-image: url('/images/close.gif'); скрыть или открыть картинку закрытия панели результатов*/
-    font-size:0px; /*скрываем "X" при наличии картинки закрытия*/
+    /*background-image: url('/images/close.gif'); СЃРєСЂС‹С‚СЊ РёР»Рё РѕС‚РєСЂС‹С‚СЊ РєР°СЂС‚РёРЅРєСѓ Р·Р°РєСЂС‹С‚РёСЏ РїР°РЅРµР»Рё СЂРµР·СѓР»СЊС‚Р°С‚РѕРІ*/
+    font-size:0px; /*СЃРєСЂС‹РІР°РµРј "X" РїСЂРё РЅР°Р»РёС‡РёРё РєР°СЂС‚РёРЅРєРё Р·Р°РєСЂС‹С‚РёСЏ*/
 }
 
-/* Настройки грида с результатами поиска*/
+/* РќР°СЃС‚СЂРѕР№РєРё РіСЂРёРґР° СЃ СЂРµР·СѓР»СЊС‚Р°С‚Р°РјРё РїРѕРёСЃРєР°*/
 div.gvResultDiv
 {
     
@@ -423,12 +423,12 @@ div.gvResultDiv
 text-decoration:underline;
 }
 
-/* Цвет затемнения */
+/* Р¦РІРµС‚ Р·Р°С‚РµРјРЅРµРЅРёСЏ */
 .overlay {
 background-color: #eeeeee;
 }
 
-/* Цвета статусов туров (спец, горящий, прайс) */
+/* Р¦РІРµС‚Р° СЃС‚Р°С‚СѓСЃРѕРІ С‚СѓСЂРѕРІ (СЃРїРµС†, РіРѕСЂСЏС‰РёР№, РїСЂР°Р№СЃ) */
 .spec
 {
     color: #0000FF;
@@ -442,14 +442,14 @@ background-color: #eeeeee;
     color: #000000;
 }
 
-/*Цвет надписи об отсутсвие данных*/
+/*Р¦РІРµС‚ РЅР°РґРїРёСЃРё РѕР± РѕС‚СЃСѓС‚СЃРІРёРµ РґР°РЅРЅС‹С…*/
 div.nodata
 {
     color: #FF0000;
     font-weight:bold;
 }
 
-/*Цвет надписи о stop-sale'е*/
+/*Р¦РІРµС‚ РЅР°РґРїРёСЃРё Рѕ stop-sale'Рµ*/
 div.isStop
 {
     color: #FF0000;
@@ -464,7 +464,7 @@ table.SearchDuration *td
     text-align:center;
 }
 
-/* Цвета ячеек продолжительности туров*/
+/* Р¦РІРµС‚Р° СЏС‡РµРµРє РїСЂРѕРґРѕР»Р¶РёС‚РµР»СЊРЅРѕСЃС‚Рё С‚СѓСЂРѕРІ*/
 .durYellow
 {
     background-color: #F0E68C;
@@ -481,23 +481,23 @@ table.SearchDuration *td
 }
 
 
-/* Всплывающее окно со списком туров*/
+/* Р’СЃРїР»С‹РІР°СЋС‰РµРµ РѕРєРЅРѕ СЃРѕ СЃРїРёСЃРєРѕРј С‚СѓСЂРѕРІ*/
 
-/*кнопка закрытия*/
+/*РєРЅРѕРїРєР° Р·Р°РєСЂС‹С‚РёСЏ*/
 .close-tour-list-div
 {
     background-color:#006EC7;
     color:White;
 }
 
-/*Заголовок*/
+/*Р—Р°РіРѕР»РѕРІРѕРє*/
 div.title-tour-list-div
 {
     color:White;
     background-color:#006EC7;
 }
     
-/* окно */    
+/* РѕРєРЅРѕ */    
 div.sub-tours-list-div
 {
     background-color:#eeeeee; 
