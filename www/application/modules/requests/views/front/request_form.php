@@ -98,6 +98,7 @@
     function sendrequest() {
         $("#request_btn").css('display', 'none');
         $(".loading_img").css('display', 'block');
+        $('#save_request').css('opacity', '0.3');
         $.ajax({
             url: '/requests/save',
             type: "POST",
@@ -107,6 +108,7 @@
                 document.getElementById('request_form').innerHTML = response;
                 $("#request_btn").css('display', 'block');
                 $(".loading_img").css('display', 'none');
+                $('#save_request').css('opacity', '1');
             },
             error: function (response) {
                 document.getElementById('request_form').innerHTML = "Ошибка при отправке формы";
