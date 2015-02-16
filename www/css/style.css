@@ -196,7 +196,7 @@ section {position: relative;}
 
 /*slider_form*/
 
-.slider_form {width: 990px;height: 420px;position: absolute;top: 307px;left: 50%;margin-left: -500px;background: #fdc900;z-index: 2;}
+.slider_form {width: 990px;height: 350px;position: absolute;top: 307px;left: 50%;margin-left: -500px;background: #fdc900;z-index: 2;}
 
 /************************************************************
       article
@@ -827,6 +827,7 @@ a.close-modal {text-decoration: none;color: #000;position: absolute;bottom: 10px
     font-size: 21px;
     line-height: 42px;
 }
-.travelpayouts_container-form--type-avia{
-    width: 918px;
-}
+
+.travelpayouts_container-form--type-avia{width: 918px; border-color: #fdc900 !important;background-color: #fdc900 !important;}
+/*div.travelpayouts_container-form-container-dates-depart_container{margin-top:30px !important;}
+div.travelpayouts_container-form-container-dates-return_container{margin-top:30px !important;}*/

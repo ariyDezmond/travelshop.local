@@ -1,3 +1,4 @@
+<div id="result_pjax">
 <section>
     <div class="wrapper">
 

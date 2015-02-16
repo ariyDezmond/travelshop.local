@@ -1,2 +1,3 @@
-    </div><!-- /wrapper -->
+</div><!-- /wrapper -->
 </section><!-- /section -->
+</div>

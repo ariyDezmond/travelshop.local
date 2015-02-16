@@ -41,7 +41,7 @@ class Front extends MX_Controller {
         $this->load->view('pages/contacts', $data);
         $this->load->view('templates/footer', $data);
     }
-    
+
     public function allreviews() {
         $data['title'] = 'Отзывы';
         $contacts = Modules::run('contacts/get');
@@ -100,7 +100,6 @@ class Front extends MX_Controller {
         $this->load->view('templates/contacts', $data);
         $this->load->view('templates/footer', $data);
     }
-
 
     public function belay() {
         $data['title'] = 'Медицинаская страховка';
