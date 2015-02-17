@@ -65,4 +65,15 @@ $(document).ready(function () {
         infiniteLoop: false
     });
 
+    $('.view_all').click(function () {
+        $(this).parent().hide();
+        $(this).parent().next().show();
+        return false;
+    });
+    $('.show_all').click(function () {
+        $(this).parent().prev().show();
+        $(this).parent().hide();
+        return false;
+    });
+
 });

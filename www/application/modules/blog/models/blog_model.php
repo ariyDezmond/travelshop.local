@@ -60,6 +60,13 @@ class Blog_model extends CI_Model {
         }
     }
 
+    public function get3posts_for_front() {
+        $this->db->order_by('order', 'desc');
+        $this->db->order_by('date', 'desc');
+        $query = $this->db->get_where($this->table_name, array('active' => 'on'), 3);
+        return $query->result_array();
+    }
+
     public function get_by_url($url) {
         $query = $this->db->get_where($this->table_name, array('active' => 'on', 'url' => $url));
         return $query->row_array();
@@ -87,7 +94,12 @@ class Blog_model extends CI_Model {
     }
 
     public function set($image) {
-
+        date_default_timezone_set('Asia/Bishkek');
+        if ($this->input->post('date')) {
+            $date = date('Y-m-d H:i:s', strtotime($this->input->post('date')));
+        } else {
+            $date = date('Y-m-d H:i:s', time());
+        }
         $data = array(
             'name' => $this->input->post('name'),
             'url' => $this->input->post('url'),
@@ -95,7 +107,7 @@ class Blog_model extends CI_Model {
             'desc' => $this->input->post('desc'),
             'keyw' => $this->input->post('keyw'),
             'text' => $this->input->post('text'),
-            'date' => $this->input->post('date'),
+            'date' => $date,
             'active' => $this->input->post('active'),
             'image' => $image
         );
@@ -116,7 +128,7 @@ class Blog_model extends CI_Model {
                 'desc' => $this->input->post('desc'),
                 'keyw' => $this->input->post('keyw'),
                 'text' => $this->input->post('text'),
-                'date' => date('Y-m-d h:i:s', strtotime($this->input->post('date'))),
+                'date' => date('Y-m-d H:i:s', strtotime($this->input->post('date'))),
                 'active' => $this->input->post('active')
             );
             $this->db->where('id', $id);
@@ -128,7 +140,7 @@ class Blog_model extends CI_Model {
                 'desc' => $this->input->post('desc'),
                 'keyw' => $this->input->post('keyw'),
                 'text' => $this->input->post('text'),
-                'date' => $this->input->post('date'),
+                'date' => date('Y-m-d H:i:s', strtotime($this->input->post('date'))),
                 'active' => $this->input->post('active'),
                 'image' => $image
             );

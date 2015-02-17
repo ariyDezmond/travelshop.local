@@ -131,6 +131,10 @@ class Blog extends MX_Controller {
         return $this->blog_model->get_by_url($url);
     }
 
+    public function get3posts_for_front() {
+        return $this->blog_model->get3posts_for_front();
+    }
+
     public function check_url($url) {
         if ($this->blog_model->get_by_url($url)) {
             $this->form_validation->set_message('check_url', 'Такой ЧПУ уже занят!');

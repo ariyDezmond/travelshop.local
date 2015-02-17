@@ -11,6 +11,8 @@ class Front extends MX_Controller {
 
     public function main() {
         $data['title'] = 'TravelShop';
+        $data['news'] = Modules::run('news/get3news_for_front');
+        $data['blog'] = Modules::run('blog/get3posts_for_front');
         $this->load->view('templates/metahead', $data);
         $this->load->view('templates/head', $data);
         $this->load->view('templates/slider', $data);

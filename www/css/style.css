@@ -3,6 +3,9 @@
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {margin: 0;padding: 0;border: 0;font-size: 100%;font: inherit;vertical-align: baseline;}
 
 /* HTML5 display-role reset for older browsers */
+.clearfix {display: inline-block;}
+html[xmlns] .clearfix {display: block;}
+* html .clearfix {height: 1%;}
 
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display: block;}
 body {line-height: 1;}
@@ -218,9 +221,8 @@ article h4 {font-family: "Arial-Black";font-size: 30px;color: #fdc900;text-trans
 .block_img_wrapper img {width: 131px;height: 125px;}
 
 .block_item_content {float: right;width: 303px;}
-.block_item_content h5 {font-family: 'RBCGROTESK-REGULAR';font-size: 16px;color: #000;padding: 3px 0 7px 0;margin-left: -2px;}
-.block_item_content h5 a {color: #000;text-decoration: none;}
-.block_item_content h5 a:hover{color: #55bce8;}
+.block_item_content h5 a {text-decoration: none;font-family: "TrebuchetMS";font-size: 16px;line-height: 22px;color: #042d80;font-weight: 700;margin-bottom: 5px;}
+.block_item_content h5 a:hover{color: #fdc900;}
 .block_item_content p {font-family: 'RBCGROTESK-REGULAR';font-size: 13px;color: #000;line-height: 16px;width: 90%;margin: 0 0 15px 0;}
 .blog .block_item_content p {margin-bottom: 11px;width: 95%;margin-left: -2px;}
 
@@ -250,11 +252,12 @@ article h4 {font-family: "Arial-Black";font-size: 30px;color: #fdc900;text-trans
 
 /*read_more*/
 
-a.read_more {display: block;text-decoration: none;padding: 5px 10px 5px 23px;background: #fdc900;margin: 22px 136px 0 177px;font-size: 15px;color: #0072ff;line-height: 27px;font-family: "Arial";
+a.read_more {display: block;text-decoration: none;padding: 5px 10px 5px 23px;background: #fdc900;margin: 22px 136px 0 177px;font-size: 15px;color: #0072ff;line-height: 27px;font-family: "Arial";color: #fff;
 
              -webkit-border-radius: 4px;
              -moz-border-radius: 4px;
              border-radius: 4px;}
+a.read_more:hover{text-decoration: underline;}
 
 /**************************
         search_tour
@@ -598,10 +601,10 @@ footer .metrics {position: absolute;bottom: 20px;right: 65px;width: 178px;height
 /*news_and_blog_item*/
 
 .news_and_blog_item {padding: 10px 0px 20px 0px;margin: 0 20px;border-bottom: 1px solid #d4d4d4;}
-.news_and_blog_item h6 {font-family: "TrebuchetMS";font-size: 16px;line-height: 22px;color: #042d80;font-weight: 700;}
+.news_and_blog_item h6 {font-family: "TrebuchetMS";font-size: 16px;line-height: 22px;color: #042d80;font-weight: 700;margin-top: 17px;margin-bottom: 10px;}
 .news_and_blog_item h6 span {display: inline-block;margin: 0 0 0 15px;}
 .news_and_blog_item img {width: 267px;height: 143px;margin: 20px 10px 0 0;}
-.news_and_blog_item p {font-family: "TrebuchetMS";font-size: 14px;line-height: 22px;margin: 0;}
+.news_and_blog_item p {font-family: "TrebuchetMS";font-size: 14px;line-height: 22px;margin: 0 0 10px 0;min-height: 70px;}
 .news_and_blog_item a {display: block;height: 33px;width: 135px;text-decoration: none;color: #fff;background: #efc825;text-align: center;font-family: "TrebuchetMS";font-size: 14px;line-height: 33px;margin-left: 275px;
 
                        -webkit-border-radius: 5px;

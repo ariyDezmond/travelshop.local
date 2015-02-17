@@ -45,6 +45,10 @@ class News extends MX_Controller {
         return $this->news_model->get_by_url($url);
     }
 
+    public function get3news_for_front() {
+        return $this->news_model->get3news_for_front();
+    }
+
     public function edit($id = null) {
         global $object;
         $object = 'blog';

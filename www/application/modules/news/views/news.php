@@ -22,7 +22,7 @@
                 <td width="30%"><?= mb_strimwidth($entry['url'], 0, 30, "...") ?></td>
                 <td width="20px"><img width="50px" src='/images/<?= $module ?>/<?= $entry['image'] ?>'></td>
                 <td><?= mb_strimwidth(strip_tags($entry['text']), 0, 50, "..."); ?></td>
-                <td><?= date('d.m.Y h:i', strtotime($entry['date'])) ?></td>
+                <td><?= date('d.m.Y H:i', strtotime($entry['date'])) ?></td>
                 <td width="30px"><?php
                     if ($entry['active'] == 'on') {
                         echo '<span style="-webkit-user-select: none;" class="label label-success active">да</span>';

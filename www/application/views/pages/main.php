@@ -2,45 +2,33 @@
     <div class="wrapper">
         <div class="news">
             <h4>Новости</h4>
-
-            <div class="block_item">
-                <a href="#" class="block_img_wrapper"><img src="img/jpg/news-img.jpg" alt=""></a>
-                <div class="block_item_content">
-                    <h5><a href="#">Новая спортивная точка “Геркулес”!</a></h5>
-                    <p>Минус 30 см в объемах за две недели - это не розыгрыш! Занимаясь по системе для похудения оксисайз с Мариной Корпан, следуя советам диетолога . . .</p>
-                    <div class="info_block">
-                        <a href="#" class="views">160</a>
-                        <a href="#" class="comments">12</a>
-                        <span>29.11.2014 - 18:29</span>
+            <?php foreach ($news as $entry): ?>
+                <div class="block_item">
+                    <a href="/news/<?= $entry['url'] ?>" class="block_img_wrapper"><img src="/images/news/<?= $entry['image'] ?>" alt="<?= $entry['name'] ?>"></a>
+                    <div class="block_item_content">
+                        <h5><a href="/news/<?= $entry['url'] ?>"><?= mb_strimwidth(strip_tags($entry['name']), 0, 61, "..."); ?></a></h5>
+                        <p><?= mb_strimwidth(strip_tags($entry['text']), 0, 200, "..."); ?></p>
                     </div>
                 </div>
-            </div>
-            <!-- /block_item -->
+            <?php endforeach; ?>
 
-
-            <a href="" class="read_more">Читать еще...</a>
+            <a href="/news/" class="read_more">Читать еще...</a>
 
         </div><!-- news -->
 
         <div class="blog">
             <h4>Блог</h4>
+            <?php foreach ($blog as $entry): ?>
+                <div class="block_item">
+                    <a href="/blog/<?= $entry['url'] ?>" class="block_img_wrapper"><img src="/images/blog/<?= $entry['image'] ?>" alt="<?= $entry['name'] ?>"></a>
+                    <div class="block_item_content">
+                        <h5><a href="/blog/<?= $entry['url'] ?>"><?= mb_strimwidth(strip_tags($entry['name']), 0, 61, "..."); ?></a></h5>
+                        <p><?= mb_strimwidth(strip_tags($entry['text']), 0, 200, "..."); ?></p>
+                    </div>
+                </div>
+            <?php endforeach; ?>
 
-            <div class="block_item">
-                <a href="#" class="block_img_wrapper"><img src="img/jpg/blog-img.jpg" alt=""></a>
-                <div class="block_item_content">
-                    <h5><a href="#">Как не заболеть зимой при занятии  спортом на улице?</a></h5>
-                    <p>Выглядеть моложе без дорогих операций и сложных косметических процедур? Антивозрастная программа . . . </p>
-                    <div class="info_block">
-                        <a href="#" class="views">160</a>
-                        <a href="#" class="comments">12</a>
-                        <span>29.11.2014 - 18:29</span>
-                    </div><!-- info_block -->
-                </div><!-- block_item_content -->
-            </div>
-            <!-- /block_item -->
-
-
-            <a href="" class="read_more">Читать еще...</a>
+            <a href="/blog/" class="read_more">Читать еще...</a>
 
         </div><!-- blog -->
     </div><!-- /wrapper -->
