@@ -1,7 +1,7 @@
 <footer>
     <div class="wrapper">
         <ul>
-            <li><a href="/">Главаная</a></li>
+            <li><a href="/">Главная</a></li>
             <li><a href="/about/">О нас</a></li>
             <li><a href="/blog/">Статьи </a></li>
             <li><a href="/news/">Новости</a></li>
