@@ -41,8 +41,15 @@ if (!defined('BASEPATH'))
   |
  */
 
-$route['default_controller'] = "front/main";
 
+//if (file_exists(APPPATH . 'modules/lang')) {
+//    $route['default_controller'] = "lang";
+//    $route['(ru|en)'] = $this->config->item('default_controller');
+//    $route['(ru|en)/(:any)'] = "front/$2";
+//} else {
+//    $route['default_controller'] = $this->config->item('default_controller');
+//}
+$route['default_controller'] = "front/main";
 //~~~~~~~~~~~~~~~~~~~~~~admin routes~~~~~~~~~~~~~~~~~~~~~
 
 $route['admin/login'] = 'admin/login';

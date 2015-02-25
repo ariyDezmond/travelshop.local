@@ -10,6 +10,7 @@ class Front extends MX_Controller {
     }
 
     public function main() {
+//        $this->lang->load('translations', $this->uri->segment(1));
         $data['title'] = 'TravelShop';
         $data['news'] = Modules::run('news/get3news_for_front');
         $data['blog'] = Modules::run('blog/get3posts_for_front');
@@ -20,6 +21,7 @@ class Front extends MX_Controller {
         $this->load->view('pages/main', $data);
         $this->load->view('templates/contacts', $data);
         $this->load->view('templates/footer', $data);
+//        echo $this->lang->line('hello_world');
     }
 
     public function about() {
