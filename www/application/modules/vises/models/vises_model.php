@@ -59,7 +59,10 @@ class Vises_model extends CI_Model {
     }
 
     public function getFirstEntry() {
-        $query = $this->db->get($this->table_name);
+        $this->db->select_max('order', 'maxOrder');
+        $query2 = $this->db->get($this->table_name);
+        $max_order = $query2->row_array();
+        $query = $this->db->get_where($this->table_name, array('order' => $max_order['maxOrder']));
         $first = $query->row_array();
         return $first;
     }

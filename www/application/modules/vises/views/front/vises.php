@@ -3,7 +3,9 @@
         <ul>
             <?php foreach ($entries as $entry): ?>
                 <li <?php
-                if ($entry['url'] == $this->uri->segment(2)) {
+                if (!isset($firstEntry))
+                    $firstEntry = false;
+                if ($entry['url'] == $this->uri->segment(2) || $entry['url'] == $firstEntry['url']) {
                     echo 'class="active"';
                 }
                 ?> ><a href="/vises/<?= $entry['url'] ?>/"><?= $entry['name'] ?></a></li>
