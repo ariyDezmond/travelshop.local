@@ -49,7 +49,11 @@
         <div class="input-group">
             <span class="input-group-addon">ok.ru/</span>
             <input name="social_ok" type="text" placeholder="" class="form-control" value="<?= $entry['social_ok'] ?>">
-        </div>    
+        </div>
+        <div class="input-group">
+            <span class="input-group-addon">instagram.com/</span>
+            <input name="social_insta" type="text" placeholder="" class="form-control" value="<?= $entry['social_insta'] ?>">
+        </div>
     </div>
     <div class="col-md-6">
         <label for="email">Адрес на карте</label>

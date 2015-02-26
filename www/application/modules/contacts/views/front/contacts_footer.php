@@ -17,6 +17,9 @@
                 <?php if ($entry['social_ok']): ?>
                     <a href="http://ok.ru/<?= $entry['social_ok'] ?>" class="ok"></a>
                 <?php endif; ?>
+                <?php if ($entry['social_insta']): ?>
+                    <a href="http://instagram.com/<?= $entry['social_insta'] ?>" class="ok"></a>
+                <?php endif; ?>
             </div>
         </div>
 

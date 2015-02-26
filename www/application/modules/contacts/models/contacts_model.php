@@ -28,7 +28,8 @@ class Contacts_model extends CI_Model {
             'social_vk' => $this->input->post('social_vk'),
             'social_fb' => $this->input->post('social_fb'),
             'social_tw' => $this->input->post('social_tw'),
-            'social_ok' => $this->input->post('social_ok')
+            'social_ok' => $this->input->post('social_ok'),
+            'social_insta' => $this->input->post('social_insta')
         );
         $this->db->where('id', $id);
         $this->db->update($this->table_name, $data);

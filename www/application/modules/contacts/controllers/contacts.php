@@ -50,6 +50,7 @@ class Contacts extends MX_Controller {
             $this->form_validation->set_rules('social_fb', 'Мета keywords', 'trim|xss_clean');
             $this->form_validation->set_rules('social_tw', 'Мета keywords', 'trim|xss_clean');
             $this->form_validation->set_rules('social_ok', 'Мета keywords', 'trim|xss_clean');
+            $this->form_validation->set_rules('social_insta', 'Мета keywords', 'trim|xss_clean');
 
             $this->form_validation->set_error_delimiters('<span class="label label-danger">', '</span>');
 
