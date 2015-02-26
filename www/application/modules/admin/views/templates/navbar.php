@@ -85,6 +85,11 @@
                             echo "class=\"active\"";
                         }
                         ?>><a href="/admin/partners">Партнеры</a></li>
+                        <li <?php
+                        if ($this->uri->segment(2) == 'slider') {
+                            echo "class=\"active\"";
+                        }
+                        ?>><a href="/admin/slider">Слайдер</a></li>
                     </ul>
                 </li>
             </ul>
