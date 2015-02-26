@@ -1,0 +1,266 @@
+/*main searh form*/
+
+#SearchForm {
+  width: 100%;
+}
+tbody {
+   border:none;
+}
+table.SearchTableForm {
+  width: 890px;
+  border:none;
+}
+table.mainTablePanel {
+   width: 100%;
+}
+.innerWidth {
+   border:none;
+}
+ table tr td.right_align {
+   display: block;
+ }
+  table tr td {
+   display: block;
+   text-align: left;
+  }
+ table tr td.right_align span {
+   display: block;
+   float: none;
+   width: 100%;
+   font-family: "TrebuchetMS";
+   font-size: 14px;
+   text-align: left;
+   color: #002983;
+}
+ table tr td select {
+   width: 212px;
+   height: 30px;
+   border: 0;
+   font-family: Arial, sans-serif;
+   font-size: 15px;
+
+      -webkit-border-radius: 5px;
+   -moz-border-radius: 5px;
+   border-radius: 5px;
+ }
+.combo1 {
+   width: 212px;
+   height: 30px;
+   border: 0;
+   font-family: Arial, sans-serif;
+   font-size: 15px;
+ }
+ label.cb-disable {display: none;}
+ label.cb-enable.selected {display: none;}
+
+ table.innerWidth td table {
+   float: left;
+   margin-right: 60px;
+ }
+ table td.leftBorder table {}
+ table td.leftBorder table td span {
+   display: block;
+   float: none;
+   width: 100%;
+   font-family: "TrebuchetMS";
+   font-size: 14px;
+   text-align: left;
+   color: #002983;
+ }
+ table td.leftBorder table td select {
+   width: 320px;
+   height: 30px;
+   border: 0;
+   font-family: Arial, sans-serif;
+   font-size: 15px;
+
+      -webkit-border-radius: 5px;
+   -moz-border-radius: 5px;
+   border-radius: 5px;
+ }
+
+ .search_tour html {
+   overflow: hidden;
+ }
+ span#mLbDateFrom {
+   display: block;
+   float: none;
+   width: 100%;
+   font-family: "TrebuchetMS";
+   font-size: 14px;
+   text-align: left;
+   color: #002983;
+ }
+ .calendar {
+   width: 192px;
+   height: 30px;
+   border: 0;
+   font-family: Arial, sans-serif;
+   font-size: 15px;
+   line-height: 30px;
+   background-image: none;
+   padding: 0 10px;
+
+      -webkit-border-radius: 5px;
+   -moz-border-radius: 5px;
+   border-radius: 5px;
+ }
+ span#mNightsFrom, span#mNightsTill {
+   float: left;
+   width: 20px;
+ }
+ span#mNightsTill {
+   margin-top: 10px;
+ }
+table td.leftBorder table td select#durationFrom,
+table td.leftBorder table td select#durationTill {
+   width: 145px;
+
+      -webkit-border-radius: 5px;
+   -moz-border-radius: 5px;
+   border-radius: 5px;
+}
+table td.leftBorder table td select#durationFrom {
+   margin: -6px 0 18px 0;
+
+      -webkit-border-radius: 5px;
+   -moz-border-radius: 5px;
+   border-radius: 5px;
+}
+.mainDivPanel table td.leftBorder {
+   float: left;
+   width: 200px;
+ }
+ .mainDivPanel.panel2 .leftBorder td {
+   width: 200px;
+ }
+  .mainDivPanel.panel2 .leftBorder td.AdultRow {
+   margin-bottom: -20px;
+  }
+  span#mLbAdult {
+   padding-bottom: 20px;
+  }
+.mainDivPanel.panel3 {
+   margin-top: -65px;
+  }
+span#mLbRegionAny {
+   float: none;
+   width: 100%;
+   font-family: "TrebuchetMS";
+   font-size: 14px;
+   text-align: left;
+   color: #002983;
+}
+div#RegionDiv {
+   background: none;
+   border: none;
+   height: 100%;
+}
+table tr:nth-child(3) td table tbody tr td table.innerWidth td:nth-child(4).leftBorder table {
+   width: 100px;
+   margin-left: 105px;
+}
+
+.search_tour iframe body {
+   overflow: hidden;
+}
+body {
+   height: auto;
+}
+td#filter_panel {
+   margin-top: 25px;
+   font-family: Arial;
+   font-size: 15px;
+   line-height: 25px;
+   margin-bottom: 20px;
+}
+#SearchForm table.SearchTableForm tbody tr:nth-child(3) td table.mainTablePanel tbody tr.innerWidth td .mainDivPanel.panel3 table.innerWidth tbody tr:nth-child(2) table.innerWidth tbody tr td {
+   font-family: Arial;
+   font-size: 15px;
+   line-height: 25px;
+   text-align: center;
+}
+input#tbPriceFrom, input#tbPriceTo {
+   width: 70px;
+   text-align: right;
+   padding: 0 10px;
+   border: 0;
+   height: 30px;
+   margin: 0 0 0 10px;
+
+   -webkit-border-radius: 5px;
+   -moz-border-radius: 5px;
+   border-radius: 5px;
+}
+input#tbPriceTo {
+
+}
+select#mDdlCurrencyType {
+   width: 110px;
+   padding: 0;
+   height: 30px;
+
+   -webkit-border-radius: 5px;
+   -moz-border-radius: 5px;
+   border-radius: 5px;
+}
+select#mDdlSortType {
+    width: 110px;
+   padding: 0;
+   height: 30px;
+
+   -webkit-border-radius: 5px;
+   -moz-border-radius: 5px;
+   border-radius: 5px;
+}
+input#searchbyname {
+   float: left;
+   height: 30px;
+   padding: 0;
+   border: 0;
+
+   -webkit-border-radius: 5px;
+   -moz-border-radius: 5px;
+   border-radius: 5px;
+}
+
+table input {
+   -webkit-border-radius: 5px;
+   -moz-border-radius: 5px;
+   border-radius: 5px;
+}
+input#cbAllHotel {
+   float: left;
+}
+span#mLbHotelAny {
+   float: left;
+   display: inline-block;
+   line-height: 18px;
+   width: 48px;
+   margin-bottom: 19px;
+}
+#mUpButton table tr td:first-child {
+
+}
+input#mBnSearch {
+   width: 310px;
+   height: 38px;
+   line-height: 38px;
+   color: #fff;
+   background: #002983;
+   border:0;
+   margin: 100px 0 0 300px;
+   position: relative;
+
+   -webkit-border-radius: 5px;
+   -moz-border-radius: 5px;
+   border-radius: 5px;
+}
+input#mBnSearch:hover {
+   cursor: pointer;
+}
+div.stars, div.hotels, div.pansion {
+   -webkit-border-radius: 5px;
+   -moz-border-radius: 5px;
+   border-radius: 5px;
+}
