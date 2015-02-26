@@ -432,10 +432,11 @@ a.more_tours:hover {text-decoration: underline;}
 .contacts_col_1 .social_icons {overflow: hidden;margin: 0 0 0 28px;}
 .contacts_col_1 .social_icons a {width: 47px;height: 47px;display: block;float: left;margin-right: 8px;}
 
-.contacts_col_1 .social_icons a.vk {background: url(../img/sample_icons/social_icons.png) -8px -8px no-repeat;}
-.contacts_col_1 .social_icons a.fc {background: url(../img/sample_icons/social_icons.png) -63px -8px no-repeat;}
+.contacts_col_1 .social_icons a.vk {background: url(../img/sample_icons/social_icons.png) -9px -8px no-repeat;}
+.contacts_col_1 .social_icons a.fc {background: url(../img/sample_icons/social_icons.png) -64px -8px no-repeat;}
 .contacts_col_1 .social_icons a.tw {background: url(../img/sample_icons/social_icons.png) -118px -8px no-repeat;}
-.contacts_col_1 .social_icons a.ok {background: url(../img/sample_icons/social_icons.png) -173px -8px no-repeat;}
+.contacts_col_1 .social_icons a.ok {background: url(../img/sample_icons/social_icons.png) -172px -8px no-repeat;}
+.contacts_col_1 .social_icons a.insta {background: url(../img/sample_icons/insta.png) no-repeat;}
 
 /*.contacts_col_2*/
 

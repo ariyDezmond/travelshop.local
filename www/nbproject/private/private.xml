@@ -2,6 +2,12 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="1"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/D:/WebServers/home/travelshop.local/www/application/modules/slider/views/front/slider.php</file>
+            <file>file:/D:/WebServers/home/travelshop.local/www/application/modules/slider/models/slider_model.php</file>
+            <file>file:/D:/WebServers/home/travelshop.local/www/application/modules/slider/views/add.php</file>
+            <file>file:/D:/WebServers/home/travelshop.local/www/application/modules/slider/controllers/slider.php</file>
+            <file>file:/D:/WebServers/home/travelshop.local/www/application/modules/slider/views/slider.php</file>
+        </group>
     </open-files>
 </project-private>
