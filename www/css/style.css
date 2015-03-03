@@ -223,7 +223,7 @@ article h4 {font-family: "Arial-Black";font-size: 30px;color: #fdc900;text-trans
 .block_item_content {float: right;width: 303px;}
 .block_item_content h5 a {text-decoration: none;font-family: "TrebuchetMS";font-size: 16px;line-height: 22px;color: #042d80;font-weight: 700;margin-bottom: 5px;}
 .block_item_content h5 a:hover{color: #fdc900;}
-.block_item_content p {font-family: 'RBCGROTESK-REGULAR';font-size: 13px;color: #000;line-height: 16px;width: 90%;margin: 0 0 15px 0;}
+.block_item_content p {font-family: "TrebuchetMS";font-size: 13px;color: #000;line-height: 16px;width: 90%;margin: 0 0 15px 0;}
 .blog .block_item_content p {margin-bottom: 11px;width: 95%;margin-left: -2px;}
 
 /*info block*/

@@ -3,6 +3,7 @@
 class Tours_model extends CI_Model {
 
     private $table_name = 'tours';
+    private $primary_key = 'id';
     private $images_table = 'tours_images';
     private $redirect_url = 'tours';
 
@@ -11,7 +12,7 @@ class Tours_model extends CI_Model {
     }
 
     public function order($id, $direction) {
-        $query = $this->db->get_where($this->table_name, array('id' => $id));
+        $query = $this->db->get_where($this->table_name, array($this->primary_key => $id));
         $category = $query->row_array();
         $order = $category['order'];
         if ($direction == 'up') {
@@ -23,7 +24,7 @@ class Tours_model extends CI_Model {
             'order' => $order,
         );
 
-        $this->db->where('id', $id);
+        $this->db->where($this->primary_key, $id);
         $this->db->update($this->table_name, $data);
         redirect('admin/' . $this->redirect_url);
     }
@@ -31,7 +32,7 @@ class Tours_model extends CI_Model {
     public function get($id = null, $for_front = false) {
         if (!$for_front) {
             if ($id) {
-                $query = $this->db->get_where($this->table_name, array('id' => $id));
+                $query = $this->db->get_where($this->table_name, array($this->primary_key => $id));
 
                 return $query->row_array();
             }
@@ -44,7 +45,7 @@ class Tours_model extends CI_Model {
             }
         } else {
             if ($id) {
-                $query = $this->db->get_where($this->table_name, array('id' => $id, 'active' => 'on'));
+                $query = $this->db->get_where($this->table_name, array($this->primary_key => $id, 'active' => 'on'));
 
                 return $query->row_array();
             }
@@ -83,12 +84,12 @@ class Tours_model extends CI_Model {
     }
 
     public function get_image($id) {
-        $query = $this->db->get_where($this->images_table, array('id' => $id));
+        $query = $this->db->get_where($this->images_table, array($this->primary_key => $id));
         return $query->row_array();
     }
 
     public function delete_image($id) {
-        $this->db->delete($this->images_table, array('id' => $id));
+        $this->db->delete($this->images_table, array($this->primary_key => $id));
     }
 
     public function set($image) {
@@ -126,7 +127,10 @@ class Tours_model extends CI_Model {
     }
 
     public function delete($id) {
-        $this->db->delete($this->table_name, array('id' => $id));
+        if (!$this->session->userdata('logged')) {
+            redirect('admin/login');
+        }
+        $this->db->delete($this->table_name, array($this->primary_key => $id));
     }
 
     public function update($id, $image = null) {
@@ -157,7 +161,7 @@ class Tours_model extends CI_Model {
                 'type' => $this->input->post('type'),
                 'active' => $this->input->post('active')
             );
-            $this->db->where('id', $id);
+            $this->db->where($this->primary_key, $id);
             $this->db->update($this->table_name, $data);
         } else {
             $data = array(
@@ -188,7 +192,7 @@ class Tours_model extends CI_Model {
                 'image' => $image
             );
 
-            $this->db->where('id', $id);
+            $this->db->where($this->primary_key, $id);
             $this->db->update($this->table_name, $data);
         }
     }

@@ -37,7 +37,8 @@
 
 <div class="search_tour">
     <div class="wrapper">
-        <iframe src="http://spb.ntk-intourist.ru/main.aspx?userCSS=<?= base_url() ?>css/form.css" width="100%" height="100%"></iframe>
+        <!--<? base_url() ?>css/form.css-->
+        <iframe src="http://spb.ntk-intourist.ru/main.aspx?userCSS=http://gibigate.ru/travelshop/css/form.css" width="100%" height="100%"></iframe>
     </div><!-- /wrapper -->
 </div><!-- /search_tour -->
 

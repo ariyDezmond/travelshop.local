@@ -12,7 +12,7 @@
                             <h5><a href="/<?= $module ?>/<?= $entry['url'] ?>/"><?= $entry['country'] ?></a></h5>
                         </div>
                         <div class="tours_content">
-                            <img style="height: 100%;" src="/images/<?= $module ?>/<?= $entry['image'] ?>" alt="<?= $entry['name'] ?>">
+                            <img style="height: 100%;width:100%;" src="/images/<?= $module ?>/<?= $entry['image'] ?>" alt="<?= $entry['name'] ?>">
                             <?php if ($entry['label'] == 'action'): ?>
                                 <h6 style="background: #ef7d00;"><a href="/<?= $module ?>/<?= $entry['url'] ?>/">Акция от TravelShop</a></h6>
                             <?php elseif ($entry['label'] == 'new'): ?>

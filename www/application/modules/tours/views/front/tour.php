@@ -17,7 +17,7 @@
                 </div>
             </div>
 
-            <div class="tour_description">
+            <div class="tour_description" style="width: 835px;">
                 <p><span>Вылет:</span><?= $entry['flightout'] ?></p>
                 <p><span>Курорт:</span><?= $entry['country'] ?></p>
                 <p><span>Длительность:</span><?= $entry['duration'] ?></p>
@@ -53,7 +53,7 @@
             <div class="clear"></div>
             <a href="javascript:" class="cost">Итоговая цена<span><?= $entry['price'] ?></span>= <?= $entry['priceperone'] ?> за 1 чел.</a>
             <a href="/toursbuy/send/<?= $entry['id'] ?>" class="buy">Купить</a>
-            <a href="#" class="tour_number">Тур № <?= $entry['id'] ?></a>
+            <a class="tour_number">Тур № <?= $entry['id'] ?></a>
         </div>
         <?php if (count($hotel) > 1): ?>
             <h3 class="main_title hotel_description_title">Описание отеля
@@ -95,7 +95,7 @@
                             </div>
                             <div class="hotel_info_inner">
                                 <h5 class="hotel_title_2"><?= $hotel['name'] ?></h5>
-                                <p>Сайт отеля:<a href="<?= $hotel['site'] ?>"><?= $hotel['site'] ?></a></p>
+                                <p>Сайт отеля:<a href="<?= $hotel['site'] ?>"><?=mb_strimwidth($hotel['site'], 0, 35, "...") ?></a></p>
                                 <p>Телефон: <?= $hotel['phone'] ?></p>
                                 <p>Email:<a href="mailto:<?= $hotel['email'] ?>"><?= $hotel['email'] ?></a></p>
                                 <p>Дата постройки: 2010</p>

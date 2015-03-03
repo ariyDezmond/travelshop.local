@@ -17,7 +17,7 @@ class Allreviews_model extends CI_Model {
                 return $query->row_array();
             }
             $this->db->order_by('order', 'desc');
-            $this->db->order_by('date', 'desc');
+            $this->db->order_by('date', 'asc');
             $query = $this->db->get($this->table_name);
             if (count($query->result_array()) > 0) {
                 return $query->result_array();

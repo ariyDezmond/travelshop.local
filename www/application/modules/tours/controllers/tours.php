@@ -212,6 +212,9 @@ class Tours extends MX_Controller {
     }
 
     public function delete($id) {
+        if (!$this->session->userdata('logged')) {
+            redirect('admin/login');
+        }
         $entry = $this->tours_model->get($id);
         if (count($entry) > 0) {
             if (file_exists('images/' . $this->module . '/' . $entry['image'])) {

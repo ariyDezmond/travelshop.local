@@ -3,27 +3,27 @@
 #SearchForm {
   width: 100%;
 }
-tbody {
+table.SearchTableForm tbody {
    border:none;
 }
 table.SearchTableForm {
   width: 890px;
   border:none;
 }
-table.mainTablePanel {
+table.SearchTableForm table.mainTablePanel {
    width: 100%;
 }
-.innerWidth {
+table.SearchTableForm .innerWidth {
    border:none;
 }
- table tr td.right_align {
+ table.SearchTableForm table tr td.right_align {
    display: block;
  }
-  table tr td {
+  table.SearchTableForm table tr td {
    display: block;
    text-align: left;
   }
- table tr td.right_align span {
+ table.SearchTableForm table tr td.right_align span {
    display: block;
    float: none;
    width: 100%;
@@ -32,7 +32,7 @@ table.mainTablePanel {
    text-align: left;
    color: #002983;
 }
- table tr td select {
+ table.SearchTableForm table tr td select {
    width: 212px;
    height: 30px;
    border: 0;
@@ -43,22 +43,22 @@ table.mainTablePanel {
    -moz-border-radius: 5px;
    border-radius: 5px;
  }
-.combo1 {
+table.SearchTableForm .combo1 {
    width: 212px;
    height: 30px;
    border: 0;
    font-family: Arial, sans-serif;
    font-size: 15px;
  }
- label.cb-disable {display: none;}
- label.cb-enable.selected {display: none;}
+ table.SearchTableForm label.cb-disable {display: none;}
+ table.SearchTableForm label.cb-enable.selected {display: none;}
 
- table.innerWidth td table {
+ table.SearchTableForm table.innerWidth td table {
    float: left;
    margin-right: 60px;
  }
- table td.leftBorder table {}
- table td.leftBorder table td span {
+table.SearchTableForm  table td.leftBorder table {}
+table.SearchTableForm  table td.leftBorder table td span {
    display: block;
    float: none;
    width: 100%;
@@ -67,7 +67,7 @@ table.mainTablePanel {
    text-align: left;
    color: #002983;
  }
- table td.leftBorder table td select {
+ table.SearchTableForm table td.leftBorder table td select {
    width: 320px;
    height: 30px;
    border: 0;
@@ -79,10 +79,10 @@ table.mainTablePanel {
    border-radius: 5px;
  }
 
- .search_tour html {
+table.SearchTableForm .search_tour html {
    overflow: hidden;
  }
- span#mLbDateFrom {
+table.SearchTableForm span#mLbDateFrom {
    display: block;
    float: none;
    width: 100%;
@@ -91,7 +91,7 @@ table.mainTablePanel {
    text-align: left;
    color: #002983;
  }
- .calendar {
+table.SearchTableForm .calendar {
    width: 192px;
    height: 30px;
    border: 0;
@@ -105,43 +105,43 @@ table.mainTablePanel {
    -moz-border-radius: 5px;
    border-radius: 5px;
  }
- span#mNightsFrom, span#mNightsTill {
+table.SearchTableForm span#mNightsFrom, span#mNightsTill {
    float: left;
    width: 20px;
  }
- span#mNightsTill {
+table.SearchTableForm span#mNightsTill {
    margin-top: 10px;
  }
-table td.leftBorder table td select#durationFrom,
-table td.leftBorder table td select#durationTill {
+table.SearchTableForm table td.leftBorder table td select#durationFrom,
+table.SearchTableForm table td.leftBorder table td select#durationTill {
    width: 145px;
 
       -webkit-border-radius: 5px;
    -moz-border-radius: 5px;
    border-radius: 5px;
 }
-table td.leftBorder table td select#durationFrom {
+table.SearchTableForm table td.leftBorder table td select#durationFrom {
    margin: -6px 0 18px 0;
 
       -webkit-border-radius: 5px;
    -moz-border-radius: 5px;
    border-radius: 5px;
 }
-.mainDivPanel table td.leftBorder {
+table.SearchTableForm .mainDivPanel table td.leftBorder {
    float: left;
    width: 200px;
  }
- .mainDivPanel.panel2 .leftBorder td {
+ table.SearchTableForm .mainDivPanel.panel2 .leftBorder td {
    width: 200px;
  }
-  .mainDivPanel.panel2 .leftBorder td.AdultRow {
+ table.SearchTableForm .mainDivPanel.panel2 .leftBorder td.AdultRow {
    margin-bottom: -20px;
   }
   span#mLbAdult {
    padding-bottom: 20px;
   }
-.mainDivPanel.panel3 {
-   margin-top: -65px;
+table.SearchTableForm .mainDivPanel.panel3 {
+   margin-top: 20px;
   }
 span#mLbRegionAny {
    float: none;
@@ -156,7 +156,7 @@ div#RegionDiv {
    border: none;
    height: 100%;
 }
-table tr:nth-child(3) td table tbody tr td table.innerWidth td:nth-child(4).leftBorder table {
+table.SearchTableForm tr:nth-child(3) td table tbody tr td table.innerWidth td:nth-child(4).leftBorder table {
    width: 100px;
    margin-left: 105px;
 }
@@ -167,7 +167,7 @@ table tr:nth-child(3) td table tbody tr td table.innerWidth td:nth-child(4).left
 body {
    height: auto;
 }
-td#filter_panel {
+table.SearchTableForm td#filter_panel {
    margin-top: 25px;
    font-family: Arial;
    font-size: 15px;
@@ -224,7 +224,7 @@ input#searchbyname {
    border-radius: 5px;
 }
 
-table input {
+table.SearchTableForm table input {
    -webkit-border-radius: 5px;
    -moz-border-radius: 5px;
    border-radius: 5px;
@@ -263,4 +263,92 @@ div.stars, div.hotels, div.pansion {
    -webkit-border-radius: 5px;
    -moz-border-radius: 5px;
    border-radius: 5px;
+}
+
+select#adultcnt, select#ddlChildSelect, select#ddlAge1, select#ddlAge2, select#ddlAge3 {
+   width: 36px;float: left;margin: 0 10px 0 0;
+}
+span#mLbInputChdsAge {
+   margin: 25px -50px -18px 0px;
+   float: right;
+   display: block;
+}
+select#ddlAge1 {margin: -2px 6px 0 0;width: 45px;}
+select#ddlAge2 {margin: -4px 6px 0 0;width: 45px;}
+select#ddlAge3 {margin: -6px 0 0 0;width: 45px;}
+
+.datepickerContainer {
+   left: -197px;
+   top: 25px;
+   background: #fdc900;
+   z-index: 11;
+}
+
+label.cb-enable {
+   width: 212px;
+   height: 30px;
+   border: 0;
+   font-family: Arial, sans-serif;
+   font-size: 15px;
+   background: #fff;
+   margin: 0 0 0 -20px;
+   border-radius: 5px;
+   text-align: center;
+}
+.cb-enable span, .cb-disable span {
+   line-height: 30px;
+   padding: 0;
+}
+#mPnResult {
+   font-family: Arial;
+}
+#mPnResult div.MainResultPanel table.innerWidth {
+   border:0;
+   -webkit-border-radius: 10px;
+   -moz-border-radius: 10px;
+   border-radius: 10px;
+   box-shadow: 0px 0px 30px rgba(50,50,50,0.7);
+   background: #fafafa;
+}
+.PagingBlock a {
+   text-decoration: none;
+   color: #32A434;
+}
+.PagingBlock a:hover {
+   color: #fdc900;
+}
+#mPnResult div.MainResultPanel table.innerWidth td {
+   text-align: center;
+}
+#mPnResult div.MainResultPanel table.innerWidth td i {
+   font-size: 0;
+   line-height: 0;
+}
+
+#mPnResult div.MainResultPanel table.innerWidth tbody tr:nth-child(2) td table td {
+   text-align: center;padding: 0;
+}
+table#gvResult tr.gvhr th {
+   text-align: center;
+   font-size: 12px;
+   padding: 5px;}
+
+#mPnResult div.MainResultPanel table.innerWidth tbody tr:nth-child(2) td table tr:first-child td {
+   padding: 5px;
+   font-size: 15px;
+   color: #002983;
+}
+#mLbResultTitle {
+   text-transform: uppercase;
+   font-weight: 700;
+   display: block;
+   padding: 15px 0 10px 0;
+   border-bottom: 1px dashed #002983;
+}
+.PagingBlock {
+   padding: 15px 5px 10px 0px;
+   text-align: center;
+   border-bottom: 1px dashed #002983;
+   border-top: 1px dashed #002983;
+   margin: 10px 0;
 }
