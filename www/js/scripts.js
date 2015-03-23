@@ -76,4 +76,8 @@ $(document).ready(function () {
         return false;
     });
 
+    setTimeout(function () {
+        $('#mBnSearch').attr('value', 'Отправить');
+    }, 3000);
+
 });
