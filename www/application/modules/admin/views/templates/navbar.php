@@ -41,6 +41,11 @@
                         }
                         ?>><a href="/admin/toursbuy">Покупка туров</a></li>
                         <li <?php
+                        if ($this->uri->segment(2) == 'services') {
+                            echo "class=\"active\"";
+                        }
+                        ?>><a href="/admin/services">Услуги при отеле</a></li>
+                        <li <?php
                         if ($this->uri->segment(2) == 'blog') {
                             echo "class=\"active\"";
                         }
