@@ -38,7 +38,7 @@
             <p class="help-block">Выберите картинку</p>
         </div>
         <div class="form-group">
-            <label for="text">Текст на слайде</label>
+            <label for="text">Название услуги</label>
             <input name='text' value="<?= set_value('text') ?>" type="text" class="form-control" id="text" placeholder="">
         </div>
     </div>

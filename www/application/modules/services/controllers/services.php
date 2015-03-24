@@ -119,7 +119,7 @@ class Services extends MX_Controller {
 		$data['module_name'] = $this->module_name;
 		$data['module'] = $this->module;
 		if ($this->input->post('do') == $this->module . 'Add') {
-			$this->form_validation->set_rules('text', 'Текст слайда', 'trim|xss_clean');
+			$this->form_validation->set_rules('text', 'Название услуги', 'trim|xss_clean');
 
 			$this->form_validation->set_error_delimiters('<span class="label label-danger">', '</span>');
 

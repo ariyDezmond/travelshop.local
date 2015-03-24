@@ -1,15 +1,18 @@
 <script src="<?php echo base_url();?>js/tag-it.js" type="text/javascript" charset="utf-8"></script>
 <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>css/jquery.tagit.css">
 <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>css/tagit.ui-zendesk.css">
+<style type="text/css">
+.ui-helper-hidden-accessible { display:none; }
+</style>
 <script type="text/javascript">
 	$(document).ready(function() {
 		var readTags = false;
 		$(".myTags").click(function(){
 			readTags = true;
 		});
+
 		$(".myTags").tagit({
 			allowSpaces:true,
-			fieldName: "services_elems",
 			afterTagAdded: function(event, ui) {
 				var tagLabel = ui.tagLabel;
 				var serviceId = ($(this).data('service'));
