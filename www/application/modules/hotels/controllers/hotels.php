@@ -112,6 +112,12 @@ class Hotels extends MX_Controller {
                 }
             }
         } else {
+            $services = $this->hotels_model->get_default_services();
+            foreach ($services as &$item) {
+                $item['elems'] = explode(",", $item['elems']);
+             }
+            $data['services'] = $services;
+            var_dump($data);
             $this->load->view('edit', $data);
         }
     }
@@ -276,6 +282,21 @@ class Hotels extends MX_Controller {
 
     public function down($id) {
         $this->hotels_model->order($id, 'down');
+    }
+
+    public function add_default_tabs(){
+        $hotelId =  $_POST['hotelId'];
+        $serviceId = $_POST['serviceId'];
+        $elems = trim($_POST['elems']);
+        $elems = str_replace (" ", ',', $elems);
+        $data = array('hotel_id' => $hotelId, 'service_id' => $serviceId,'elems'=> $elems);
+        $this->hotels_model->add_services($data);
+    }
+
+    public function delete_default_tabs(){
+        $hotelId =  $_POST['hotelId'];
+        $serviceId = $_POST['serviceId'];
+        $this->hotels_model->delete_services($hotelId, $serviceId);
     }
 
 }

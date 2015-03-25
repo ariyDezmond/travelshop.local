@@ -35,7 +35,7 @@
         <div class="form-group">
             <label for="image">Изображение</label><br/>
             <input required name='image' type="file" class="btn-file" id="image">
-            <p class="help-block">Выберите картинку</p>
+            <p class="help-block">Выберите иконку</p>
         </div>
         <div class="form-group">
             <label for="text">Название услуги</label>

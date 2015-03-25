@@ -152,4 +152,17 @@ class Hotels_model extends CI_Model {
         }
     }
 
+    public function get_default_services(){
+        $query =  $this->db->get('services');
+        return $query->result_array();
+    }
+
+    public function add_services($data){
+        $this->db->insert('services_hotel', $data);
+    }
+    public function delete_services($data){
+
+        $this->db->delete('services_hotel', array('id' => $id));
+    }
+
 }

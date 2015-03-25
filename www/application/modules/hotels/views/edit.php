@@ -1,3 +1,6 @@
+<script src="<?php echo base_url();?>js/tag-it.js" type="text/javascript" charset="utf-8"></script>
+<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>css/jquery.tagit.css">
+<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>css/tagit.ui-zendesk.css">
 <div class="row">
     <div class="col-md-12">
         <a href="/admin/<?= $module ?>">
@@ -9,6 +12,7 @@
     <h2>Редактирование модуля "<?= $module_name ?>"</h2>
 </div>
 <?= form_open_multipart('admin/' . $module . '/edit/' . $entry['id']) ?>
+<input type="hidden" value = "<?=$entry['id']?>" id="hotel_id">
 <div class="row" style="margin-bottom: 10px;">
     <div class="col-md-12">
         <button type="submit" class="btn btn-default">Сохранить</button>
@@ -109,6 +113,60 @@
                         image_del_click_subscription('<?= $module ?>');
                     }
                 });
+
+            $('.srv_check').change(function(){
+                var elems = '';
+                if($(this).attr('checked')){
+                    var hotel_id = $('#hotel_id').val();
+                    var service_id = $(this).val();
+                    $(this).parent().next().slideDown();
+                    $(this).parent().next().find('.tagit-label').each(function(){
+                         var current = $(this);
+                         elems = elems+' '+current.text()
+                    });
+                    $.ajax({
+                        type: "POST",
+                        data: ({hotelId : hotel_id, serviceId: service_id, elems : elems}),
+                        url: '/hotels/add_default_tabs',
+                    });
+                }
+                else{
+                    $(this).parent().next().slideUp();
+                }
+            });
+
+        var readTags = false;
+        $(".myTags").click(function(){
+            readTags = true;
+        });
+
+        $(".myTags").tagit({
+            allowSpaces:true,
+            afterTagAdded: function(event, ui) {
+                var tagLabel = ui.tagLabel;
+                var serviceId = ($(this).data('service'));
+                var hotelId = ($(this).data('hotel'));
+                if(readTags){
+                    $.ajax({
+                        type: "POST",
+                        data: ({tagLabel : tagLabel,serviceId : serviceId}),
+                        url: '/services/add_tab',
+                    });
+                }
+            },
+            afterTagRemoved:function(event, ui) {
+                var tagLabel = ui.tagLabel;
+                var serviceId = ($(this).data('service'));
+                var hotelId = ($(this).data('hotel'));
+                $.ajax({
+                        type: "POST",
+                        data: ({tagLabel : tagLabel,serviceId : serviceId}),
+                        url: '/services/delete_tab',
+                    });
+            },
+        });
+
+
             });
         </script>
         <div class="checkbox">
@@ -119,6 +177,21 @@
                 }
                 ?> type="checkbox"> Активен
             </label>
+        </div>
+        <div id="srv_id">
+            <div>  <label>Услуги при отеле  </label></div>
+            <?php foreach ($services as $service): ?>
+            <div class="checkbox">
+                <label>
+                    <input name='service[]' type="checkbox" value="<?=$service['id']?>" class="srv_check"><?= $service['text']?> 
+                </label>
+               <ul class="myTags" data-service="<?= $service['id'] ?>" data-hotel="<?= $entry['id'] ?>" style="display:none;">
+                    <?php foreach ($service['elems'] as $elem):   ?>
+                        <li><?php echo $elem?></li>
+                    <?php endforeach ?>
+                </ul>
+            </div>
+        <?php endforeach ;?>
         </div>
     </div>
 

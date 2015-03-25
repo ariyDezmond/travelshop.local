@@ -1,3 +1,4 @@
+
 <div class="row">
     <div class="col-md-12">
         <a href="/admin/<?= $module ?>">
@@ -38,12 +39,12 @@
         </div>
         <div class="form-group">
             <label for="image">Изображение</label><br/>
-            <div class="well"><img width="200px" style="border: 1px solid black; background-color: grey;" src="/images/<?= $module ?>/<?= $entry['image'] ?>"></div>
+            <div class="well"><img width="50px" style="border: 1px solid black;" src="/images/<?= $module ?>/<?= $entry['image'] ?>"></div>
             <input name='image' type="file" class="btn-file" id="image">
-            <p class="help-block">Выберите главное фото</p>
+            <p class="help-block">Выберите иконку</p>
         </div>
         <div class="form-group">
-            <label for="text">Текст на слайде</label>
+            <label for="text">Название услуги</label>
             <input required name='text' value="<?= $entry['text'] ?>" type="text" class="form-control" id="text" placeholder="">
         </div>
     </div>
