@@ -280,8 +280,9 @@ select#ddlAge3 {margin: -6px 0 0 0;width: 45px;}
 .datepickerContainer {
    left: -197px;
    top: 25px;
-   background: #fdc900;
+   background: #002983;
    z-index: 11;
+   color: #fff;
 }
 
 label.cb-enable {
