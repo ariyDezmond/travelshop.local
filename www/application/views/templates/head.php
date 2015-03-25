@@ -8,7 +8,7 @@
                     <?php $contacts = Modules::run('contacts/get'); ?>
                     <p><?= $contacts['phone'] ?></p>
                 </div><!-- /phone_number -->
-                <a href="" class="logo"><img src="/img/logo.png" alt=""></a><!-- /logo -->
+                <a href="/" class="logo"><img src="/img/logo.png" alt=""></a><!-- /logo -->
                 <div class="order_btn">
                     <a id="backcall" href="/backcall/send">Заказать обратный звонок</a>
                 </div><!-- /order_btn -->
