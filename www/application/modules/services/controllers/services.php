@@ -29,10 +29,11 @@ class Services extends MX_Controller {
 				$data['entries'] = $this->model->get_by_url($url);
 			} else {
 				$data['entries'] = $this->model->get();
-				foreach ($data['entries'] as &$item) {
-				   $item['elems'] = explode(",", $item['elems']);
+				if(!empty($data['entries'])){
+					foreach ($data['entries'] as &$item) {
+				   		$item['elems'] = explode(",", $item['elems']);
+					}
 				}
-
 				$this->load->view($this->module, $data);
 			}
 		} else {
