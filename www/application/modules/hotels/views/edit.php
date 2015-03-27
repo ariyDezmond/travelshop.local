@@ -116,9 +116,9 @@
 
             $('.srv_check').change(function(){
                 var elems = '';
+                var hotel_id = $('#hotel_id').val();
+                var service_id = $(this).val();
                 if($(this).attr('checked')){
-                    var hotel_id = $('#hotel_id').val();
-                    var service_id = $(this).val();
                     $(this).parent().next().slideDown();
                     $(this).parent().next().find('.tagit-label').each(function(){
                          var current = $(this);
@@ -127,11 +127,16 @@
                     $.ajax({
                         type: "POST",
                         data: ({hotelId : hotel_id, serviceId: service_id, elems : elems}),
-                        url: '/hotels/add_default_tabs',
+                        url: '/hotels/add_tabs',
                     });
                 }
                 else{
                     $(this).parent().next().slideUp();
+                    $.ajax({
+                        type: "POST",
+                        data: ({hotelId : hotel_id, serviceId: service_id, elems : elems}),
+                        url: '/hotels/delete_tabs',
+                    });
                 }
             });
 
@@ -149,8 +154,8 @@
                 if(readTags){
                     $.ajax({
                         type: "POST",
-                        data: ({tagLabel : tagLabel,serviceId : serviceId}),
-                        url: '/services/add_tab',
+                        data: ({tagLabel : tagLabel,serviceId : serviceId, hotelId:hotelId}),
+                        url: '/hotels/add_tab',
                     });
                 }
             },
@@ -160,8 +165,8 @@
                 var hotelId = ($(this).data('hotel'));
                 $.ajax({
                         type: "POST",
-                        data: ({tagLabel : tagLabel,serviceId : serviceId}),
-                        url: '/services/delete_tab',
+                        data: ({tagLabel : tagLabel,serviceId : serviceId, hotelId:hotelId}),
+                        url: '/hotels/delete_tab',
                     });
             },
         });
@@ -183,9 +188,9 @@
             <?php foreach ($services as $service): ?>
             <div class="checkbox">
                 <label>
-                    <input name='service[]' type="checkbox" value="<?=$service['id']?>" class="srv_check"><?= $service['text']?> 
+                    <input name='service[]' type="checkbox" value="<?=$service['id']?>" class="srv_check" <?php if (isset($service['checked'])):?> checked='checked' <?php endif; ?>><?= $service['text']?> 
                 </label>
-               <ul class="myTags" data-service="<?= $service['id'] ?>" data-hotel="<?= $entry['id'] ?>" style="display:none;">
+               <ul class="myTags" data-service="<?= $service['id'] ?>" data-hotel="<?= $entry['id'] ?>" <?php if (isset($service['checked'])):?> style="display:block;" <?php else: ?>style="display:none;"<?php endif;?>>
                     <?php foreach ($service['elems'] as $elem):   ?>
                         <li><?php echo $elem?></li>
                     <?php endforeach ?>

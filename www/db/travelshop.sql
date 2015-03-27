@@ -1,12 +1,12 @@
 -- --------------------------------------------------------
 -- Хост:                         127.0.0.1
--- Версия сервера:               5.6.17 - MySQL Community Server (GPL)
--- ОС Сервера:                   Win64
--- HeidiSQL Версия:              9.1.0.4921
+-- Версия сервера:               5.5.24-log - MySQL Community Server (GPL)
+-- ОС Сервера:                   Win32
+-- HeidiSQL Версия:              8.0.0.4396
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!40101 SET NAMES utf8 */;
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
@@ -23,7 +23,7 @@ CREATE TABLE IF NOT EXISTS `admins` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
--- Дамп данных таблицы travelshop.admins: ~0 rows (приблизительно)
+-- Дамп данных таблицы travelshop.admins: ~1 rows (приблизительно)
 /*!40000 ALTER TABLE `admins` DISABLE KEYS */;
 INSERT INTO `admins` (`id`, `login`, `e-mail`, `pass`, `name`, `sname`, `lname`) VALUES
 	(1, '123', '123@123', '312', 'Andrey', 'Fedotov', '');
@@ -63,7 +63,7 @@ CREATE TABLE IF NOT EXISTS `allreviews_email` (
   `email` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Дамп данных таблицы travelshop.allreviews_email: ~0 rows (приблизительно)
+-- Дамп данных таблицы travelshop.allreviews_email: ~1 rows (приблизительно)
 /*!40000 ALTER TABLE `allreviews_email` DISABLE KEYS */;
 INSERT INTO `allreviews_email` (`email`) VALUES
 	('protected.for@gmail.com');
@@ -104,7 +104,7 @@ CREATE TABLE IF NOT EXISTS `backcall_email` (
   `email` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Дамп данных таблицы travelshop.backcall_email: ~0 rows (приблизительно)
+-- Дамп данных таблицы travelshop.backcall_email: ~1 rows (приблизительно)
 /*!40000 ALTER TABLE `backcall_email` DISABLE KEYS */;
 INSERT INTO `backcall_email` (`email`) VALUES
 	('tour@travelshop.kg');
@@ -130,7 +130,7 @@ CREATE TABLE IF NOT EXISTS `blog` (
   UNIQUE KEY `url` (`url`)
 ) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
 
--- Дамп данных таблицы travelshop.blog: ~7 rows (приблизительно)
+-- Дамп данных таблицы travelshop.blog: ~4 rows (приблизительно)
 /*!40000 ALTER TABLE `blog` DISABLE KEYS */;
 INSERT INTO `blog` (`id`, `name`, `url`, `text`, `date`, `title`, `desc`, `keyw`, `image`, `order`, `views`, `active`) VALUES
 	(12, 'Юбилейный 20-ый Дубайский торговый фестиваль: путешествие в роскошь', 'jubilejnyj_20-yj_dubajskij_torgovyj_festival_puteshestvie_v_roskosh', '<p><span style="color:rgb(20, 24, 35); font-family:helvetica,arial,lucida grande,tahoma,verdana,arial,sans-serif; font-size:14px">Юбилейный 20-ый Дубайский торговый фестиваль: путешествие в роскошь</span><br />\n<br />\n<span style="color:rgb(20, 24, 35); font-family:helvetica,arial,lucida grande,tahoma,verdana,arial,sans-serif; font-size:14px">■ Двадцатый Дубайский торговый фестиваль под лозунгом &laquo;20 лет путешествий &ndash; из праздника в праздник&rdquo; пройдет с 1 января по 1 февраля 2015 и станет первым в череде ярких с</span><span style="color:rgb(20, 24, 35); font-family:helvetica,arial,lucida grande,tahoma,verdana,arial,sans-serif; font-size:14px">обытий в Дубае в новом году.&nbsp;<br />\nВпервые фестиваль прошел в 1996 году; в настоящее время он превратился в самое продолжительное мероприятие такого рода в мире, в значительной мере способствуя продвижению Дубая как туристического направления и предлагая жителям города и туристам яркие впечатления. За период с 1996 по 2014 года фестиваль посетило приблизительно 56 млн. человек, а общая сумма затрат составила $ 40 млрд.<br />\n<br />\nТри составляющих успеха Дубайского торгового фестиваля &ndash; развлечения, шопинг и розыгрыш различных призов.&nbsp;<br />\n<br />\nДля привлечения к участию в фестивале как можно большего количества людей мероприятия проходят не только в торговых центрах, но и в общественных местах, на главных улицах города, например на Бульваре Мохаммеда Бин Рашида, а также в Ковровом оазисе, в историческом районе Шиндага, во Всемирной деревне и парках.&nbsp;<br />\n<br />\nКрасочные фестивальные мероприятия мирового уровня, рассчитанные на всех членов семьи, неизменно привлекают внимание как жителей города, так и туристов со всего мира.&nbsp;<br />\n<br />\nНеизменный хит &ndash; мюзикл MAMMA MIA &ndash; можно будет увидеть со 2 по 10 января 2015г. на сцене зала Шейха Рашида в Дубайском центре международной торговли. Это шоу посмотрело уже более 54 млн. зрителей во всем мире, ведь за время его существования было сделано 39 различных постановок на 14 языках.<br />\n<br />\nС 15 по 17 января на сцене Мадинат арены будет представлен классический балет &laquo;Ромео и Джульетта&raquo; в исполнении самой известной европейской труппы Балет Монте-Карло под руководством одного из лучших мировых хореографов Жана Кристофа Майо (Jean Chrostoph Maillot).<br />\n<br />\nЮбилейный фестиваль вновь подтвердит уникальные возможности лучшего в мире шопинга, уникального и разнообразного, будь то городские и традиционные рынки или первоклассные торговые центры. Дубай действительно является мировым центром шопинга, вторым после Лондона городом, по количеству представленных международных розничных брендов. В фестивале примут участие более 70 торговых центров и 6000 магазинов, а скидки на разные товары, начиная от золота, парфюмерии, одежды модных брендов, машин, электроники до текстиля и изделий ручной работы достигают 75%.<br />\nКроме того, будет представлены уникальные модные концепции, например Celebrity Pop-up Shop с коллекциями одежды от известных дизайнеров или владельцев брендов, ранее не представленными в ОАЭ. Здесь же пройдут показы мод, автограф-сессии и стайлинг-сессии. В течение трех недель в магазине будут попеременно представлены коллекции трех дизайнеров. Так, с 15 по 21 января 2015 известная американская актриса и дизайнер Николь Ричи представит свою ювелирную линию House of Harlow 1090. Украшения в ретро стиле из этой коллекции носят Мадонна и Эшли Симпсон. Celebrity Pop-up Shop расположится на пляже The Beach &ndash; Jumeirah Beach Residence.<br />\n<br />\nИ конечно, же, Дубайский торговый фестиваль славится лотереями крупных денежных призов, роскошных автомобилей и золота.&nbsp;<br />\n<br />\nМега лотерея Gold &amp; Jewellery Mega Raffle даст шанс выиграть призы на сумму до 15 млн. дирхам, включая золото весом до 100 кг и бриллианты общим весом до 40 карат. А в рамках мега лотереи Infinity Mega Raffle ежедневно будет разыгрываться приз, состоящий из двух автомобилей QX 60 и QX 50 и 100 000 дирхам. В ходе еженедельных розыгрышей этой лотереи будут также разыграны призы на сумму 2 млн. дирхам. Для участия необходимо приобрести лотерейный билет стоимостью 200 дирхам (ок $54).&nbsp;<br />\n<br />\nВо время Дубайского торгового фестиваля организаторы планируют попасть в Книгу рекордов Гиннеса, создав золотую цепь ручной работы длиной 5 км (&lsquo;Dubai celebration Chain&rdquo;). Всем желающим будет предоставлена возможность приобрести части этой цепи, так как они будут выставлены на продажу.&nbsp;</span></p>\n', '2016-01-01 06:00:00', 'Юбилейный 20-ый Дубайский торговый фестиваль: путешествие в роскошь', 'Юбилейный 20-ый Дубайский торговый фестиваль: путешествие в роскошь', 'Юбилейный 20-ый Дубайский торговый фестиваль: путешествие в роскошь', 'd2480590815c9b77c37bb88443e72e86.jpg', 1, 0, 'on'),
@@ -160,7 +160,7 @@ CREATE TABLE IF NOT EXISTS `contacts` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
--- Дамп данных таблицы travelshop.contacts: ~0 rows (приблизительно)
+-- Дамп данных таблицы travelshop.contacts: ~1 rows (приблизительно)
 /*!40000 ALTER TABLE `contacts` DISABLE KEYS */;
 INSERT INTO `contacts` (`id`, `adress`, `phone`, `email`, `coords`, `social_text`, `social_vk`, `social_fb`, `social_tw`, `social_ok`, `social_insta`) VALUES
 	(1, 'ул.Абдрахманова 135  Филиал №1: ул.Логвиненко 26а', 'Авиакасса 66 20 20 <br/> Тур отдел   66 21 21', 'tour@travelshop.kg', '42.87121241497057, 74.61166512966156', 'Мы также есть в социальных сетях,следите за нашими новостями и новыми турами.', 'id279877089', 'travelshopkg', 'travelshop', 'travelshop', '123');
@@ -197,7 +197,7 @@ CREATE TABLE IF NOT EXISTS `feedback_email` (
   `email` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Дамп данных таблицы travelshop.feedback_email: ~0 rows (приблизительно)
+-- Дамп данных таблицы travelshop.feedback_email: ~1 rows (приблизительно)
 /*!40000 ALTER TABLE `feedback_email` DISABLE KEYS */;
 INSERT INTO `feedback_email` (`email`) VALUES
 	('tour@travelshop.kg');
@@ -371,7 +371,7 @@ CREATE TABLE IF NOT EXISTS `news` (
   UNIQUE KEY `url` (`url`)
 ) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 
--- Дамп данных таблицы travelshop.news: ~9 rows (приблизительно)
+-- Дамп данных таблицы travelshop.news: ~7 rows (приблизительно)
 /*!40000 ALTER TABLE `news` DISABLE KEYS */;
 INSERT INTO `news` (`id`, `name`, `url`, `text`, `date`, `title`, `desc`, `keyw`, `image`, `category_id`, `order`, `views`, `active`) VALUES
 	(1, 'Семь лучших мест для встречи Нового Года в Таиланде', 'imya', '<p><strong>Семь лучших мест для встречи Нового Года в Таиланде</strong></p>\n\n<p>Торжества по случаю празднования Нового Года пройдут на всей территории Таиланда, а самые крупные из них состоятся в Бангкоке, Чиангмае, провинциях Чианграй (город Мае Сай), Чонбури (Паттайя), Сонгкхла (Хат Яй), в городе Кхон Каен и на острове Пхукет. Празднования пройдут с 25 декабря 2014 года по 1 января 2015 года.</p>\n\n<p>Каждое из семи торжеств будет посвящено определенной тематике и подарит гостям Королевства незабываемые впечатления, а также удивит великолепными фейерверками.</p>\n\n<p>В Бангкоке основные празднования состоятся у торгового центра Ploenchit, на пересечениях улиц Ratchaprasong и Pathumwan в ночь с 31 декабря на 1 января. Гостей будут ждать великолепные фейерверки, концерты и выступления артистов. Традиционный обратный отчет перед наступлением Нового Года пройдет перед торговыми комплексами CentralWorld и Amarin Plaza.</p>\n\n<p>В Чиангмае торжества пройдут у ворот Tha Pae и на улице Tha Pae Road с 25 по 31 декабря. Гостей будут ждать небольшие уличные концерты, выступления артистов и разнообразные представления, а в новогоднюю ночь &ndash; обратный отчет перед наступлением полуночи и зрелищные фейерверки.</p>\n\n<p>Район Мае Сай северной провинции Чианграй встретит путешественников фейерверками, музыкальными представлениями и праздничными шоу-программами в традициях народов трех соседних государств &ndash; Таиланда, Лаоса и Мьянмы.</p>\n\n<p>В Паттайе торжества пройдут на пирсе Bali Hai в самой южной части городского пляжа с 25 по 31 декабря. Все семь дней будут наполнены представлениями и концертами знаменитых тайских и иностранных музыкантов, а завершатся новогодним фейерверком в небе над побережьем.</p>\n\n<p>В городе Хай Яй провинции Сонгкхла празднования пройдут в канун Нового Года на четырех главных улицах города &ndash; Niphat Uthit 3, Sanehanusorn, Thammanoonvithi и Chee Uthit, перед торговым центром Lee Gardens Plaza и рынком Gong Kong Villa Market. На острове Пхукет торжества состоятся с 29 по 31 декабря на поле Sanam Chai, а в городе Кхон Каен &ndash; с 25 по 31 декабря на улице Srichan Road у городских ворот.</p>\n\n<p><strong>Центр медитации в Чианграе приглашает присоединиться к праздничным молитвам в честь Нового Года</strong></p>\n\n<p>Медитационный центр Rai Cherntawan в самой северной провинции Таиланда Чианграй приглашает гостей страны присоединиться к праздничным молитвам в честь наступления Нового Года, которые пройдут с 25 декабря 2014 года по 5 января 2015 года.</p>\n\n<p>Молитвы пройдут одновременно с фестивалем ланнских фонарей и цветов, гости которого будут очарованы видом сотен фонариков и множества разноцветных тюльпанов, а также смогут постоять под специальной аркой, украшенной приносящими удачу цветками.</p>\n\n<p>Праздничные молитвы в честь наступления Нового Года пройдут, в том числе, 31 декабря, а 1 января гости центра смогут присоединиться к первому в 2015 году уроку в центре медитации, который проведет один из самых знаменитых монахов Таиланда В. Ваджирамедхи.</p>\n\n<p>Центр Rai Cherntawan был открыт в 2009 году и сегодня занимает площадь более 250 000 квадратных метров в районе Муанг провинции Чианграй. Здесь можно пройти целый курс, или взять несколько уроков медитации. Концепция центра основана на принципе возвращения к природе, а его гости могут расслабиться и восстановить душевное равновесие.</p>\n\n<p><strong>Зонтики и коврики возвращаются на пляжи Пхукета</strong></p>\n\n<p>Администрации Пхукета удалось найти баланс между комфортными условиями отдыха туристов на пляжах, сохранением красоты береговой линии острова и справедливыми ценами на пляжные услуги от предпринимателей.</p>\n\n<p>23 декабря Администрацией провинции было объявлено о том, что одна десятая часть на всех пляжах острова отводится под территорию для шезлонгов и зонтиков.</p>\n\n<p>Предпринимателям разрешено возобновить свой бизнес, при этом власти определят все цены на услуги и они (цены) будут едины по всему острову. Стоимость будет объявлена в пятницу 26 декабря.</p>\n\n<p>Сегодня чиновники определят территории под коврики и зонтики на 12 пляжах.</p>\n\n<p>Услуги аренды будут предоставляться с 9 утра до 16 часов.</p>\n\n<p>В рамках кампании по восстановлению пляжей Пхукета, кампании против коррупции и по ряду других внутренних причин, пляжные услуги, начиная от предоставления зонтиков и шезлонгов, заканчивая пляжными барами, были отменены на береговой линии всех пляжей острова.</p>\n\n<p>&nbsp;</p>\n\n<p>Источник: Туристическое Управление Таиланда</p>\n\n<p>За дополнительной информацией обращайтесь:</p>\n\n<p>Travel Shop +996 312 66 21 21, +996 701 66 21 21, +996 554 66 21 21</p>\n', '2015-06-01 12:00:00', 'Тайланд', 'Таиланд, отдых в Тайланде, тур вТайланд Бишкек, Отели Тайланда Бишкек, горящие туры в Тайланд', 'Таиланд, отдых в Тайланде, тур вТайланд Бишкек, Отели Тайланда Бишкек, горящие туры в Тайланд', '12e1561e487ca17c5b92631944901c66.jpg', 0, 1, 0, 'on'),
@@ -460,7 +460,7 @@ CREATE TABLE IF NOT EXISTS `requests_email` (
   `email` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Дамп данных таблицы travelshop.requests_email: ~0 rows (приблизительно)
+-- Дамп данных таблицы travelshop.requests_email: ~1 rows (приблизительно)
 /*!40000 ALTER TABLE `requests_email` DISABLE KEYS */;
 INSERT INTO `requests_email` (`email`) VALUES
 	('protected.for@gmail.com');
@@ -493,7 +493,7 @@ CREATE TABLE IF NOT EXISTS `reviews_email` (
   `email` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Дамп данных таблицы travelshop.reviews_email: ~0 rows (приблизительно)
+-- Дамп данных таблицы travelshop.reviews_email: ~1 rows (приблизительно)
 /*!40000 ALTER TABLE `reviews_email` DISABLE KEYS */;
 INSERT INTO `reviews_email` (`email`) VALUES
 	('protected.for@gmail.com');
@@ -510,13 +510,14 @@ CREATE TABLE IF NOT EXISTS `services` (
   `active` varchar(2) NOT NULL,
   `elems` longtext,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=57 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=58 DEFAULT CHARSET=utf8;
 
--- Дамп данных таблицы travelshop.services: ~2 rows (приблизительно)
+-- Дамп данных таблицы travelshop.services: ~3 rows (приблизительно)
 /*!40000 ALTER TABLE `services` DISABLE KEYS */;
 INSERT INTO `services` (`id`, `text`, `image`, `order`, `active`, `elems`) VALUES
-	(51, 'Здоровье и красота', 'fb233d245da73f19301da331e6eac264.png', -1, 'on', 'массаж,маникюр'),
-	(56, 'Интернет', 'fb233d245da73f19301da331e6eac264.png', 0, 'on', 'wi-fi,ip-телефон,dfdsf,sdfsdf,sdf');
+	(51, 'Здоровье и красота', 'fb233d245da73f19301da331e6eac264.png', -1, 'on', 'массаж,маникюр,стрижка,[f[f[f'),
+	(56, 'Интернет', 'fb233d245da73f19301da331e6eac264.png', 0, 'on', 'wi-fi,ip-телефон'),
+	(57, 'Дополнительно', 'fb233d245da73f19301da331e6eac264.png', 0, 'on', 'разное,новое');
 /*!40000 ALTER TABLE `services` ENABLE KEYS */;
 
 
@@ -525,15 +526,15 @@ DROP TABLE IF EXISTS `services_hotel`;
 CREATE TABLE IF NOT EXISTS `services_hotel` (
   `hotel_id` int(11) NOT NULL,
   `service_id` int(11) NOT NULL,
-  `elems` longtext NOT NULL,
-  PRIMARY KEY (`service_id`)
+  `elems` longtext NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Дамп данных таблицы travelshop.services_hotel: ~0 rows (приблизительно)
+-- Дамп данных таблицы travelshop.services_hotel: ~3 rows (приблизительно)
 /*!40000 ALTER TABLE `services_hotel` DISABLE KEYS */;
 INSERT INTO `services_hotel` (`hotel_id`, `service_id`, `elems`) VALUES
-	(19, 51, 'массаж,маникюр'),
-	(19, 56, 'wi-fi,ip-телефон');
+	(19, 56, 'wi-fi,ip-телефон'),
+	(19, 51, 'маникюр,стрижка,dsdsd'),
+	(20, 51, 'выаыва');
 /*!40000 ALTER TABLE `services_hotel` ENABLE KEYS */;
 
 
@@ -569,7 +570,7 @@ CREATE TABLE IF NOT EXISTS `tags` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8;
 
--- Дамп данных таблицы travelshop.tags: ~0 rows (приблизительно)
+-- Дамп данных таблицы travelshop.tags: ~1 rows (приблизительно)
 /*!40000 ALTER TABLE `tags` DISABLE KEYS */;
 INSERT INTO `tags` (`id`, `name`, `object`, `page_id`) VALUES
 	(25, 'dasdsad', 'blog', 2);
@@ -656,7 +657,7 @@ CREATE TABLE IF NOT EXISTS `toursbuy_email` (
   `email` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Дамп данных таблицы travelshop.toursbuy_email: ~0 rows (приблизительно)
+-- Дамп данных таблицы travelshop.toursbuy_email: ~1 rows (приблизительно)
 /*!40000 ALTER TABLE `toursbuy_email` DISABLE KEYS */;
 INSERT INTO `toursbuy_email` (`email`) VALUES
 	('tour@travelshop.kg');
@@ -732,7 +733,7 @@ CREATE TABLE IF NOT EXISTS `vises` (
   UNIQUE KEY `url` (`url`)
 ) ENGINE=InnoDB AUTO_INCREMENT=50 DEFAULT CHARSET=utf8;
 
--- Дамп данных таблицы travelshop.vises: ~123 rows (приблизительно)
+-- Дамп данных таблицы travelshop.vises: ~46 rows (приблизительно)
 /*!40000 ALTER TABLE `vises` DISABLE KEYS */;
 INSERT INTO `vises` (`id`, `name`, `url`, `text`, `order`, `active`) VALUES
 	(5, '​Визовые услуги', 'turcija', '<p><span style="font-size:14px">Визовые услуги</span></p>\n\n<h6><span style="font-size:14px">&nbsp;&laquo;Путешествие длиной в тысячу миль начинается с первого шага&raquo; (Лао-Цзы).</span></h6>\n\n<hr />\n<p><img alt="" src="/ckeditor/kcfinder/upload/images/usa_slider%281%29.jpg" style="height:198px; width:417px" /><img alt="" src="/ckeditor/kcfinder/upload/images/visa.jpg" style="height:200px; width:223px" /></p>\n\n<h6><span style="font-size:14px">Сделайте первый шаг &mdash; оформите визу! Подготовим, подадим, получим документы в визовых центрах и посольствах находящиеся в Бишкеке, Алматы, Астане, Ташкенте и Москве.</span></h6>\n\n<hr />\n<h6><span style="font-size:14px"><strong>Визовые услуги от туристической компании </strong><strong>Travel</strong> <strong>Shop</strong> <strong>(услуги по подготовке документов для оформления виз):</strong></span></h6>\n\n<h6><span style="font-size:14px">- консультирование и проверка документов;</span></h6>\n\n<h6><span style="font-size:14px">- предоставление полного пакета необходимых документов, учитывая индивидуальные особенности заявителя;</span></h6>\n\n<h6><span style="font-size:14px">- проверка правильности оформления документов, согласно требованиям Посольства/Консульства;</span></h6>\n\n<h6><span style="font-size:14px">- помощь в заполнении визовой анкеты;</span></h6>\n\n<h6><span style="font-size:14px">- консультации по оформлению приглашения;</span></h6>\n\n<h6><span style="font-size:14px">- подготовка к собеседованию;</span></h6>\n\n<h6><span style="font-size:14px">- рекомендации о подаче дополнительных документов, исходя из требований каждого Посольства/Консульства;</span></h6>\n\n<hr />\n<p><span style="font-size:14px">Вам необходимо&nbsp;зарегистрироваться по прибытии в Кыргызстан?&nbsp;Получить визу в Кыргызскую Республику или одну из стран Центральной Азии? </span></p>\n\n<p><span style="font-size:14px">Обратитесь в Трэвел Шоп - Ваши документы будут подготовлены точно в установленные сроки.&nbsp;</span></p>\n\n<p><span style="font-size:14px">Справки по телефонам раб.: 0312 66 21 21, 0312 66 20 20 моб. 0701 66 21 21, 0554 66 21 21&nbsp;</span></p>\n\n<h6>&nbsp;</h6>\n\n<h6>&nbsp;</h6>\n\n<h6>&nbsp;</h6>\n', 2, 'on'),
@@ -789,7 +790,7 @@ CREATE TABLE IF NOT EXISTS `widget` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=53 DEFAULT CHARSET=utf8;
 
--- Дамп данных таблицы travelshop.widget: ~12 rows (приблизительно)
+-- Дамп данных таблицы travelshop.widget: ~6 rows (приблизительно)
 /*!40000 ALTER TABLE `widget` DISABLE KEYS */;
 INSERT INTO `widget` (`id`, `title`, `text`, `order`) VALUES
 	(19, 'copyright', '© ОсОО «Травел Шоп» 2014. Все права защищены.', -2),
