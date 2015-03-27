@@ -288,8 +288,8 @@ class Hotels extends MX_Controller {
 	public function add_tabs(){
 		$hotelId =  $_POST['hotelId'];
 		$serviceId = $_POST['serviceId'];
-		$elems = trim($_POST['elems']);
-		$elems = str_replace (" ", ',', $elems);
+		$elems = trim($_POST['elems'],'~');
+		$elems = str_replace ("~", ',', $elems);
 		$data = array('hotel_id' => $hotelId, 'service_id' => $serviceId,'elems'=> $elems);
 		$this->hotels_model->add_services($data);
 

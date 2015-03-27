@@ -33,6 +33,7 @@ class Tours extends MX_Controller {
             }
         } else {
             if (!$url) {
+
                 $data['entries'] = $this->tours_model->get('', true);
                 $this->load->view('front/tours', $data);
             } else {

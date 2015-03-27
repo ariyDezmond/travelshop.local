@@ -44,9 +44,24 @@ class Hotels_model extends CI_Model {
             }
         } else {
             if ($id) {
-                $query = $this->db->get_where($this->table_name, array('id' => $id, 'active' => 'on'));
+               // $query = $this->db->get_where($this->table_name, array('id' => $id, 'active' => 'on'));
+                $this->db->select('*');
+                $this->db->from($this->table_name);
+                $this->db->where('id', $id);
+                $this->db->where('active', 'on');
+                $query = $this->db->get();
+                $data =  $query->row_array();
 
-                return $query->row_array();
+                $this->db->select('sh.*, s.text,s.image');
+                $this->db->from('services_hotel as sh');
+                $this->db->where('hotel_id', $id);
+                $this->db->join('services as s', 's.id=sh.service_id');
+                $query = $this->db->get();
+                $data['services'] = $query->result_array();
+                foreach ($data['services'] as &$item) {
+                    $item['elems'] = explode(',',  $item['elems']);
+                }
+                return $data;
             }
             $this->db->order_by('order', 'desc');
             $query = $this->db->get_where($this->table_name, array('active' => 'on'));
