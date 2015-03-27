@@ -200,4 +200,13 @@ class Allreviews extends MX_Controller {
         $this->model->order($id, 'down');
     }
 
+    public function ajax_load(){
+        $startFrom = $_POST['startFrom'];
+        $data = $this->model->get_ajax($startFrom);
+        foreach ($data as &$item){
+            $item['date'] = date('d.m.Y H:i', strtotime($item['date']));
+        }
+        echo json_encode($data);
+    }
+
 }

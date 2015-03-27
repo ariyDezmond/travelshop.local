@@ -30,8 +30,14 @@ class Allreviews_model extends CI_Model {
 
                 return $query->row_array();
             }
-            $this->db->order_by('order', 'desc')->order_by('date', 'desc');
-            $query = $this->db->get_where($this->table_name, array('active' => 'on'));
+            $this->db->select('*');
+            $this->db->from($this->table_name);
+            $this->db->order_by('order', 'desc');
+            $this->db->order_by('date', 'desc');
+            $this->db->limit(5);
+            $this->db->where('active','on');
+            $query = $this->db->get();
+           
             if (count($query->result_array()) > 0) {
                 return $query->result_array();
             } else {
@@ -149,4 +155,8 @@ class Allreviews_model extends CI_Model {
         $this->db->delete($this->table_name, array('id' => $id));
     }
 
+    public function get_ajax($start = null){
+        $query = $this->db->query("SELECT * FROM `$this->table_name` WHERE `active`='on' ORDER BY `date` DESC, `order` DESC   LIMIT $start, 5");
+        return $query->result_array();
+    }
 }
