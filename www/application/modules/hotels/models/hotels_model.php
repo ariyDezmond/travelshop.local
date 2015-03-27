@@ -152,17 +152,57 @@ class Hotels_model extends CI_Model {
         }
     }
 
-    public function get_default_services(){
-        $query =  $this->db->get('services');
-        return $query->result_array();
+    public function get_services($hotel_id){
+
+        $this->db->select('*');
+        $this->db->from('services');
+        $services = $this->db->get();
+        $services = $services->result_array();
+        foreach ($services as &$item) {
+            $this->db->select('elems');
+            $this->db->from('services_hotel');
+            $this->db->where('hotel_id', $hotel_id);
+            $this->db->where('service_id', $item['id']);
+            $elems = $this->db->get();
+            $elems = $elems->result_array();
+            if(!empty($elems)){
+             $item['elems'] = $elems[0]['elems'];
+             $item['checked'] = TRUE;
+            }
+        }
+        return $services;
     }
 
     public function add_services($data){
-        $this->db->insert('services_hotel', $data);
+        $this->db->select('*');
+        $this->db->from('services_hotel');
+        $this->db->where('hotel_id', $data['hotel_id']);
+        $this->db->where('service_id', $data['service_id']);
+        $query = $this->db->get();
+        $query = $query->result_array();
+        if(empty($query)){
+             $this->db->insert('services_hotel', $data);
+        }
+       
     }
-    public function delete_services($data){
+    public function delete_services($hotel_id, $service_id){
+        $this->db->query("DELETE FROM `services_hotel` WHERE `service_id` = $service_id AND `hotel_id` = $hotel_id");
+    }
 
-        $this->db->delete('services_hotel', array('id' => $id));
+    public function get_hotel_service($hotel_id,$service_id){
+        $this->db->select('*');
+        $this->db->from('services_hotel');
+        $this->db->where('hotel_id', $hotel_id);
+        $this->db->where('service_id', $service_id);
+        $query = $this->db->get();
+        return $query->result_array();
+    }
+
+    public function update_tags($hotel_id, $service_id, $tags){
+        $data = array('elems' => $tags);
+        $this->db->where('hotel_id', $hotel_id);
+        $this->db->where('service_id', $service_id);
+        $this->db->update('services_hotel', $data);
     }
 
 }

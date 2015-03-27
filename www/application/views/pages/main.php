@@ -39,7 +39,7 @@
     <div class="wrapper">
         <!--<input type="button" id="button_1">-->
         <!--<? base_url() ?>css/form.css-->
-        <iframe id="search_tours" src="http://spb.ntk-intourist.ru/main.aspx?userCSS=http://gibigate.ru/travelshop/css/form.css" width="100%" height="100%"></iframe>
+        <iframe id="search_tours" src="http://spb.ntk-intourist.ru/main.aspx?userCSS=http://travelshop.kg/css/form.css" width="100%" height="100%"></iframe>
     </div><!-- /wrapper -->
 </div><!-- /search_tour -->
 
