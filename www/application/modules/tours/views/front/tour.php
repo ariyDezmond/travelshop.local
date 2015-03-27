@@ -1,3 +1,19 @@
+<style type="text/css">
+.srv_elems{
+    margin-left: 70px;
+    list-style-type: disc !important;
+}
+.srv_elems li{
+    height: 20px!important;
+    border-bottom: none!important;
+      display: list-item!important;
+        overflow: visible!important;
+}
+.hotel_description_content_right_side ul li{
+    height: auto!important;
+}
+</style>
+
 <div class="tour_main">
     <div class="wrapper">
         <h3 class="main_title"><?= $entry['name'] ?></h3>
@@ -113,56 +129,17 @@
                     <div class="hotel_description_content_right_side">
                         <h5 class="hotel_title_2">Услуги при отеле</h5>
                         <ul>
+                            <?php foreach ($hotel['services'] as $service):?>
                             <li>
-                                <img src="/img/sample_icons/hotel_icon.jpg" alt="">
-                                <h6>Общие услуги</h6>
-                                <p>Сад</p>
+                                <img src="/images/services/<?=$service['image']?>" alt="">
+                                <h6><?=$service['text']?></h6>
+                                <ul class="srv_elems">
+                                     <?php foreach ($service['elems'] as $elem):?>
+                                    <li><?=$elem?></li>
+                                    <?php endforeach;?>
+                                </ul>
                             </li>
-                            <li>
-                                <img src="/img/sample_icons/hotel_icon.jpg" alt="">
-                                <h6>Общие услуги</h6>
-                                <p>Сад</p>
-                            </li>
-                            <li>
-                                <img src="/img/sample_icons/hotel_icon.jpg" alt="">
-                                <h6>Общие услуги</h6>
-                                <p>Сад</p>
-                            </li>
-                            <li>
-                                <img src="/img/sample_icons/hotel_icon.jpg" alt="">
-                                <h6>Общие услуги</h6>
-                                <p>Сад</p>
-                            </li>
-                            <li>
-                                <img src="/img/sample_icons/hotel_icon.jpg" alt="">
-                                <h6>Общие услуги</h6>
-                                <p>Сад</p>
-                            </li>
-                            <li>
-                                <img src="/img/sample_icons/hotel_icon.jpg" alt="">
-                                <h6>Общие услуги</h6>
-                                <p>Сад</p>
-                            </li>
-                            <li>
-                                <img src="/img/sample_icons/hotel_icon.jpg" alt="">
-                                <h6>Общие услуги</h6>
-                                <p>Сад</p>
-                            </li>
-                            <li>
-                                <img src="/img/sample_icons/hotel_icon.jpg" alt="">
-                                <h6>Общие услуги</h6>
-                                <p>Сад</p>
-                            </li>
-                            <li>
-                                <img src="/img/sample_icons/hotel_icon.jpg" alt="">
-                                <h6>Общие услуги</h6>
-                                <p>Сад</p>
-                            </li>
-                            <li>
-                                <img src="/img/sample_icons/hotel_icon.jpg" alt="">
-                                <h6>Общие услуги</h6>
-                                <p>Сад</p>
-                            </li>
+                            <?php endforeach;?>
                         </ul>
                     </div>
 

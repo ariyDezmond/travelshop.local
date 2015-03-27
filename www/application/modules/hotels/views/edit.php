@@ -1,6 +1,9 @@
 <script src="<?php echo base_url();?>js/tag-it.js" type="text/javascript" charset="utf-8"></script>
 <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>css/jquery.tagit.css">
 <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>css/tagit.ui-zendesk.css">
+<style type="text/css">
+.ui-helper-hidden-accessible { display:none; }
+</style>
 <div class="row">
     <div class="col-md-12">
         <a href="/admin/<?= $module ?>">
@@ -122,7 +125,7 @@
                     $(this).parent().next().slideDown();
                     $(this).parent().next().find('.tagit-label').each(function(){
                          var current = $(this);
-                         elems = elems+' '+current.text()
+                         elems = elems+'~'+current.text()
                     });
                     $.ajax({
                         type: "POST",
