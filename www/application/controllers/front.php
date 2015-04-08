@@ -18,9 +18,9 @@ class Front extends MX_Controller {
         $this->load->view('templates/head', $data);
         $this->load->view('templates/slider', $data);
         $this->load->view('templates/reservation', $data);
-        $this->load->view('pages/main', $data);
-        $this->load->view('templates/contacts', $data);
-        $this->load->view('templates/footer', $data);
+       // $this->load->view('pages/main', $data);
+        //$this->load->view('templates/contacts', $data);
+        //$this->load->view('templates/footer', $data);
 //        echo $this->lang->line('hello_world');
     }
 

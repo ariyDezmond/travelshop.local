@@ -149,6 +149,55 @@ class Toursbuy extends MX_Controller {
         }
     }
 
+    public function save()
+    {
+        $token = 'f1cc605b8eb3c048a327695a587927a0'; 
+        /*Партнерский маркер*/
+        $marker = '72756'; 
+
+        $aParams = array(
+            'search[params_attributes][origin_name]' => $_GET['origin_iata'],
+            'search[params_attributes][destination_name]' => $_GET['destination_iata'],
+            'search[params_attributes][depart_date]' => $_GET['depart_date'],
+            'search[params_attributes][return_date]' => $_GET['return_date'],
+            'search[params_attributes][range]' => $_GET['range'],
+            'search[params_attributes][adults]' => $_GET['adults'],
+            'search[params_attributes][children]' => $_GET['children'],
+            'search[params_attributes][infants]' => $_GET['infants'],
+            'search[params_attributes][trip_class]' => $_GET['trip_class']
+        ); 
+
+        ksort($aParams);
+
+        $signature = md5("$token:$marker:".implode(':', array_values($aParams)));
+
+        $bParams = array(
+            'signature' => $signature,
+            'enable_api_auth' => true,
+            'marker' => $marker
+            );
+        $aParams = $aParams + $bParams;
+
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, 'http://yasen.aviasales.ru/searches.json');
+        curl_setopt($ch, CURLOPT_POST, 1);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($aParams));
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_FAILONERROR, 1);
+        /*Выполнение curl запроса*/
+        $answer = curl_exec($ch);
+        $answer = json_decode($answer, true);
+        echo "<pre>"; 
+        var_dump(($answer['tickets']));
+        /*Вывод списка авиакомпаний, совершающих перелет по маршруту*/              
+                        echo "<p>Перелеты между этими городами совершают <b>авиакомпании</b>: </p><ul>" ;
+                        foreach ($answer['airlines'] as $value){
+                            echo "<li>Name: " .$value['name']. "</li>";
+                            echo "<li>Alliance name : " .$value['alliance_name']. "</li>";
+                        }
+                        echo "</ul>";
+    }
+
     public function up($id) {
         $this->model->order($id, 'up');
     }

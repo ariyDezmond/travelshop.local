@@ -1,0 +1,296 @@
+body {margin: 0;}
+.clear {clear: both;font-size: 0;line-height: 0;}
+
+input[type=button] {
+    cursor: pointer;
+}
+.ui-menu-item a{
+    line-height: 1.2em !important;
+    padding: 2px 35px 2px 3px !important;
+    position: relative;}
+
+.avs_ac_name_iata span {
+    font-size: 12px;
+    margin-right: 5px;}
+
+.avs_ac_name_iata .avs_ac_iata {
+    position: absolute;
+    top: 5px;
+    right: 5px;}
+
+.avs_ac_name_iata .avs_ac_country {
+    font-size: 10px;
+    color: #777;}
+
+.avs_ac_name_iata .avs_ac_airport_name {
+    display: block;
+    font-size: 10px;
+    color: #777;}
+
+form {
+    width: 860px;
+    padding: 0 65px;
+    margin: 0 auto;
+    height: 419px;
+    background: #fdc900;
+    font-family: Arial, sans-serif;
+    position: relative;
+}
+form h2 {
+    font-family: "Arial-Black";
+    font-size: 26px;
+    line-height: 22px;
+    color: #fff;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.75);
+    padding: 10px 0 15px 0;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0;
+}
+form label {
+    color: #fff;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 22px;
+}
+.aviasales_selected_iata {
+    display: none;
+}
+form .form_block {
+    width: 45%;
+    float: left;
+    position: relative;
+    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 22px;
+    color: #002983;
+}
+img.ui-datepicker-trigger {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+form .form_block input[type=text] {
+    width: 287px;
+    height: 35px;
+    border:0;
+    padding: 0 10px;
+    margin: 0;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+form .form_label {
+    color: #fff;
+    font-size: 14px;
+    line-height: 28px;
+    position: relative;
+    display: inline-block;
+    padding-left: 30px;
+}
+form .form_label:checked {
+    color: #002983;
+}
+form .form_block a {
+    width: 40px;
+    height: 38px;
+    display: block;
+    font-size: 0;
+    line-height: 0;
+    position: absolute;
+    top: 18px;
+    right: 20px;
+}
+img.ui-datepicker-trigger {
+    position: absolute;
+    right: 88px;
+    top: 27px;
+}
+form .passangers_label {
+    font-size: 14px;
+    line-height: 22px;
+    color: #fff;
+}
+.passangers_select_form {
+    width: 50px;
+    height: 26px;
+    float: left;
+    padding: 0 0 0 20px;
+    margin-right: 10px;
+}
+.passangers_select_form select {
+    width: 50px;
+    height: 26px;
+    background: #fff;
+    border:0;
+
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+.passangers_select_form select {
+  -webkit-appearance: none;
+  background-image: url('../img/select_png.png');
+  background-position: 80% center;
+  background-repeat: no-repeat;
+  line-height: 1em;
+  /* for FF */
+  -moz-appearance: none;
+  text-indent: 0.01px;
+  text-overflow: '';
+  /* for IE */
+  -ms-appearance: none;
+  appearance: none!important;
+}
+
+.passangers_select_form select::-ms-expand {
+  display: none;
+}
+.passangers_select_form_adults {background: url(../img/form_sprite.png) 0 center no-repeat;}
+.passangers_select_form_children {background: url(../img/form_sprite.png) -17px center no-repeat;}
+.passangers_select_form_infants {background: url(../img/form_sprite.png) -36px center no-repeat;}
+
+.form_block_label {float: left;}
+.form_block2 {
+    float: right;
+    margin-right: 85px;
+}
+#economy_ticket {margin: 0px -4px 0 150px;width: 157px;height: 36px;border:0;background: #fcd23f;border-top: 1px solid #fff;outline: 0;
+
+-webkit-border-top-left-radius: 4px;
+-webkit-border-bottom-left-radius: 4px;
+-moz-border-radius-topleft: 4px;
+-moz-border-radius-bottomleft: 4px;
+border-top-left-radius: 4px;
+border-bottom-left-radius: 4px;}
+
+#economy_ticket.active {width: 157px;height: 36px;border:0;background: #f1c202;border-top: 1px solid #d89b01;outline: 0;outline: 0;}
+
+#buisness_ticket {margin: 0;width: 157px;height: 36px;border:0;background: #fcd23f;border-top: 1px solid #fff;outline: 0;
+
+    -webkit-border-top-right-radius: 4px;
+    -webkit-border-bottom-right-radius: 4px;
+    -moz-border-radius-topright: 4px;
+    -moz-border-radius-bottomright: 4px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;}
+
+#buisness_ticket.active {margin: 0;width: 157px;height: 36px;border:0;background: #f1c202;border-top: 1px solid #d89b01;outline: 0;}
+
+
+form .form_block label {
+    color: #002983;
+    font-size: 14px;
+}
+.form_block_margin {margin-bottom: 20px;}
+.form_block3 {margin-top: 20px;}
+
+#main_submit {
+    border:0;
+    width: 155px;
+    height: 39px;
+    border-bottom: 3px solid #001f65;
+    background: #002983;
+    position: absolute;
+    top: 120px;
+    right: 40px;
+    color: #fff;
+    font-size: 21px;
+    line-height: 38px;
+    outline: 0;
+    cursor: pointer;
+
+    -webkit-box-shadow: 4px 4px 5px 0px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow:    4px 4px 5px 0px rgba(50, 50, 50, 0.75);
+    box-shadow:         4px 4px 5px 0px rgba(50, 50, 50, 0.75);
+
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+}
+#main_button:focus {outline: 0;}
+#main_button:active {outline: 0;}
+form p {
+    color: #fff;
+    font-size: 16px;
+    line-height: 22px;
+}
+form p a {
+    text-decoration: none;
+    color: #002983;
+}
+div#ui-datepicker-div {
+    top: 193px!important;
+    width: 200px!important;
+}
+.ui-datepicker-title {
+    font-size: 14px;
+}
+table.ui-datepicker-calendar {
+    font-size: 12px!important;
+}
+#depart_date {position: relative;}
+#return_date {position: relative;}
+
+#rfirst+label:before, #rsecond+label:before, #rthird+label:before {
+    content: "";
+    display: inline-block;
+    height: 19px;
+    width: 19px;
+    margin: 0 5px 0 0;
+    background-color: #fff;
+    background-image: url(../img/checkbox_sprite.png);
+    background-repeat: no-repeat;
+    background-position: -14px center;
+    position: absolute;
+    top: 4px;
+    left: 5px;
+
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
+#rfirst:checked+label:before, #rsecond:checked+label:before, #rthird:checked+label:before {
+    background-position: 3px center;
+}
+#range1+label, #oneway+label, #show_hotels+label {
+    position: relative;
+}
+#range1+label:before, #oneway+label:before, #show_hotels+label:before {
+    content: "";
+    display: inline-block;
+    height: 19px;
+    width: 25px;
+    margin: 0 5px 0 0;
+    background-image: url(../img/checbox1.png);
+    background-repeat: no-repeat;
+    background-position: 0px center;
+    position: absolute;
+    top: -3px;
+    left: -27px;
+}
+#range1:checked+label:before, #oneway:checked+label:before, #show_hotels:checked+label:before {
+    background-image: url(../img/checbox2.png);
+}
+#aviasales_search{
+    position: relative;
+}
+#disable_form{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 999;
+  opacity: 0;
+  display: none;
+}
+#av_loader{
+    width: 400px;
+    margin: auto;
+    display: none;
+}
+
+#av_loader > img{
+    width: 400px;
+}

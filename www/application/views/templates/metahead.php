@@ -17,6 +17,7 @@
         <link rel="stylesheet" href="/css/slider.css">
         <link rel="stylesheet" href="/colorbox/colorbox.css">
         <link rel="stylesheet" href="/css/backcall.css">
+        <link rel="stylesheet" href="/css/avia.css">
 
         <style type="text/css">
             #map-canvas{
@@ -24,11 +25,31 @@
                 height: 250px;
             }
         </style>
-        <script src="/js/jquery-2.1.1.min.js"></script>
+        <!-- jQuery -->
+        <script src="http://yandex.st/jquery/1.6.2/jquery.min.js" type="text/javascript"></script>
+        <!-- Jquery-UI -->
+        <script src="http://yandex.st/jquery-ui/1.8.16/jquery-ui.min.js" type="text/javascript"></script>
+        <!-- языковой пакет для jQuery-UI -->
+        <script src="http://yandex.st/jquery-ui/1.8.15/i18n/jquery.ui.datepicker-ru.min.js" type="text/javascript"></script>
         <script defer src="/js/jquery.flexslider.js"></script>
         <script src="/js/jquery.bxslider.js"></script>
         <script src="/js/scripts.js"></script>
         <script src="/colorbox/jquery.colorbox-min.js"></script>
+        
+        <!-- Pure -->
+        <script src="/js/pure.min.js" type="text/javascript"></script>
+        <!-- Underscore -->
+        <script src="/js/underscore-min.js" type="text/javascript"></script>
+        <!-- данные для автокомплита -->
+        <script src="http://nano.aviasales.ru/assets/autocomplete_places_ru.js" type="text/javascript"></script>
+
+        <!-- опеределение origin по geoip -->
+        <script src="http://nano.aviasales.ru/assets/geoip_location_en.js"></script>
+
+
+        <!-- инициализатор формы -->
+        <script src="http://nano.aviasales.ru/assets/minimal/inline_form.js" type="text/javascript"></script>
+        <script src="/js/avia.js"></script>
         <script>
             jQuery(document).ready(function () {
                 
